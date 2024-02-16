@@ -3,6 +3,7 @@
 # dependencies
 node_modules
 node_modules_bak
+package-lock.json
 /.pnp
 .pnp.js
 .yarn/install-state.gz
