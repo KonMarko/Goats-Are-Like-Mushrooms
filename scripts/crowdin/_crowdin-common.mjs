@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const apiToken = process.env.CROWDIN_API_TOKEN;
-const projectId = process.env.CROWDIN_PROJECT_ID;
+const projectId = Number(process.env.CROWDIN_PROJECT_ID);
 export const crowdinCommand = __dirname + '/node_modules/.bin/crowdin';
 
 export const getBranches = () => {
