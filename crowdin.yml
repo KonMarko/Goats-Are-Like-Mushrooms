@@ -1,0 +1,5 @@
+# https://support.crowdin.com/configuration-file/
+
+files:
+  - source: /public/locales/en
+    translation: /public/locales/%locale%/%original_file_name%
