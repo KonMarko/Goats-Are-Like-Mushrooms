@@ -1,0 +1,4 @@
+{
+  "header": "this is settings json file",
+  "not-a-header": "this is header from settings json file"
+}
