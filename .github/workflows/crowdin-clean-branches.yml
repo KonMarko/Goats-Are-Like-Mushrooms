@@ -1,0 +1,20 @@
+name: Clean Crowdin Branches
+
+on:
+  workflow_dispatch:
+
+jobs:
+  crowdin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install crowdin
+        run: |
+          cd scripts/crowdin && npm i
+
+      - name: Clean crowdin branches
+        env:
+          CROWDIN_API_TOKEN: ${{ secrets.CROWDIN_API_TOKEN }}
+        run: |
+          node ./scripts/crowdin/crowdin-clean-branches.mjs

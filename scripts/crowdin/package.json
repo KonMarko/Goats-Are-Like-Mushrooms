@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "@crowdin/cli": "^3.18.0"
+  },
+  "overrides": {
+    "node-fetch": "2.6.7"
+  }
+}

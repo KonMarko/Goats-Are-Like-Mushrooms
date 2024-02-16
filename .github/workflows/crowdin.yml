@@ -1,0 +1,43 @@
+name: Crowdin Operations
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        required: true
+        description: 'Branch name'
+      operation:
+        required: true
+        type: choice
+        description: Choose the operation
+        options:
+        - Upload source texts
+        - Pull and commit translations
+        - Delete Crowdin branch
+
+jobs:
+  crowdin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Fetch master branch
+        run: |
+          # When the operation is `Delete Crowdin branch` it doesn't need to be
+          # on the same branch, and in many cases the GitHub branch will
+          # already have been deleted if the PR was merged
+          if [[ "${{ github.event.inputs.operation }}" != "Delete Crowdin branch" ]]; then
+            git fetch origin ${{ github.event.inputs.branch }}
+            git checkout ${{ github.event.inputs.branch }}
+          fi
+
+      - name: Install crowdin
+        run: |
+          cd scripts/crowdin && npm i
+
+      - name: Run crowdin operation
+        env:
+          CROWDIN_API_TOKEN: ${{ secrets.CROWDIN_API_TOKEN }}
+          CROWDIN_BRANCH: ${{ github.event.inputs.branch }}
+          CROWDIN_OPERATION: ${{ github.event.inputs.operation }}
+        run: |
+          node ./scripts/crowdin/crowdin-operations.mjs

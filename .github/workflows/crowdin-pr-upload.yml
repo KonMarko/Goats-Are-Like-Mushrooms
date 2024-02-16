@@ -1,0 +1,33 @@
+name: Crowdin upload translation at PR
+
+on:
+  pull_request:
+    paths:
+      - 'public/locales/en/**'
+
+jobs:
+  crowdin-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install crowdin
+        run: |
+          cd scripts/crowdin && npm i
+
+      - name: Run crowdin upload
+        env:
+          CROWDIN_API_TOKEN: ${{ secrets.CROWDIN_API_TOKEN }}
+          CROWDIN_BRANCH: ${{ github.head_ref }}
+          CROWDIN_OPERATION: "Upload source texts"
+        run: |
+          node ./scripts/crowdin/crowdin-operations.mjs
+
+      - name: Comment PR
+        if: ${{ failure() }}
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: |
+            There was an issue uploading your translations to crowdin! :confused:
+            Please check the action output in
+            https://github.com/${{github.repository}}/commit/${{github.sha}}/checks/${{github.run_id}}
