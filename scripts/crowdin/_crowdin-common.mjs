@@ -8,7 +8,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const apiToken = process.env.CROWDIN_API_TOKEN;
-const projectId = Number(process.env.CROWDIN_PROJECT_ID);
 export const crowdinCommand = __dirname + '/node_modules/.bin/crowdin';
 
 export const getBranches = () => {
@@ -29,7 +28,7 @@ export const setupCrowdinAuth = () => {
   const crowdinCredsPath = os.homedir() + '/.crowdin.yml';
 
   if (!fs.existsSync(crowdinCredsPath)) {
-    const ymlContent = [`project_id: '${projectId}'`, `api_token: '${apiToken}'`].join('\n');
+    const ymlContent = [`project_id: '648646'`, `api_token: '${apiToken}'`].join('\n');
 
     fs.writeFileSync(crowdinCredsPath, ymlContent);
   }
