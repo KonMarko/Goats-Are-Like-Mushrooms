@@ -1,0 +1,20 @@
+{
+  "enquiries": "Zapytania",
+  "enquiriesLastMonth": "Całkowita liczba zapytań w zeszłym miesiącu",
+  "profilePerformance": "Wydajność profilu",
+  "profileScoreBeginner": "Początkujący\n",
+  "profileScoreExpert": "Ekspert",
+  "profileScoreExplanation": "💡 Czy wiedziałeś?\nMiejsca, które pojawiają się na pierwszych 9 pozycjach wyszukiwania, otrzymują 3,5 razy więcej zapytań.\n",
+  "profileScoreImprove": "Aby poprawić swój wynik profilu i pozycję wyszukiwania, regularnie aktualizuj swój profil\n",
+  "profileScoreIntermediate": "Pośredni",
+  "searchAppearencesLastMonth": "Wyszukaj występy w zeszłym miesiącu",
+  "searchPositionCounty": "Szukaj pozycji w",
+  "totalBridebookEnquiries": "totalBridebookEnquiries",
+  "totalEnquiries": "Całkowita liczba zapytań",
+  "totalReceived": "Razem otrzymano",
+  "totalReviewsNull": "Brak recenzji",
+  "totalReviewsReceived": "otrzymana recenzja",
+  "yourProfileScore": "Twój wynik w profilu",
+  "yourReviewScore": "Twój wynik z recenzji",
+  "yourSearchAppearances": "Twoje wyglądy w wyszukiwarce"
+}

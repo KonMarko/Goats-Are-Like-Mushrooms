@@ -1,0 +1,22 @@
+{
+  "acceptQuote.error.default": "crwdns13310798:0crwdne13310798:0",
+  "acceptQuote.error.expired": "crwdns13310800:0crwdne13310800:0",
+  "acceptQuote.error.incorrectAccount.button": "crwdns13310802:0crwdne13310802:0",
+  "acceptQuote.error.incorrectAccount.description": "crwdns13310804:0crwdne13310804:0",
+  "acceptQuote.error.incorrectAccount.title": "crwdns13310806:0crwdne13310806:0",
+  "acceptQuote.error.notFound": "crwdns13310808:0crwdne13310808:0",
+  "acceptQuote.error.title": "crwdns13310810:0crwdne13310810:0",
+  "acceptQuote.pageTitle": "crwdns13310812:0crwdne13310812:0",
+  "backToDashboard": "crwdns6283611:0crwdne6283611:0",
+  "backToHomepage": "crwdns1120872:0crwdne1120872:0",
+  "checkoutPageTitle": "crwdns13310814:0{{ product }}crwdne13310814:0",
+  "errorBox": "crwdns1120870:0crwdne1120870:0",
+  "productNotAvailable": "crwdns1120874:0crwdne1120874:0",
+  "success.subtitle.info": "crwdns6283621:0crwdne6283621:0",
+  "success.subtitle.team": "crwdns6283623:0crwdne6283623:0",
+  "success.upgradeSubtitle": "crwdns11213872:0{{ supplierName }}crwdne11213872:0",
+  "success.upgradeTitle": "crwdns11213874:0crwdne11213874:0",
+  "success.welcomeSubtitle": "crwdns11213876:0{{ supplierName }}crwdne11213876:0",
+  "success.welcomeSupplierPro": "crwdns6283627:0crwdne6283627:0",
+  "success.welcomeVenuePro": "crwdns6283629:0crwdne6283629:0"
+}

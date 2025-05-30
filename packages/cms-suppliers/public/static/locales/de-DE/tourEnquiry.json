@@ -1,0 +1,13 @@
+{
+  "intro.back": "Zurück",
+  "intro.done": "Erledigt",
+  "intro.next": "Weiter",
+  "intro.templates.step1.description": "<0>Hier können Sie alle Gespräche sehen, die Sie mit diesem Paar führen. Es ist nicht mehr nötig, die E-Mail in ein externes System zu kopieren.<1></1> <2></2> <3>Mit der Bridebook Inbox haben Sie alle Informationen an einem Ort organisiert.</3> <4></4> <5></5> Wenn Sie einem Paar eine Nachricht senden, erhält es eine Push-Benachrichtigung auf dem Handy und kann direkt über die Bridebook-App antworten, sodass das Gespräch natürlicher und flüssiger verläuft.</0>",
+  "intro.templates.step1.title": "Antworten Sie dem Paar sofort",
+  "intro.templates.step2.description": "<0>Wählen Sie aus Ihren eigenen vordefinierten Vorlagen aus, um mit nur wenigen Klicks zu antworten.<1></1> <2></2> Jede Nachricht kann automatisch mit Angaben zum Paar <4>personalisiert werden</4>.</0>",
+  "intro.templates.step2.title": "Reagieren Sie schneller mit Nachrichtenvorlagen",
+  "intro.templates.step3.description": "Personalisieren Sie Ihre Nachricht mit unseren dynamischen Feldern. Die Paar Informationen werden automatisch in Ihre Nachricht eingefügt, bevor Sie sie senden.",
+  "intro.templates.step3.title": "Nachricht hinzufügen",
+  "intro.templates.step4.description": "Dies könnte eine Broschüre, eine Preisliste oder ein Fotoalbum sein. Dies wird mit Ihrer Antwortvorlage gesendet.",
+  "intro.templates.step4.title": "Dateien anhängen"
+}

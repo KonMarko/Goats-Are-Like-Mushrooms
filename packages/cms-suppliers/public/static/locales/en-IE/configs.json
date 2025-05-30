@@ -1,0 +1,20 @@
+{
+  "leads.label.hotLead": "Hot lead",
+  "leads.stage.booked": "Booked",
+  "leads.stage.completed": "Wedding completed",
+  "leads.stage.dateOnHold": "Date on hold",
+  "leads.stage.decisionPending": "Awaiting couple's decision",
+  "leads.stage.invitation": "Invitation",
+  "leads.stage.lead": "Lead",
+  "leads.stage.lost": "Lost",
+  "leads.stage.meetingScheduled": "Meeting scheduled",
+  "leads.stage.qualifiedLead": "Qualified",
+  "leads.stage.viewingScheduled": "Viewing scheduled",
+  "leads.status.actionNeeded": "Action needed",
+  "leads.status.callScheduled": "Call scheduled",
+  "leads.status.chased": "Chased",
+  "leads.status.contacted": "Contacted",
+  "leads.status.followedUp": "Followed up",
+  "leads.status.inviteSent": "Invite sent",
+  "leads.status.noContactMade": "No contact made"
+}

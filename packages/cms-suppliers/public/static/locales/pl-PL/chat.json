@@ -1,0 +1,22 @@
+{
+  "blocked.learnMore": "Ucz się więcej",
+  "blocked.subNote": "Dane karty kredytowej nie są potrzebne",
+  "blocked.subtitle": "Rozmawiaj ze swoim zespołem w jednym, łatwym miejscu.",
+  "blocked.title": "Przedstawiamy czat zespołowy",
+  "button.create": "Stwórz",
+  "button.createNew": "Stwórz nowy",
+  "cancel.button": "Cofnij",
+  "connectionError": "Błąd połączenia",
+  "create.new.chat": "Stwórz nowy chat",
+  "delete.button": "Usuń",
+  "delete.chat.confirmation": "Czy na pewno chcesz usunąć ten czat?",
+  "deleteChannelPopup.title": "Kanał",
+  "deleteChat.button": "Usuń czat",
+  "enter.name": "Wpisz imię",
+  "notification": "{{ nazwa }} wysłał wiadomość",
+  "title": "Czat drużynowy",
+  "watcher.online_0": "{{count}} obecny",
+  "watcher.online_1": "{{count}} obecnych",
+  "watcher.online_2": "{{count}} obecnych",
+  "yourChats": "Twoje czaty"
+}

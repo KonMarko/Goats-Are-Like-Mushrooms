@@ -1,0 +1,22 @@
+{
+  "acceptQuote.error.default": "Un problème est survenu, veuillez réessayer plus tard ou contactez-nous.",
+  "acceptQuote.error.expired": "Ce devis a déjà été accepté ou a expiré.",
+  "acceptQuote.error.incorrectAccount.button": "Connectez-vous avec un autre compte",
+  "acceptQuote.error.incorrectAccount.description": "Ce devis est préparé pour un autre prestataire. Vérifiez l'email que vous avez reçu de notre part et connectez-vous avec le bon compte.",
+  "acceptQuote.error.incorrectAccount.title": "Compte incorrect",
+  "acceptQuote.error.notFound": "Devis non trouvé.",
+  "acceptQuote.error.title": "Erreur",
+  "acceptQuote.pageTitle": "Acceptez le devis",
+  "backToDashboard": "Retour au tableau de bord",
+  "backToHomepage": "Retour à la page d'accueil",
+  "checkoutPageTitle": "{{ product }} Paiement",
+  "errorBox": "Un problème est survenu, veuillez réessayer plus tard.",
+  "productNotAvailable": "Désolé, ce produit n'est pas disponible.",
+  "success.subtitle.info": "Tout est prêt ! Le changement peut prendre quelques minutes.",
+  "success.subtitle.team": "Toute l'équipe Bridebook est là pour vous aider à rencontrer des couples et à atteindre vos objectifs commerciaux",
+  "success.upgradeSubtitle": "{{ supplierName }}, nous sommes ravis de vous aider à réussir !",
+  "success.upgradeTitle": "Youpi ! Vous êtes premium",
+  "success.welcomeSubtitle": "{{ supplierName }}, nous sommes ravis de vous avoir avec nous !",
+  "success.welcomeSupplierPro": "Bienvenue sur SupplierPro de Bridebook",
+  "success.welcomeVenuePro": "Bienvenue sur VenuePro de Bridebook"
+}

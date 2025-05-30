@@ -1,0 +1,23 @@
+{
+  "cta.goToMessage": "Reply",
+  "cta.sendEnquiry": "Message",
+  "error": "There was an error processing your request",
+  "infoItem.bedroom": "bedroom",
+  "infoItem.bedroom_plural": "bedrooms",
+  "infoItem.guest": "guest",
+  "infoItem.guest_plural": "guests",
+  "infoItem.no": "No",
+  "infoItem.noReviews": "No reviews yet",
+  "infoItem.notSet": "Not set",
+  "infoItem.other": "Other",
+  "infoItem.review": "review",
+  "infoItem.review_plural": "reviews",
+  "infoItem.yes": "Yes",
+  "rowHeader.accommodation": "Accommodation",
+  "rowHeader.guests": "Guests",
+  "rowHeader.reviews": "Reviews",
+  "rowHeader.venuePrice": "Venue price",
+  "rowHeader.venueStyle": "Venue style",
+  "rowHeader.venueType": "Venue type",
+  "title": "Compare venues"
+}

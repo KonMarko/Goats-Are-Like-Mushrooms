@@ -1,0 +1,22 @@
+{
+  "active": "AKTIV",
+  "addNewDescription": "Bewerben Sie Ihre Hochzeitsmessen/Hausführungen auf Bridebook.",
+  "available": "Verfügbar",
+  "cancelButton": "Abbrechen",
+  "createNewEvent": "Neues Event erstellen",
+  "dateLabel": "Datum",
+  "deleteEvent": "Event löschen",
+  "descriptionLabel": "Beschreibung",
+  "editEvent": "Bearbeiten",
+  "editSave": "Speichern",
+  "editTitle": "Hochzeitsformular bearbeiten",
+  "expired": "ABGELAUFEN",
+  "fairDeletedSuccessMessage": "Event entfernt",
+  "lockedNotAvailable": "Nicht verfügbar",
+  "newEventTitle": "Neues Event hinzufügen.",
+  "saveButton": "Event erstellen",
+  "successFairSave": "Erfolgreich gespeichert!",
+  "titleLabel": "Titel des Events",
+  "upgradeToUnlock": "Upgraden, um weitere Events freizuschalten.",
+  "yourUpgradeOptions": "Ihre Upgrade-Optionen"
+}

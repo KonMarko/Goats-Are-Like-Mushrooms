@@ -1,0 +1,16 @@
+{
+  "addCounty": "Dodaj powiat...",
+  "benefitsWithSearchBoost": "Dzięki funkcji Search Boost Twoja firma zajmuje jedną z najwyższych pozycji w maksymalnie {{locationLimit}} hrabstwach. Połącz się z większą liczbą par już dziś!",
+  "changeHomeAdress.link": "Edytuj swoją stronę profilu",
+  "changeHomeAdress.text": "Możesz zmienić swój adres domowy w",
+  "expandYourReach": "Rozszerz swój zasięg",
+  "heading.additionalCounties": "Dodatkowe hrabstwa",
+  "heading.selectCounties": "Wybierz maksymalnie <1>{{additionalCountiesLimit}} innych hrabstw</1>, w których chcesz promować swoją firmę.",
+  "homeCounty": "Kraj macierzysty",
+  "listinLocations": "Lokalizacje aukcji",
+  "searchBoostOnly": "Tylko przyspieszenie wyszukiwania",
+  "selectCounty": "Wybierz powiat...",
+  "statementHeading": "Dotrzyj do większej liczby par, poszerzając swoją ekspozycję na wiele regionów! Dzięki funkcji Search Boost Twoja firma zajmuje jedną z najwyższych pozycji w {{limit}} hrabstwach. Bez Search Boost Twój profil wyświetla się na standardowej pozycji tylko na podstawie adresu Twojej firmy.",
+  "unlockedWithSearchBoost": "Odblokowane dzięki przyspieszeniu wyszukiwania!",
+  "upgradeNow": "Ulepsz teraz"
+}

@@ -1,0 +1,18 @@
+{
+  "inviteCollaborators": "Invite Collaborators",
+  "collaboratorsInviteInfo": "Collaborators can only be assigned once they have <1>accepted</1> the invitation.",
+  "inputSelect.enterTheirEmailAddress.placeholder": "Enter their email address",
+  "inputSelect.setPermissionLevel.placeholder": "Set permission level",
+  "permissionExplanation": "<0><0>Admins</0> can edit everything and invite others</0><1><0>Editors</0> can edit everything but not invite others</1>",
+  "button.invite": "Invite",
+  "listOfUsersWithAccess": "List of Users with Access",
+  "button.inviteCollaborators": "Invite collaborators",
+  "email": "Email",
+  "role": "Role",
+  "doYouNeedToRemoveUser": "Do you need to remove user? <2>Contact Bridebook team</2>",
+  "inviteCollaboratorSuccess_hasSupplierName": "{{email}} has been invited by email to be an {{permissionLevel}} on {{supplierName}}",
+  "inviteCollaboratorSuccess": "{{email}} has been invited by email to be an {{permissionLevel}}",
+  "admin": "Admin",
+  "editor": "Editor",
+  "settingsBadges": "Settings & Badges"
+}

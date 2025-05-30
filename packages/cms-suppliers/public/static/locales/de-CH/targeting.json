@@ -1,0 +1,14 @@
+{
+  "budget.tip": "Wählen Sie das gesamte Hochzeitsbudget der Paare aus, die Sie ansprechen möchten.",
+  "budget.title": "Bevorzugtes Gesamthochzeitsbudget",
+  "coupleTargeting.saved": "Paar-Targeting gespeichert!",
+  "info.topTip.note": "Bitte beachten Sie, dass Ihr Targeting zu weit gefasst ist und nicht richtig funktioniert, wenn Sie für alle unten aufgeführten Optionen \"Alle\" auswählen.",
+  "info.topTip.text": "Bitte wählen Sie eine Option pro Abschnitt. Nach der Auswahl werden Sie Paaren angezeigt, die diesen Präferenzen entsprechen.",
+  "selection.day.header": "Bevorzugter Wochentag",
+  "selection.save": "Filter speichern",
+  "selection.season.header": "Bevorzugte Jahreszeit",
+  "selection.season.tooltip": "Frühling: März - Mai Sommer: Juni - Aug Herbst: Sep - Nov Winter: Dez - Feb",
+  "selection.year.header": "Bevorzugtes Jahr",
+  "tooltip.guests": "Wählen Sie die Gesamtanzahl der Hochzeitsgäste aus, die Sie ansprechen möchten.",
+  "totalGuest.number": "Bevorzugte min./max. Gästeanzahl"
+}

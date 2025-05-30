@@ -1,0 +1,17 @@
+{
+  "invitedHeading": "You have been invited",
+  "invitedSubheading": "to be an {{ role }} of {{ supplierName }}, {{ city }}.",
+  "yourProfileIsLive": "Your free business profile is now live",
+  "getEnquiriesFromCouples": "Get enquiries from thousands of couples.",
+  "chooseEmailAndPassword": "Choose an email and password to sign up:",
+  "inputText.emailAddress.placeholder": "Email address",
+  "inputText.password.placeholder": "Password",
+  "seeYourFreeProfile": "See your FREE profile!",
+  "chooseSeparateEmailForEnquiries": "You can choose a separate email address for enquiries after logging in.",
+  "loadingPreview": "Loading preview...",
+  "whatsThePrice": "So, what's the price?<1></1>Zero. Zilch. Nada.",
+  "profileInviteInfo": "It will always be free for founding members to have a profile on Bridebook. We also have additional paid upgrades that you might like to try out in the future, but the core product will always remain free.",
+  "seeOurFaq": "Questions? See our <1>FAQ</1>",
+  "asSeenIn": "As seen in:",
+  "supplierSignUp": "Supplier Sign Up"
+}

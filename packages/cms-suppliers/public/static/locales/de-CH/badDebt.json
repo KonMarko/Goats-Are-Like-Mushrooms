@@ -1,0 +1,15 @@
+{
+  "badDebt.admin.cms": "Zahlungsausfall – CMS sperren",
+  "badDebt.admin.coupleside": "Zahlungsausfall – Flag auf Coupleside hinzufügen",
+  "badDebt.banner.button": "Problem lösen",
+  "badDebt.banner.msg": "Sie haben Ihren vereinbarten Zahlungstermin überschritten. Wir haben Ihren Zugriff auf Anfragen von Paaren eingeschränkt, bis Ihre Zahlungen beglichen sind.",
+  "badDebt.banner.title": "Zahlung überfällig",
+  "badDebt.block.msg": "Der Bereich ist derzeit aufgrund überfälliger Zahlungen gesperrt.",
+  "badDebt.inline.msg.email": "Zahlung aktualisieren, um die E-Mail-Adresse anzuzeigen",
+  "badDebt.inline.msg.phone": "Zahlung aktualisieren, um die Telefonnummer anzuzeigen",
+  "badDebt.lead.button": "Anfragen wiederherstellen",
+  "badDebt.lead.msg": "Deine Anfragen sind derzeit aufgrund überfälliger Zahlungen eingeschränkt",
+  "badDebt.popup.button": "Mehr erfahren",
+  "badDebt.popup.header": "Zahlung überfällig",
+  "badDebt.popup.msg": "Bitte senden Sie eine E-Mail an <1>{{mailto}}</1>, um den vollen Zugriff auf Ihr Bridebook Business-Konto wiederherzustellen und auf Anfragen antworten zu können."
+}

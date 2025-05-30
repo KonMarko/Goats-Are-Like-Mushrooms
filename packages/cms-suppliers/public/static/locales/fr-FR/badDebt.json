@@ -1,0 +1,15 @@
+{
+  "badDebt.admin.cms": "Créances irrécouvrables - verrouiller le CMS",
+  "badDebt.admin.coupleside": "Créances irrécouvrables – ajouter un indicateur côté couple",
+  "badDebt.banner.button": "Résoudre maintenant",
+  "badDebt.banner.msg": "Vous avez dépassé la date de paiement convenue. Nous avons restreint votre accès aux demandes de renseignements jusqu'à ce que vos paiements soient mis à jour.",
+  "badDebt.banner.title": "Retard de paiement",
+  "badDebt.block.msg": "La section est actuellement restreinte en raison de paiements en retard.",
+  "badDebt.inline.msg.email": "Mettez à jour le paiement pour afficher l'adresse e-mail",
+  "badDebt.inline.msg.phone": "Mettez à jour le paiement pour afficher le numéro de téléphone",
+  "badDebt.lead.button": "Restaurer les demandes",
+  "badDebt.lead.msg": "Vos demandes sont actuellement limitées en raison retards de paiements",
+  "badDebt.popup.button": "En savoir plus",
+  "badDebt.popup.header": "Retard de paiement",
+  "badDebt.popup.msg": "Veuillez envoyer un e-mail à <1>{{mailto}}</1> pour restaurer l'accès complet à votre compte Bridebook Business et répondre à vos demandes."
+}

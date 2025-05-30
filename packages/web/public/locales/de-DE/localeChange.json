@@ -1,0 +1,5 @@
+{
+  "localeChangeSuggestion.changeCountryButton": "Bridebook {{ targetCountry }} besuchen",
+  "localeChangeSuggestion.keepCountryButton": "Auf der Website von {{ currentCountry }} bleiben",
+  "localeChangeSuggestion.title": "Suchst du nach Bridebook in deinem Land?"
+}

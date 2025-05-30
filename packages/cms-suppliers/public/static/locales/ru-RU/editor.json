@@ -1,0 +1,19 @@
+{
+  "ratingHeading": "Rating",
+  "hideFromSearch": "Hide from Search",
+  "statusHeading": "Status",
+  "checked": "Checked",
+  "controlsHeading": "Controls",
+  "deactivateAccount.markAsDeleted": "Deactivate account / Mark as deleted",
+  "statsHeading": "Stats",
+  "statsScore": "Score {{supplierScore}}",
+  "lastScored": "Last scored on {{lastScoredAt}}",
+  "supplierDetailsHeading": "Supplier details",
+  "supplierEnquiriesEmail": "Supplier enquiries email",
+  "supplierID": "Supplier ID",
+  "supplierRegisteredInAdmin": "Supplier registered in CMS Admin",
+  "answerYes": "yes",
+  "answerNo": "no",
+  "tierHeading": "Tier",
+  "paymentModelHeading": "Payment Model"
+}

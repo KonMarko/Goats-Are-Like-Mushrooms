@@ -1,0 +1,11 @@
+{
+  "closeThisWindow": "Close this window",
+  "instagram.button.tryAgain": "Try connecting again",
+  "instagram.connect.pageTitle": "Connect Instagram",
+  "instagram.connecting.header": "Connecting your Instagram...",
+  "instagram.connecting.subheader": "It should take just a moment.",
+  "instagram.error.header": "Error connecting Instagram",
+  "instagram.error.text": "If the problem persists, please <2>contact support</2>.",
+  "instagram.success.header": "Instagram connected",
+  "instagram.success.subheader": "You can now close this window."
+}

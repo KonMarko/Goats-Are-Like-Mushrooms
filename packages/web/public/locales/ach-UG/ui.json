@@ -1,0 +1,23 @@
+{
+  "addAPhoto": "crwdns5589187:0crwdne5589187:0",
+  "back": "crwdns11388876:0crwdne11388876:0",
+  "confetti.pressMe": "crwdns5589191:0crwdne5589191:0",
+  "fileFormat": "crwdns5589215:0crwdne5589215:0",
+  "fileUploadLimitReached": "crwdns5589241:0crwdne5589241:0",
+  "photoUploadFileSize.validation": "crwdns5589255:0{{fileName}}crwdnd5589255:0{{maxFileSize}}crwdne5589255:0",
+  "photoUploadFileType.validation": "crwdns5589257:0{{fileName}}crwdnd5589257:0{{userFriendlyTypes}}crwdne5589257:0",
+  "photoUploadImageSize.validation": "crwdns5589259:0{{fileName}}crwdnd5589259:0{{minImageWidth}}crwdne5589259:0",
+  "photoUploadLimit.validation": "crwdns5589261:0{{fileName}}crwdne5589261:0",
+  "profilePhoto.error.fileType": "crwdns5589263:0crwdne5589263:0",
+  "profilePhoto.error.main": "crwdns5589265:0{{name}}crwdne5589265:0",
+  "profilePhoto.error.maxSize": "crwdns5589267:0{{width}}crwdnd5589267:0{{height}}crwdne5589267:0",
+  "profilePhoto.error.minSize": "crwdns5589269:0{{minImageWidth}}crwdne5589269:0",
+  "profilePhoto.error.sizeMsg": "crwdns5589271:0crwdne5589271:0",
+  "removePhoto": "crwdns5589275:0crwdne5589275:0",
+  "suggestionCustom.addManually": "crwdns5589295:0crwdne5589295:0",
+  "suggestionCustom.supplierNotListed": "crwdns5589297:0crwdne5589297:0",
+  "textFieldPlaceholder": "crwdns5589299:0crwdne5589299:0",
+  "uploadAPhoto": "crwdns5589305:0crwdne5589305:0",
+  "uploading": "crwdns5589313:0crwdne5589313:0",
+  "uploadNewPhoto": "crwdns5589315:0crwdne5589315:0"
+}

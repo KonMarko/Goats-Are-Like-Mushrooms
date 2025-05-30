@@ -1,0 +1,11 @@
+{
+  "button.makeProfilePhoto": "Zrób zdjęcie profilowe",
+  "fileFormat": "Format pliku: <1>.JPG</1> or <3>.PNG</3> | Minimalna szerokość: <6>600 pikseli</6> | Maksymalny rozmiar pliku: <8>50mb</8>",
+  "photoRequirements": "Wymagania dotyczące zdjęć",
+  "profilePhoto": "Zdjęcie profilowe",
+  "removeWatermarks": "Nie zapomnij o% u2019! Usuń logo i znaki wodne ze swoich zdjęć. Zostanie dodany słaby znormalizowany znak wodny w celu ochrony zdjęć. Zawsze zachowujesz prawa autorskie.",
+  "stockPhoto": "Zdjęcie stockowe w celach ilustracyjnych",
+  "uploadMinimum10Photos": "Prześlij co najmniej <1>10 zdjęć</1>i wybierz<3> 1 zdjęcie profilowe</3> która będzie wyświetlana jako miniatura w wynikach wyszukiwania.",
+  "uploadYourPhotos": "Prześlij swoje zdjęcia",
+  "yourPhotoPortfolio": "Twoje portfolio ze zdjęciami"
+}

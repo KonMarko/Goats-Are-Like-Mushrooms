@@ -1,0 +1,22 @@
+{
+  "acceptQuote.error.default": "Etwas ist schief gelaufen, bitte versuche es später nochmal oder wende dich an den Kundenservice.",
+  "acceptQuote.error.expired": "Dieses Angebot wurde bereits angenommen oder ist abgelaufen.",
+  "acceptQuote.error.incorrectAccount.button": "Mit anderem Account anmelden",
+  "acceptQuote.error.incorrectAccount.description": "Dieses Angebot wurde für einen anderen Anbieter erstellt. Bitte überprüfe die E-Mail, die du von uns erhalten hast und melde dich mit dem richtigen Account an.",
+  "acceptQuote.error.incorrectAccount.title": "Falscher Account",
+  "acceptQuote.error.notFound": "Angebot nicht gefunden.",
+  "acceptQuote.error.title": "Fehler",
+  "acceptQuote.pageTitle": "Angebot annehmen",
+  "backToDashboard": "Zurück zum Dashboard",
+  "backToHomepage": "Zurück zur Startseite",
+  "checkoutPageTitle": "{{ product }} Checkout",
+  "errorBox": "Ups. Etwas ist schief gelaufen. Bitte versuchen Sie es später erneut.",
+  "productNotAvailable": "Leider ist dieses Produkt nicht verfügbar.",
+  "success.subtitle.info": "Sie sind bereit! Es kann einige Minuten dauern, bis das Upgrade wirksam wird.",
+  "success.subtitle.team": "Jeder hier bei Bridebook wird Ihnen helfen, mit Paaren in Kontakt zu kommen und Ihre Geschäftsziele zu erreichen",
+  "success.upgradeSubtitle": "{{ supplierName }}, wir freuen uns sehr, Ihnen zum Erfolg zu verhelfen!",
+  "success.upgradeTitle": "Juhu! Sie wurden upgegradet",
+  "success.welcomeSubtitle": "{{ supplierName }}, wir freuen uns sehr, Sie bei uns zu haben!",
+  "success.welcomeSupplierPro": "Willkommen bei SupplierPro von Bridebook",
+  "success.welcomeVenuePro": "Willkommen bei VenuePro von Bridebook"
+}

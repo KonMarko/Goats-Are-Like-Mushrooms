@@ -1,0 +1,22 @@
+{
+  "active": "ACTIVE",
+  "addNewDescription": "Promote your wedding fairs/showarounds on Bridebook.",
+  "available": "Available",
+  "cancelButton": "Cancel",
+  "createNewEvent": "Create new event",
+  "dateLabel": "Date",
+  "deleteEvent": "Delete event",
+  "descriptionLabel": "Description",
+  "editEvent": "Edit",
+  "editSave": "Save",
+  "editTitle": "Edit wedding form",
+  "expired": "EXPIRED",
+  "fairDeletedSuccessMessage": "Event removed",
+  "lockedNotAvailable": "Not available",
+  "newEventTitle": "Add new event.",
+  "saveButton": "Create event",
+  "successFairSave": "Event saved successfully!",
+  "titleLabel": "Event title",
+  "upgradeToUnlock": "Upgrade to unlock more events.",
+  "yourUpgradeOptions": "Your upgrade options"
+}

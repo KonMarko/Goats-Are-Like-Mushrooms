@@ -1,0 +1,14 @@
+{
+  "budget.tip": "Sélectionnez le budget total des couples que vous souhaitez cibler.",
+  "budget.title": "Budget total préféré",
+  "coupleTargeting.saved": "Ciblage des couples enregistré !",
+  "info.topTip.note": "Veuillez noter que si vous sélectionnez \"Tous\" pour toutes les options ci-dessous, votre ciblage sera trop large et ne fonctionnera pas correctement.",
+  "info.topTip.text": "Veuillez sélectionner une option par section. Une fois sélectionnée, vous serez montré aux couples qui correspondent à ces préférences.",
+  "selection.day.header": "Jour préféré de la semaine",
+  "selection.save": "Enregistrer les filtres",
+  "selection.season.header": "Saison préférée",
+  "selection.season.tooltip": "Printemps : mars - mai. Été : juin - août. Automne : septembre - novembre. Hiver : décembre - février",
+  "selection.year.header": "Année préférée",
+  "tooltip.guests": "Sélectionnez le nombre d'invités des couples que vous souhaitez cibler.",
+  "totalGuest.number": "Nombre d'invités min/max préféré"
+}

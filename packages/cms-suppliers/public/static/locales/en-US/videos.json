@@ -1,0 +1,7 @@
+{
+  "inputText.addVideo.alreadyExists.validation": "This video already exists",
+  "inputText.addVideo.incorrectUrl.validation": "Incorrect video URL",
+  "inputText.addVideo.notFound.validation": "Video not found",
+  "inputText.addVideo.placeholder": "Enter YouTube / Vimeo URL",
+  "videosTitle": "Videos"
+}

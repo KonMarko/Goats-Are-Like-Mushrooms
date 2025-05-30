@@ -1,0 +1,8 @@
+{
+  "addVideo": "Add a Video",
+  "inputText.addVideo.placeholder": "Enter YouTube / Vimeo URL",
+  "inputText.addVideo.incorrectUrl.validation": "Incorrect video URL",
+  "inputText.addVideo.alreadyExists.validation": "missing value",
+  "inputText.addVideo.notFound.validation": "Video not found",
+  "yourVideoPortfolio": "Your Video Portfolio"
+}

@@ -1,0 +1,19 @@
+{
+  "customise.heading": "Personnalisation",
+  "embed.heading": "Intégration",
+  "embedCode.copied": "Copié",
+  "embedCode.copyToClipboard": "Copier dans le presse-papier",
+  "howYourWidgetWillLook.subtext": "À quoi ressemblera votre widget sur votre site internet.",
+  "instruction.for.install": "Demandez à votre développeur de copier ce code sur votre site internet et le tour est joué ! Vous pouvez commencer à gérer vos demandes en un seul endroit facilement. <2>Besoin d'aide ?</2>",
+  "learn.more": "En savoir plus.",
+  "preview.heading": "Aperçu",
+  "settings.email": "Email",
+  "settings.estimatedGuestNumber": "Nombre estimé d'invités",
+  "settings.idealDate": "Date idéale",
+  "settings.message": "Message",
+  "settings.partnerName": "Nom de votre fiancé(e)",
+  "settings.phone": "Numéro de téléphone",
+  "settings.yourName": "Votre nom",
+  "widget.pageTitle": "Widget de demande",
+  "widget.subtext": "Intégrez votre widget Bridebook à votre site internet pour permettre aux couples d'envoyer des demandes directement depuis votre site, vous permettant de les gérer dans un seul endroit."
+}

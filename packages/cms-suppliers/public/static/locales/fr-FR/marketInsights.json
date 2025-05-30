@@ -1,0 +1,23 @@
+{
+  "competitorSearchRankings.subtitle": "Aperçus sur vous et vos concurrents dans l'historique des positions de recherche",
+  "competitorSearchRankings.title": "Classements des positions de recherche des concurrents",
+  "coupleBudgetInsights.premiumRequired.subtitle": "Regardez combien les couples (qui vous ont envoyé une demande) cherchent à dépenser au total pour leur mariage.",
+  "coupleBudgetInsights.premiumRequired.title": "Infos Budget des Couples",
+  "coupleBudgetInsights.subtitle": "Regardez combien les couples (qui vous ont envoyé une demande) cherchent à dépenser au total pour leur mariage.",
+  "coupleBudgetInsights.title": "Infos Budget des Couples",
+  "marketComparison.premiumRequired.subtitle": "Nos algorithmes vous montre les autres lieux avec lesquels vous êtes généralement ajoutés en favoris. Regardez combien de fois vous et vos concurrents avez été ajoutés aux favoris au cours des 30 derniers jours, votre score de réponse, votre score de profil et votre position de recherche ({{searchCountry}}).",
+  "marketComparison.premiumRequired.title": "Comparaison du marché",
+  "marketComparison.tableHeader.profileScore": "Score de votre profil",
+  "marketComparison.tableHeader.profileViews": "Visites du profil",
+  "marketComparison.tableHeader.responseScore": "Score de Réponse",
+  "marketComparison.tableHeader.responseScore.tooltip": "Plus vous répondez rapidement aux demandes, plus votre Score de Réponse est élevé et plus haut vous apparaîtrez dans les résultats de recherche.",
+  "marketComparison.tableHeader.searchPosition": "Position de recherche {{country}}",
+  "marketComparison.tableHeader.venueName": "Nom du lieu",
+  "marketComparison.title": "Comparaison du marché",
+  "marketComparison.title.tooltip": "Les couples qui vous ajoutent aux favoris ajoutent également ces lieux.",
+  "reportSubtitle": "Les informations les plus complètes sur le marché du mariage en ce moment.",
+  "reportTitle": "UK Wedding Report {{ year }}",
+  "responseScore.title": "Score de Réponse",
+  "responseScores.chart.seriesName": "Score de Réponse",
+  "yourPosition": "Votre position"
+}
