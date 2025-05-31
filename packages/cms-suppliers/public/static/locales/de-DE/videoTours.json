@@ -1,0 +1,12 @@
+{
+  "add360.inputTextArea.placeholder": "Geben Sie den Matterport-/Google Street View-Link ein",
+  "addPreRecorded.inputText.placeholder": "Geben Sie den YouTube-/Vimeo-URL ein",
+  "addPreRecordedDesc": "Laden Sie aufgezeichnete Videotouren hoch, damit Paare Ihre Location aus der Ferne kennenlernen können. Wir empfehlen Ihnen, mindestens eine Videotour hinzuzufügen, um Ihre Location zu präsentieren. Linkformat: Nur YouTube oder Vimeo. Keine Begrenzung der Anzahl von Videos.",
+  "addVideo.alreadyExists": "Diese Tour existiert bereits",
+  "checkbox.enableLiveTours": "Aktivieren Sie LIVE-Videotouren",
+  "enableLiveToursDescription": "Eine LIVE-Videotour ist ein Echtzeit-Video-Chat (z. B. Facetime, Zoom), bei dem Sie über Ihr Mobilgerät eine Remote-Tour durch Ihre Location durchführen. Planen Sie eine Tour direkt mit dem Paar mit Ihrer bevorzugten Technologie. Kreuzen Sie „Aktivieren“ an, damit Paare LIVE-Videotouren in Ihrem Profil anfordern können.",
+  "liveToursTitle": "Live-Videotouren",
+  "videoToursPreRecordedTitle": "Vorab aufgezeichnete Videotouren",
+  "virtualToursDesc": "Bridebook unterstützt die Formate von <1>Matterport</1> oder <3>Google Street View</3>. Kopieren Sie den Code / Link in das unten stehende Feld und klicken Sie auf Speichern. Ihre 360° virtuelle Tour wird dann in Ihrem Bridebook-Profil angezeigt!",
+  "virtualToursTitle": "360° virtuelle Touren"
+}

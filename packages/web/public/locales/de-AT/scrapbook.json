@@ -1,0 +1,20 @@
+{
+  "addNote": "Notiz hinzufügen",
+  "editContent.label": "Notiz",
+  "editContent.placeholder": "Lieder für die Tanzfläche, Aufgabenverteilung, Dekoration, Lieblingskleider - füge alles hinzu, was dir gefällt!",
+  "editNote": "Notiz bearbeiten",
+  "editNoteAddPhotos": "Fotos hinzufügen",
+  "editNoteDelete": "Notiz löschen",
+  "editTitle.label": "Notiztitel",
+  "editTitle.placeholder": "Worum geht es in dieser Notiz?",
+  "modalDeleteSubtitle": "Diese Notiz wird aus deinem Notizheft verschwinden.",
+  "modalDeleteTitle": "Aus dem Notizheft löschen?",
+  "noNotesDesc": "Benutze dein Notizheft, um Hochzeitsideen aufzuschreiben, Fotos zu speichern und Inspiration zu organisieren.",
+  "noNotesTitle": "Fang an Notizen hinzuzufügen!",
+  "notesNumber": "{{count}} Notiz",
+  "notesNumber_plural": "{{count}} Notizen",
+  "pageTitle": "Unser Hochzeits-Notizbuch",
+  "popup.title": "Notizbuch",
+  "tabs.savedInspiration": "Inspiration",
+  "tabs.scrapbook": "Notizbuch"
+}

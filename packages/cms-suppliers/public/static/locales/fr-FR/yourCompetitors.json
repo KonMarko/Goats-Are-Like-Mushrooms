@@ -1,0 +1,17 @@
+{
+  "header.description.subtitle": "Ces informations sont basées sur les couples qui vous ont envoyé une demande et qui ont réservé l'un de ces lieux.",
+  "header.description.title": "Voici les 5 lieux qui vous font perdre le plus de réservations.",
+  "header.info": "Allez voir leur profil pour voir comment vos prix, vos photos et vos avis comparent.",
+  "header.subtitle": "<0>Vous avez perdu <1>{{lostAmount}}</1>, qui sont allés à d'autres lieux.</0>",
+  "keyInfo": "INFOS CLÉS",
+  "noDataText": "Pas assez de données disponibles",
+  "numberShorthand": "Numéro",
+  "premiumBlockInfo": "Découvrez qui vous fait perdre des affaires",
+  "searchPosition.title": "Votre position de recherche actuelle",
+  "searchPosition.viewCountySearch": "Voir recherche par département",
+  "searchPostion.viewProfile": "Voir le profil",
+  "topSearches.title": "Top {{numberOfTopSearches}} lieux au/en/à {{homeArea}} sur Bridebook",
+  "topSearches.viewAll": "Voir plus",
+  "venue": "LIEU",
+  "viewProfile": "Voir le profil"
+}

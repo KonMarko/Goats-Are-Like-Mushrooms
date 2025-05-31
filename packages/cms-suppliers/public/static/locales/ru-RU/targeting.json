@@ -1,0 +1,14 @@
+{
+  "budget.tip": "Select the total wedding budget of couples that you wish to target.",
+  "budget.title": "Preferred total wedding budget",
+  "info.intro": "Couple Targeting allows you to reach the ideal couples for your venue, based on their wedding preferences and your business goals.<1></1>Couples provide the below information when they join Bridebook, so we will use this to promote your venue to the couples who match your target preferences.",
+  "info.topTip.text": "Please select one option per section. Once selected, you will be shown to couples who match these preferences.",
+  "info.topTip.note": "Please note, if you select 'All' for all of the options below, your Targeting will be too broad and will not function correctly.",
+  "selection.year.header": "Preferred year",
+  "selection.season.tooltip": "Spring: Mar - May Summer: Jun - Aug Autumn: Sep - Nov Winter: Dec - Feb",
+  "selection.season.header": "Preferred season",
+  "selection.day.header": "Preferred day of the week",
+  "selection.save": "Save filters",
+  "coupleTargeting.saved": "Couple targeting saved!",
+  "title": "Couple Targeting"
+}

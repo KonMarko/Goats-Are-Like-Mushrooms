@@ -1,0 +1,5 @@
+{
+  "covidStatus.warning": "Informuj aktualne rezerwacje, dostawców i potencjalnych klientów o swoim statusie podczas pandemii COVID-19.",
+  "inputTextarea.message.placeholder": "na przykład Jesteśmy tymczasowo zamknięci z powodu pandemii COVID-19. Wciąż przyjmujemy rezerwacje na 2021 rok i później, więc prosimy o kontakt.",
+  "statusPageTitle": "Status COVID-19"
+}

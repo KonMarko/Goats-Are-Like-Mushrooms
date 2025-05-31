@@ -1,0 +1,15 @@
+{
+  "badDebt.admin.cms": "Bad debt - lock CMS",
+  "badDebt.admin.coupleside": "Bad debt - add coupleside flag",
+  "badDebt.banner.button": "Resolve now",
+  "badDebt.banner.msg": "You have passed your agreed payment date. We have restricted your access to enquiries until your payments are updated.",
+  "badDebt.banner.title": "Payment overdue",
+  "badDebt.block.msg": "Section is currently restricted due to overdue payments.",
+  "badDebt.inline.msg.email": "Update payment to view email address",
+  "badDebt.inline.msg.phone": "Update payment to view phone number",
+  "badDebt.lead.button": "Restore enquiries",
+  "badDebt.lead.msg": "Your enquiries are currently restricted due to overdue payments",
+  "badDebt.popup.button": "Learn more",
+  "badDebt.popup.header": "Payment overdue",
+  "badDebt.popup.msg": "Please email <1>{{mailto}}</1> to restore full access to your Bridebook Business account and reply to your incoming enquiries."
+}

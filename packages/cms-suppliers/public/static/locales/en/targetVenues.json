@@ -1,0 +1,10 @@
+{
+  "addVenue": "Add venue",
+  "alert.onePhotographerCanBeLinked": "Only one photographer can be linked to one venue.",
+  "alert.venueAlreadyLinked": "Venue is already linked to other photographer:",
+  "alert.venueDeactivated": "This venue has been deactivated. Please select another venue.",
+  "applyChanges": "Apply changes",
+  "searchVenues": "Search venues…",
+  "selectVenue": "Select a venue where this photographer should be visible by clicking on the ‘Add venue' pill.",
+  "startPhotographers": "Star Photographers"
+}

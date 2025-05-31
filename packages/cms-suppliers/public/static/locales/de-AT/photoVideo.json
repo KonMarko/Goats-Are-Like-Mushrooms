@@ -1,0 +1,23 @@
+{
+  "cancel": "Abbrechen",
+  "changesUnsaved": "Sie haben ungespeicherte Änderungen",
+  "confirm": "Bestätigen",
+  "fourthPhoto": "4. Foto",
+  "keep1photoAlert": "Sie müssen mindestens 1 Foto behalten.",
+  "orderSaved": "Reihenfolge geändert",
+  "photosDeletedSuccessfully": "Fotos gelöscht",
+  "photosTitle": "Fotos",
+  "profilePhoto": "Profilfoto",
+  "removeWatermarksInfo": "Bitte denken Sie daran, <1>Logos und Wasserzeichen zu entfernen!</1> Wir fügen ein blasses standardisiertes Wasserzeichen für Sie hinzu, um Ihre Fotos zu schützen. Sie werden natürlich <3>immer</3> das Urheberrecht behalten.",
+  "saveOrder": "Angebot speichern",
+  "secondPhoto": "2. Foto",
+  "selectImagesToDelete": "Wählen Sie die zu löschenden Bilder aus und klicken Sie auf Bestätigen, wenn Sie fertig sind",
+  "selectPhotosToDelete": "Wählen Sie Foto(s) zum Löschen aus",
+  "thirdPhoto": "3. Foto",
+  "tipHero": "Das erste Foto ist Ihre Chance, wirklich anzugeben! Unsere Recherche zeigt, dass Weitwinkel Fotos Ihrer Location von außen die beste Klickrate aufweisen.",
+  "tipTop10": "Achten Sie darauf, Ihre Top-10-Fotos zu priorisieren und zu ordnen. Fotos von Ihrer Location von innen und außen zu haben, am besten für eine Hochzeit eingerichtet, funktionieren am besten. Paare sollten sich vorstellen können, wie es wäre, bei Ihnen zu heiraten!",
+  "tipTopCelebratory": "Versuchen Sie, nach Ihrem 10. Foto herangezoomte, emotionale Fotos von ihren Paare zu haben.",
+  "tipTopVenues": "Behalten Sie die Konkurrenz im Auge. Ordnen Sie Ihre Fotos strategisch an, um sich vom Rest abzuheben.",
+  "uploadMinimum20Photos": "Laden Sie mindestens <1>20 Fotos hoch</1> . Ihr <3>erstes Foto</3> wird Ihr Profilfoto sein. Dies wird als dein Thumbnail in den Suchergebnissen angezeigt. Ziehen Sie zum Aktualisieren ein anderes Foto per Drag-and-Drop an seine Stelle.",
+  "uploadPhotos": "Fotos hochladen"
+}

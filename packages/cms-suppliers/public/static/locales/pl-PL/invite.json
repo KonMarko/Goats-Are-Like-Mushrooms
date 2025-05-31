@@ -1,0 +1,21 @@
+{
+  "asSeenIn": "Jak widać w:",
+  "chooseSeparateEmailForEnquiries": "Po zalogowaniu możesz wybrać osobny adres e-mail dla zapytań ofertowych.",
+  "confirmationPassword.error": "Hasła nie pasują do siebie",
+  "heading": "Twój bezpłatny profil biznesowy jest już aktywny",
+  "info.signIn": "Wybierz adres e-mail i hasło, aby się zalogować:",
+  "info.signUp": "Wybierz adres e-mail i hasło, aby utworzyć nowe konto:",
+  "inputText.emailAddress.placeholder": "Adres e-mail",
+  "inputText.password.placeholder": "Hasło",
+  "inputText.passwordConfirmation.placeholder": "Potwierdź hasło",
+  "loadingPreview": "Ładowanie podglądu ...",
+  "profileInviteInfo": "Założycielom zawsze będzie można mieć profil na Bridebook. Mamy również dodatkowe płatne aktualizacje, które możesz chcieć wypróbować w przyszłości, ale podstawowy produkt zawsze pozostanie bezpłatny.",
+  "seeOurFaq": "Pytania? Zobacz nasze <1>FAQ</1>",
+  "subheading": "<0>Zostałeś zaproszony do zarządzania <2><0>{{supplierName}}</0>, <2>{{city}}</2></2></0>",
+  "submit.signIn": "Zaloguj się",
+  "submit.signUp": "Zapisz się",
+  "supplierSignUp": "Rejestracja dostawcy",
+  "tabs.signIn.title": "Zaloguj się",
+  "tabs.signUp.title": "Utwórz nowe konto",
+  "whatsThePrice": "Więc jaka jest cena?<1></1>Zero. Zilch. Nada."
+}

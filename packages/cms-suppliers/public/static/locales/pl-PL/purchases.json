@@ -1,0 +1,18 @@
+{
+  "addTransaction": "Dodaj transakcję",
+  "cancelAdd": "Anuluj",
+  "confirmAdd": "Dodać",
+  "noTransactions": "Brak transakcji",
+  "operationLabel.gift": "Dodano darmowe kredyty na pytania",
+  "operationLabel.purchase": "Zapytanie Kredyty dodane",
+  "operationLabel.rollback": "Wycofanie",
+  "operationLabel.spent": "Zapytanie odblokowane",
+  "operationLabel.unknown": "Nieznany",
+  "pageTitle": "Historia zakupów",
+  "product": "Product",
+  "purchaseTime.at": "w",
+  "quantity": "Ilość",
+  "transactionType": "Typ transakcji",
+  "transactionTypeLabel.gift": "Bezpłatne Zapytanie Kredyty",
+  "transactionTypeLabel.rollback": "Operation rollback"
+}

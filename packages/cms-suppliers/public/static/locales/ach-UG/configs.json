@@ -1,0 +1,20 @@
+{
+  "leads.label.hotLead": "crwdns15654338:0crwdne15654338:0",
+  "leads.stage.booked": "crwdns15654340:0crwdne15654340:0",
+  "leads.stage.completed": "crwdns15654342:0crwdne15654342:0",
+  "leads.stage.dateOnHold": "crwdns15654344:0crwdne15654344:0",
+  "leads.stage.decisionPending": "crwdns15654346:0crwdne15654346:0",
+  "leads.stage.invitation": "crwdns15654348:0crwdne15654348:0",
+  "leads.stage.lead": "crwdns15654350:0crwdne15654350:0",
+  "leads.stage.lost": "crwdns15654352:0crwdne15654352:0",
+  "leads.stage.meetingScheduled": "crwdns15654354:0crwdne15654354:0",
+  "leads.stage.qualifiedLead": "crwdns15654356:0crwdne15654356:0",
+  "leads.stage.viewingScheduled": "crwdns15654358:0crwdne15654358:0",
+  "leads.status.actionNeeded": "crwdns15654360:0crwdne15654360:0",
+  "leads.status.callScheduled": "crwdns15654362:0crwdne15654362:0",
+  "leads.status.chased": "crwdns15654364:0crwdne15654364:0",
+  "leads.status.contacted": "crwdns15654366:0crwdne15654366:0",
+  "leads.status.followedUp": "crwdns15654368:0crwdne15654368:0",
+  "leads.status.inviteSent": "crwdns15654370:0crwdne15654370:0",
+  "leads.status.noContactMade": "crwdns15654372:0crwdne15654372:0"
+}

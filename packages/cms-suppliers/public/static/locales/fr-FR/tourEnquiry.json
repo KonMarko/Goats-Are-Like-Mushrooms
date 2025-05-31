@@ -1,0 +1,13 @@
+{
+  "intro.back": "Retour",
+  "intro.done": "Complété",
+  "intro.next": "Suivant",
+  "intro.templates.step1.description": "<0>Ici, vous pouvez voir toutes les conversations que vous avez avec ce couple. Il n'est plus nécessaire de copier leur email dans un système externe.<1></1> <2></2> <3>Avec Bridebook Messages, vous avez toutes les informations organisées en un seul endroit.</3> <4></4> <5></5> Lorsque vous envoyez un message à un couple, ils reçoivent une notification push sur leur mobile et peuvent répondre directement depuis leur application Bridebook, pour que la conversation soit plus naturelle et fluide.</0>",
+  "intro.templates.step1.title": "Répondez au couple instantanément",
+  "intro.templates.step2.description": "<0>Sélectionnez parmi vos propres messages prédéfinis pour répondre en quelques clics.<1></1> <2></2> Chaque message peut être <4>automatiquement personnalisé</4> avec les détails du couple.</0>",
+  "intro.templates.step2.title": "Répondez plus rapidement avec des Modèles",
+  "intro.templates.step3.description": "Personnalisez votre message en utilisant les Variables Intelligentes. Les informations sur le couple seront automatiquement pré-remplies dans votre message avant même de l'envoyer.",
+  "intro.templates.step3.title": "Ajoutez votre message",
+  "intro.templates.step4.description": "Il peut s'agir d'une brochure, d'une liste de prix ou d'un album photo. Ceux-ci seront envoyés avec votre modèle de réponse.",
+  "intro.templates.step4.title": "Joignez vos fichiers"
+}

@@ -1,0 +1,19 @@
+{
+  "customise.heading": "Customise",
+  "widget.pageTitle": "Enquiry widget",
+  "widget.subtext": "Embed your Bridebook widget into your website to allow couple enquiries directly into your Enquiry Manager, letting you manage them in one place.",
+  "learn.more": "Learn more.",
+  "embed.heading": "Embed",
+  "instruction.for.install": "Ask your website developer to copy this code into your website and voila! You can start managing your enquiries in one, easy place. <2>Need help?</2>",
+  "embedCode.copied": "Copied",
+  "embedCode.copyToClipboard": "Copy to clipboard",
+  "preview.heading": "Preview",
+  "howYourWidgetWillLook.subtext": "How your widget will look on your website.",
+  "settings.email": "Email",
+  "settings.yourName": "Your name",
+  "settings.phone": "Phone",
+  "settings.partnerName": "Your partner’s name",
+  "settings.estimatedGuestNumber": "Estimated number of guests",
+  "settings.idealDate": "Ideal date",
+  "settings.message": "Message"
+}

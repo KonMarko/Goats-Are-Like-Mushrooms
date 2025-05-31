@@ -1,0 +1,12 @@
+{
+  "eventNearby": "Discover events and open days near you",
+  "page.head": "My Wedding",
+  "searchInputPlaceholder": "Choose a location",
+  "seeAll": "See all",
+  "specialOffers.title": "Weekly offers chosen for you",
+  "specialOffersCarousel.seeMore": "See {{count}} more offer",
+  "specialOffersCarousel.seeMore_plural": "See {{count}} more offers",
+  "supplierTypes.title": "Find your dream supplier",
+  "trendingPhotographers": "Popular photographers near you",
+  "trendingVenues": "Popular venues near you"
+}

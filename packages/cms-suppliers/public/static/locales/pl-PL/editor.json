@@ -1,0 +1,19 @@
+{
+  "answerNo": "Nie",
+  "answerYes": "Tak",
+  "checked": "Sprawdzony",
+  "controlsHeading": "Kontrola",
+  "deactivateAccount.markAsDeleted": "Dezaktywuj konto / Oznacz jako usunięte",
+  "hideFromSearch": "Ukryj w wyszukiwarce",
+  "lastScored": "Ostatni wynik {{lastScoredAt}}",
+  "paymentModelHeading": "Model płatności",
+  "ratingHeading": "Ocena",
+  "statsHeading": "Statystyki",
+  "statsScore": "Wynik {{supplierScore}}",
+  "statusHeading": "Status",
+  "supplierDetailsHeading": "Dane dostawcy",
+  "supplierEnquiriesEmail": "E-mail z zapytaniami dostawców",
+  "supplierID": "identyfikator dostawcy",
+  "supplierRegisteredInAdmin": "Dostawca zarejestrowany w CMS Admin",
+  "tierHeading": "Szczebel"
+}

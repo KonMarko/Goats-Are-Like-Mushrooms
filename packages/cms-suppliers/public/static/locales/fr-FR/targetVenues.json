@@ -1,0 +1,10 @@
+{
+  "addVenue": "Ajouter un lieu",
+  "alert.onePhotographerCanBeLinked": "Un seul photographe peut être lié à un lieu de réception.",
+  "alert.venueAlreadyLinked": "Ce lieu de réception est déjà lié à un autre photographe :",
+  "alert.venueDeactivated": "Ce lieu de réception a été désactivé. Veuillez sélectionner un autre lieu.",
+  "applyChanges": "Enregistrer les modifications",
+  "searchVenues": "Chercher des lieux…",
+  "selectVenue": "Sélectionnez un lieu de réception où ce photographe devrait être visible en cliquant sur le bouton \"Ajouter un lieu\".",
+  "startPhotographers": "Photographes vedettes"
+}

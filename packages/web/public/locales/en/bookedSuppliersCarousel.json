@@ -1,0 +1,7 @@
+{
+  "bookedSuppliers.add": "Add supplier",
+  "bookedSuppliers.favourites": "{{ count }} favourite",
+  "bookedSuppliers.favourites_plural": "{{ count }} favourites",
+  "bookedSuppliers.manage": "Manage supplier",
+  "bookedSuppliers.title": "Your dream team"
+}

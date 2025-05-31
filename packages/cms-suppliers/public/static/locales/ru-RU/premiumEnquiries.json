@@ -1,0 +1,11 @@
+{
+  "questionKnow": "Did you know?",
+  "moreEnquiries": "Want more enquiries?",
+  "average": "Average",
+  "venueProAverage": "VenuePro Average",
+  "userReceivedEnquiries": "You received <1>{{ratingAdvantage}}% more enquiries</1> than the average venue last month.",
+  "venueProReceivedEnquiries": "VenuePro venues received <1>{{ratingAdvantage}}% more enquiries</1> than your venue last month",
+  "availableVenuePro": "Only available for VenuePro venues",
+  "availableVenueProClassic&Expert": "Only available for VenuePro Classic and VenuePro Expert",
+  "availableVenueProExpert": "Only available for VenuePro Expert venues"
+}

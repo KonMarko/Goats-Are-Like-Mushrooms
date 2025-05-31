@@ -1,0 +1,7 @@
+{
+  "title": "Hmm, something is not quite right with the page you're looking for... {{ status }}",
+  "caption": "By Fiona Kelly Wedding Photography",
+  "error.msg": "Don't cry about it - Head back to the <2><0>homepage</0></2>",
+  "statusCode.msg": "An error {{ statusCode }} occurred on server",
+  "clientError.msg": "'An error occurred on client"
+}

@@ -1,0 +1,23 @@
+{
+  "competitorSearchRankings.subtitle": "crwdns60521:0crwdne60521:0",
+  "competitorSearchRankings.title": "crwdns60519:0crwdne60519:0",
+  "coupleBudgetInsights.premiumRequired.subtitle": "crwdns60549:0crwdne60549:0",
+  "coupleBudgetInsights.premiumRequired.title": "crwdns60547:0crwdne60547:0",
+  "coupleBudgetInsights.subtitle": "crwdns60545:0crwdne60545:0",
+  "coupleBudgetInsights.title": "crwdns60543:0crwdne60543:0",
+  "marketComparison.premiumRequired.subtitle": "crwdns146932:0{{searchCountry}}crwdne146932:0",
+  "marketComparison.premiumRequired.title": "crwdns60551:0crwdne60551:0",
+  "marketComparison.tableHeader.profileScore": "crwdns60533:0crwdne60533:0",
+  "marketComparison.tableHeader.profileViews": "crwdns60525:0crwdne60525:0",
+  "marketComparison.tableHeader.responseScore": "crwdns60527:0crwdne60527:0",
+  "marketComparison.tableHeader.responseScore.tooltip": "crwdns60529:0crwdne60529:0",
+  "marketComparison.tableHeader.searchPosition": "crwdns146930:0{{country}}crwdne146930:0",
+  "marketComparison.tableHeader.venueName": "crwdns60523:0crwdne60523:0",
+  "marketComparison.title": "crwdns60537:0crwdne60537:0",
+  "marketComparison.title.tooltip": "crwdns60535:0crwdne60535:0",
+  "reportSubtitle": "crwdns60541:0crwdne60541:0",
+  "reportTitle": "crwdns60539:0{{ year }}crwdne60539:0",
+  "responseScore.title": "crwdns60517:0crwdne60517:0",
+  "responseScores.chart.seriesName": "crwdns60555:0crwdne60555:0",
+  "yourPosition": "crwdns63913:0crwdne63913:0"
+}

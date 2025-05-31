@@ -1,0 +1,7 @@
+{
+  "title": "Hmm, etwas stimmt nicht mit der Seite...",
+  "caption": "Von Fiona Kelly Hochzeitsfotografie",
+  "error.msg": "Sei nicht traurig - Geh zurück zur <2>Homepage</2>",
+  "statusCode.msg": "Ein Fehler {{ statusCode }} ist auf dem Server aufgetreten",
+  "clientError.msg": "Ein Fehler {} ist auf dem Server aufgetreten"
+}

@@ -1,0 +1,19 @@
+{
+  "addCounty": "Bundesland hinzufügen...",
+  "additionalCounties.description": "Wähle bis zu <bold>{{ count }} andere Bundesländer</bold> aus, in denen du für dein Unternehmen werben möchtest.",
+  "additionalCounties.description_plural": "Wähle bis zu <bold>{{ count }} andere Bundesländer</bold> aus, in denen du für dein Unternehmen werben möchtest.",
+  "changeHomeAdress.link": "Bearbeiten Sie Ihre Profilseite",
+  "changeHomeAdress.text": "Sie können Ihre Adresse ändern in",
+  "heading.additionalCounties": "Weitere Bundesländer",
+  "homeCounty": "Mein Bundesland",
+  "selectCountiesLabel": "Wähle aus {{ count }} Bundesländern in {{ countryName }}:",
+  "selectCountiesLabel_plural": "Wähle aus {{ count }} Bundesländern in {{ countryName }}:",
+  "selectCounty": "Wählen Sie ein Bundesland aus...",
+  "snackbar.subscribe.error": "Bundesland konnte nicht hinzugefügt werden",
+  "snackbar.subscribe.success": "Bundesland erfolgreich hinzugefügt",
+  "snackbar.unsubscribe.error": "Bundesland konnte nicht entfernt werden",
+  "snackbar.unsubscribe.success": "Bundesland erfolgreich entfernt",
+  "statementHeader": "Erreichen Sie mehr Paare, indem Sie Ihre Präsenz auf mehrere Bundesländer ausweiten!",
+  "upgradeOptions": "Ihre Upgrade-Optionen",
+  "upgradeToSupplierPro": "Führen Sie ein Upgrade auf SupplierPro Classic durch, um einen weiteres Bundesland hinzuzufügen."
+}

@@ -1,0 +1,11 @@
+{
+  "closeThisWindow": "Ferme cette fenêtre",
+  "instagram.button.tryAgain": "Essayez de vous connecter à nouveau",
+  "instagram.connect.pageTitle": "Connecter Instagram",
+  "instagram.connecting.header": "Instagram en train d'être connecté...",
+  "instagram.connecting.subheader": "Cela ne devrait prendre qu'un instant.",
+  "instagram.error.header": "Erreur lors de la connexion à Instagram",
+  "instagram.error.text": "Si le problème persiste, veuillez <2>contacter notre support</2> .",
+  "instagram.success.header": "Instagram connecté",
+  "instagram.success.subheader": "Vous pouvez maintenant fermer cette fenêtre."
+}

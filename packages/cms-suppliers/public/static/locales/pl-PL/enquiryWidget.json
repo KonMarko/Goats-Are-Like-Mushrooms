@@ -1,0 +1,19 @@
+{
+  "customise.heading": "Dostosuj",
+  "embed.heading": "Osadzać",
+  "embedCode.copied": "Skopiowane",
+  "embedCode.copyToClipboard": "Skopiuj do schowka",
+  "howYourWidgetWillLook.subtext": "Jak Twój widżet będzie wyglądał na Twojej stronie.",
+  "instruction.for.install": "Poproś programistę, aby skopiował ten kod do Twojej witryny i voila! ",
+  "learn.more": "Ucz się więcej.",
+  "preview.heading": "Zapowiedź",
+  "settings.email": "E-mail",
+  "settings.estimatedGuestNumber": "Szacowana liczba gości",
+  "settings.idealDate": "Idealna randka",
+  "settings.message": "Wiadomość",
+  "settings.partnerName": "Imię twojego partnera",
+  "settings.phone": "Telefon",
+  "settings.yourName": "Twoje imię",
+  "widget.pageTitle": "Widżet zapytań",
+  "widget.subtext": "Umieść widżet księgi panny młodej na swojej stronie internetowej, aby umożliwić kilka zapytań bezpośrednio w Menedżerze zapytań, co pozwoli Ci zarządzać nimi w jednym miejscu."
+}

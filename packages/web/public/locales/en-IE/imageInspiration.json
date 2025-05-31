@@ -1,0 +1,16 @@
+{
+  "betaLabel": "Beta",
+  "bookmark.successMsg": "Inspiration saved to your scrapbook",
+  "fullImageView.bookmarkButton": "Bookmark",
+  "fullImageView.similarImagesText": "Similar images",
+  "fullImageView.unbookmarkButton": "Bookmarked",
+  "fullImageView.viewProfileButton": "View profile",
+  "page.head": "Wedding inspiration",
+  "savedInspiration.addButton": "Add more inspiration",
+  "savedInspiration.addInspirationText": "Start adding inspiration!",
+  "searchInput.fixed.placeholder": "Image search",
+  "searchInput.main.placeholder": "Search for inspiration, e.g. joyful",
+  "title": "Get inspired",
+  "unbookmark.error": "Something went wrong",
+  "unbookmark.successMsg": "Inspiration removed from your scrapbook"
+}

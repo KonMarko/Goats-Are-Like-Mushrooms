@@ -1,0 +1,23 @@
+{
+  "cancel": "Annuler",
+  "changesUnsaved": "Vous avez des changements non enregistrés !",
+  "confirm": "Confirmer",
+  "fourthPhoto": "4ème photo",
+  "keep1photoAlert": "Vous devez avoir au moins 1 photo.",
+  "orderSaved": "Ordre changé",
+  "photosDeletedSuccessfully": "Photos supprimées",
+  "photosTitle": "Photos",
+  "profilePhoto": "Photo de profil",
+  "removeWatermarksInfo": "N'oubliez pas de supprimer <1>les logos et filigranes !</1> Nous ajouterons un léger filigrane normalisé pour protéger vos photos et vous <3>conservez</3> les droits d'auteur.",
+  "saveOrder": "Enregistrer l'ordre",
+  "secondPhoto": "2ème photo",
+  "selectImagesToDelete": "Sélectionnez les images à supprimer et cliquez sur Confirmer lorsque vous êtes prêt",
+  "selectPhotosToDelete": "Sélectionnez la ou les photos à supprimer",
+  "thirdPhoto": "3ème photo",
+  "tipHero": "Votre photo de profil est votre chance de vraiment vous montrer. Nos recherches montrent que les grands angles de votre lieu depuis l'extérieur sont préférables.",
+  "tipTop10": "Assurez-vous d'ajouter vos 10 meilleures photos. Avoir des photos de votre lieu de l'intérieur, de l'extérieur et avec une configuration pour un mariage fonctionne le mieux. Les couples peuvent s'imaginer se marier chez vous !",
+  "tipTopCelebratory": "Essayez de garder les photos émotions après votre 10e photo.",
+  "tipTopVenues": "Gardez un œil sur la concurrence. Arrangez vos photos stratégiquement pour vous séparer du reste.",
+  "uploadMinimum20Photos": "Téléchargez un minimum de <1>20 photos</1> . Votre <3>première photo</3> sera votre photo de profil. Elle apparaîtra comme votre vignette dans les résultats de recherche. Pour mettre à jour, faites glisser et déposez une autre photo à sa place.",
+  "uploadPhotos": "Télécharger des photos"
+}
