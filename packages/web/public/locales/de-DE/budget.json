@@ -1,5 +1,5 @@
 {
-  "addYourSupplier": "Füge {{ supplierType }} hinzu - modified",
+  "addYourSupplier": "Füge {{ supplierType }} hinzu",
   "averageQuote": "Durchschnittliches Angebot",
   "averageQuoteShort": "Durchschnittliches Angebot",
   "bookedAmount": "gebucht ({{ bookedAmount }})",
