@@ -1,3 +1,4 @@
 {
-  "slide.by": "By <1>{{supplierName}}</1>"
+  "slide.by": "By <1>{{supplierName}}</1>",
+  "someNewKey": "Some new key in realWeddings namespace"
 }

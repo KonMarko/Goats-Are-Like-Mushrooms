@@ -48,5 +48,6 @@
   "upgradePanel.lostLeads.title": "Find out why you are losing leads to other venues",
   "visiting.your.website": "Visiting your website",
   "wantMoreEnquiries": "Want more enquiries?",
-  "yourReviewScore": "Your Review Score"
+  "yourReviewScore": "Your Review Score",
+  "someNewKey": "Some new key in analytics namespace"
 }
