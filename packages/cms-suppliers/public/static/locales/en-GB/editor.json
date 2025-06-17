@@ -1,7 +1,7 @@
 {
   "accessControl": "Access control",
   "answerNo": "no",
-  "answerYes": "yes",
+  "answerYes": "yes - or maybe no",
   "badDebt.admin.header": "Bad debt flags",
   "checked": "Checked",
   "checkLedger": "Check ledger history",
