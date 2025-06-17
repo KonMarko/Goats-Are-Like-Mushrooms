@@ -1,7 +1,0 @@
-{
-  "title": "Hmm, quelque chose ne va pas avec la page que vous recherchez... {{ status }}",
-  "caption": "Par Fiona Kelly Photographie de mariage",
-  "error.msg": "Pas de souci à se faire - Retournez à la <2>page d'accueil</2>",
-  "statusCode.msg": "Une erreur {{ statusCode }} s'est produite sur le serveur",
-  "clientError.msg": "'Une erreur s'est produite sur le site client"
-}

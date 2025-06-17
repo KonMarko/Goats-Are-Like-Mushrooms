@@ -1,7 +1,0 @@
-{
-  "inputText.addVideo.alreadyExists.validation": "Cette vidéo existe déjà",
-  "inputText.addVideo.incorrectUrl.validation": "URL de la vidéo incorrecte",
-  "inputText.addVideo.notFound.validation": "Vidéo non trouvée",
-  "inputText.addVideo.placeholder": "Entrez l'URL YouTube / Viméo",
-  "videosTitle": "Vidéos"
-}

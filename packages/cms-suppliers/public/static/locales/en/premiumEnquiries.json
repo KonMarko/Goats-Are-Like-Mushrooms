@@ -1,6 +1,0 @@
-{
-  "availableSupplierPro": "Only available with SupplierPro",
-  "availableVenuePro": "Only available for VenuePro venues",
-  "availableVenueProTier": "Only available for {{tierName}} venues",
-  "availableVenueProTiers": "Only available for {{tierName1}} and {{tierName2}}"
-}

@@ -1,7 +1,0 @@
-{
-  "bookedSuppliers.add": "Dienstleister hinzufügen",
-  "bookedSuppliers.favourites": "{{ count }} Favorit",
-  "bookedSuppliers.favourites_plural": "{{ count }} Favoriten",
-  "bookedSuppliers.manage": "Dienstleister verwalten",
-  "bookedSuppliers.title": "Euer Dreamteam"
-}

@@ -1,7 +1,0 @@
-{
-  "bookedSuppliers.add": "Ajoutez un prestataire",
-  "bookedSuppliers.favourites": "{{ count }} favori",
-  "bookedSuppliers.favourites_plural": "{{ count }} favoris",
-  "bookedSuppliers.manage": "Gérer le prestataire",
-  "bookedSuppliers.title": "Votre équipe de rêve"
-}
