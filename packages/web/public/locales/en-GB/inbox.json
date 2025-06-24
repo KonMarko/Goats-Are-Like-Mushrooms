@@ -4,7 +4,7 @@
   "desktopNotifications": "Desktop Notifications",
   "emptyState.description": "Once you've had one or more conversations, they will show up here.",
   "emptyState.descriptionArchive": "Once you've archived a conversation, it will show up here.",
-  "emptyState.header": "No chats yet!",
+  "emptyState.header": "No chats yet",
   "emptyState.shortDescription": "Your chat history will show up here",
   "emptyState.shortDescriptionArchive": "Your archived conversations will show up here",
   "encourageMsg": "72% of couples respond to suppliers within 24 hours",
