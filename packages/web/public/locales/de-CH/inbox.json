@@ -4,7 +4,7 @@
   "desktopNotifications": "Desktop-Benachrichtigungen",
   "emptyState.description": "Sobald du eine oder mehrere Personen kontaktiert hast, werden die Nachrichten hier angezeigt.",
   "emptyState.descriptionArchive": "Sobald du eine Unterhaltung archiviert hast, wird sie hier angezeigt.",
-  "emptyState.header": "Noch keine Nachrichten!",
+  "emptyState.header": "Noch keine Nachrichten",
   "emptyState.shortDescription": "Dein Chatverlauf wird hier angezeigt",
   "emptyState.shortDescriptionArchive": "Deine archivierten Unterhaltungen werden hier angezeigt",
   "encourageMsg": "72 % der Paare antworten den Dienstleistern innerhalb von 24 Stunden",
