@@ -13,11 +13,12 @@
   "profilePhoto.error.maxSize": "Datei wurde nicht hochgeladen, max. Auflösung beträgt {{width}}x{{height}}.",
   "profilePhoto.error.minSize": "Foto muss mindestens {{minImageWidth}}px breit sein.",
   "profilePhoto.error.sizeMsg": "Zulässige Größe ist 8 Mb.",
-  "removePhoto": "Entfernen",
+  "removePhoto": "Löschen",
   "suggestionCustom.addManually": "Füge Details hier manuell hinzu.",
   "suggestionCustom.supplierNotListed": "Dienstleister nicht aufgeführt?",
   "textFieldPlaceholder": "Tippe etwas ein",
   "uploadAPhoto": "Hochladen",
   "uploading": "Hochladen",
-  "uploadNewPhoto": "Hochladen / Ändern"
+  "uploadNewPhoto": "Hochladen / Ändern",
+  "uploadSelfie": "Selfie hochladen!"
 }
