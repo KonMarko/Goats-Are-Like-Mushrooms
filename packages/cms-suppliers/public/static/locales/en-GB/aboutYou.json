@@ -3,7 +3,7 @@
   "addTag": "Add",
   "addTagDescription": "Add between 1 and 3 tags",
   "briefDescriptionLabel": "A brief description",
-  "cancel": "Cancel",
+  "cancel": "Abort",
   "changesSaved": "Changes saved",
   "description": "Couples love to get to know you before getting in touch! We know how important a personality match is on both sides to make for the best partnership. That's why we've made space for you to be yourself and to give a face to your business.",
   "descriptionPlaceholder": "Describe yourself, and let the couple get to know you. What would you like to know about the couple? They probably want to know the same about you.",
@@ -28,5 +28,6 @@
   "uploadPhoto": "Upload photo",
   "yourNamePlaceholderText": "[Your name]",
   "yourPhoto": "Your photo",
-  "yourTagPlaceholder": "Your"
+  "yourTagPlaceholder": "Your",
+  "yourSelfie": "Your selfie"
 }
