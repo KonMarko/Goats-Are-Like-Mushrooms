@@ -13,11 +13,12 @@
   "profilePhoto.error.maxSize": "File was not uploaded, max. resolution is {{width}}x{{height}}.",
   "profilePhoto.error.minSize": "Photo needs to be at least {{minImageWidth}}px wide.",
   "profilePhoto.error.sizeMsg": "Allowed size is 8Mb.",
-  "removePhoto": "Remove",
+  "removePhoto": "Delete",
   "suggestionCustom.addManually": "Add their details manually here.",
   "suggestionCustom.supplierNotListed": "Supplier not listed?",
   "textFieldPlaceholder": "Type something",
   "uploadAPhoto": "Upload",
   "uploading": "Uploading",
-  "uploadNewPhoto": "Upload / Change"
+  "uploadNewPhoto": "Upload / Change",
+  "uploadSelfie": "Upload selfie!"
 }
