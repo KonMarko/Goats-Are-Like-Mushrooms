@@ -1,16 +1,17 @@
 {
   "betaLabel": "Beta",
-  "bookmark.successMsg": "Inspiration in deinem Notizbuch gespeichert",
+  "bookmark.successMsg": "Inspiration im Scrapbook gespeichert",
   "fullImageView.bookmarkButton": "Lesezeichen",
   "fullImageView.similarImagesText": "Ähnliche Bilder",
   "fullImageView.unbookmarkButton": "Gespeichert",
   "fullImageView.viewProfileButton": "Profil ansehen",
-  "page.head": "Hochzeitsinspiration",
+  "page.head": "Hochzeitsideen",
   "savedInspiration.addButton": "Mehr Inspiration hinzufügen",
   "savedInspiration.addInspirationText": "Fang an, Inspiration hinzuzufügen!",
   "searchInput.fixed.placeholder": "Bildersuche",
-  "searchInput.main.placeholder": "Suche nach Inspiration, z.B. freudig",
+  "searchInput.main.placeholder": "Suche nach Ideen, z.B. freudig",
   "title": "Lass dich inspirieren",
   "unbookmark.error": "Etwas ist schief gelaufen",
-  "unbookmark.successMsg": "Inspiration aus deinem Notizbuch entfernt"
+  "newFeatureBanner": "Entdecken Sie neue Moodboards!",
+  "comingSoonMessage": "Demnächst verfügbar"
 }
