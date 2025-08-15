@@ -1,16 +1,17 @@
 {
   "betaLabel": "Beta",
-  "bookmark.successMsg": "Inspiration saved to your scrapbook",
+  "bookmark.successMsg": "Inspiration saved to scrapbook",
   "fullImageView.bookmarkButton": "Bookmark",
-  "fullImageView.similarImagesText": "Similar images",
+  "fullImageView.similarImagesText": "Similar pictures",
   "fullImageView.unbookmarkButton": "Bookmarked",
   "fullImageView.viewProfileButton": "View profile",
-  "page.head": "Wedding inspiration",
+  "page.head": "Wedding ideas",
   "savedInspiration.addButton": "Add more inspiration",
   "savedInspiration.addInspirationText": "Start adding inspiration!",
   "searchInput.fixed.placeholder": "Image search",
-  "searchInput.main.placeholder": "Search for inspiration, e.g. joyful",
+  "searchInput.main.placeholder": "Search for ideas, e.g. joyful",
   "title": "Get inspired",
   "unbookmark.error": "Something went wrong",
-  "unbookmark.successMsg": "Inspiration removed from your scrapbook"
+  "newFeatureBanner": "Explore new mood boards",
+  "comingSoonMessage": "Coming soon"
 }
