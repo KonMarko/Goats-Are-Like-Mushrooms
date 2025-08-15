@@ -1,12 +1,14 @@
 {
-  "eventNearby": "Discover events and open days near you - blabla",
+  "eventNearby": "Discover events and open days close to you",
   "page.head": "My Wedding",
-  "searchInputPlaceholder": "Choose a location",
+  "searchInputPlaceholder": "Choose a place",
   "seeAll": "See all",
   "specialOffers.title": "Weekly offers chosen for you - some change",
-  "specialOffersCarousel.seeMore": "See {{count}} more offer",
-  "specialOffersCarousel.seeMore_plural": "See {{count}} more offers",
-  "supplierTypes.title": "Find your dream supplier",
+  "specialOffersCarousel.seeMore": "See {{count}} more deal",
+  "specialOffersCarousel.seeMore_plural": "",
+  "supplierTypes.title": "Find your perfect supplier",
   "trendingPhotographers": "Popular photographers near you",
-  "trendingVenues": "Popular venues near you blabla"
+  "trendingVenues": "Popular venues nearby",
+  "newFeatureBanner": "Try our brand new planning tools",
+  "upcomingEvents": "Upcoming events"
 }
