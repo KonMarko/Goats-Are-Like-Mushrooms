@@ -3,10 +3,12 @@
   "page.head": "Meine Hochzeit",
   "searchInputPlaceholder": "Wähle einen Standort",
   "seeAll": "Alle anzeigen",
-  "specialOffers.title": "Für euch ausgesuchte Wochenangebote",
-  "specialOffersCarousel.seeMore": "Siehe {{count}} weiteres Angebot",
-  "specialOffersCarousel.seeMore_plural": "Siehe {{count}} weitere Angebote",
-  "supplierTypes.title": "Findet den perfekten Dienstleister",
+  "specialOffers.title": "Wöchentliche Angebote, speziell für Sie ausgewählt – einige Änderungen",
+  "specialOffersCarousel.seeMore": "Siehe {{count}} weitere Angebote",
+  "specialOffersCarousel.seeMore_plural": "Weitere {{count}} Angebote anzeigen",
+  "supplierTypes.title": "Finden Sie Ihren perfekten Lieferanten",
   "trendingPhotographers": "Beliebte Fotografen in eurer Nähe",
-  "trendingVenues": "Beliebte Locations in deiner Nähe"
+  "trendingVenues": "Beliebte Veranstaltungsorte in der Nähe",
+  "newFeatureBanner": "Probieren Sie unsere brandneuen Planungstools aus.",
+  "upcomingEvents": "Bevorstehende Veranstaltungen"
 }
