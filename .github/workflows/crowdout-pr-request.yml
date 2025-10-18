@@ -1,4 +1,4 @@
-name: Crowdin fetch translation into PR on trigger
+name: Crowdout request translations in PR
 
 on:
   issue_comment:
