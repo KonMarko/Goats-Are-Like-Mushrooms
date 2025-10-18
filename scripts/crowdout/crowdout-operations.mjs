@@ -27,7 +27,7 @@ const triggerFallbacks = async () => {
       api_token: cmsApiToken,
       'User-Agent': 'GitHubAction',
     },
-    body: {appId}
+    body: JSON.stringify({ appId })
   });
 
   const appConfig = await response.json();
