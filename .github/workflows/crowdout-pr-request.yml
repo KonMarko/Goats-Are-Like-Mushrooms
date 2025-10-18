@@ -1,0 +1,46 @@
+name: Crowdin fetch translation into PR on trigger
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  crowdin-fetch-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: khan/pull-request-comment-trigger@v1.1.0
+        id: trigger
+        with:
+          trigger: '@crowdout/request'
+          reaction: '+1'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+
+      - uses: actions/checkout@v3
+        if: steps.trigger.outputs.triggered == 'true'
+
+      - name: Checkout Pull Request
+        if: ${{ github.event_name == 'issue_comment' && steps.trigger.outputs.triggered == 'true'}}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr checkout ${{ github.event.issue.number }}
+          echo "ISSUE_BRANCH=$(git branch --show-current)" >> $GITHUB_ENV
+
+      - name: Trigger fallbacks
+        if: steps.trigger.outputs.triggered == 'true'
+        env:
+          CMS_API_TOKEN: ${{ secrets.CMS_API_TOKEN }}
+          CMS_PATH: ${{ secrets.CMS_PATH }}
+          BRANCH: ${{ github.head_ref || env.ISSUE_BRANCH }}
+          BASE_BRANCH: ${{ github.base_ref || 'master'}}
+          CROWDOUT_OPERATION: "Trigger fallbacks"
+        run: |
+          node ./scripts/crowdin/crowdin-operations.mjs
+
+      - name: Comment PR with URL
+        if: ${{ failure() }}
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: |
+            TODO: add logic for translation links
