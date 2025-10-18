@@ -29,7 +29,9 @@ const triggerFallbacks = async () => {
     },
   });
 
-  console.log('=> response', response)
+  const appConfig = await response.json();
+
+  console.log('=> appConfig', appConfig)
 
   const path = '' //TODO: extract file path from changed en-GB json files for example: packages/web/public/locales/en-GB/acl.json -> packages/web/public/locales/en-GB/acl, packages/cms-suppliers/public/static/locales/en-GB/acl.json -> packages/cms-suppliers/public/static/locales/en-GB/acl
   const namespace = '' //TODO: extract namespace from changed en-GB json files for example: packages/web/public/locales/en-GB/acl.json -> acl, packages/cms-suppliers/public/static/locales/en-GB/acl.json -> acl
