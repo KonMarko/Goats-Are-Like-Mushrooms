@@ -36,7 +36,7 @@ jobs:
           BASE_BRANCH: ${{ github.base_ref || 'master'}}
           CROWDOUT_OPERATION: "Trigger fallbacks"
         run: |
-          node ./scripts/crowdin/crowdin-operations.mjs
+          node ./scripts/crowdout/crowdout-operations.mjs
 
       - name: Comment PR with URL
         if: ${{ failure() }}
