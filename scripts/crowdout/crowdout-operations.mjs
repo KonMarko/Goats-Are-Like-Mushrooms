@@ -1,4 +1,6 @@
 import {convertCrowdinBranch, crowdinCommand, getBranches, setupCrowdinAuth,} from '../crowdin/_crowdin-common.mjs';
+import { execSync } from 'child_process';
+import fs from 'fs';
 
 
 const cmsApiToken = process.env.CMS_API_TOKEN
@@ -16,30 +18,87 @@ const triggerFallbacks = async () => {
   console.log('=> baseBranch', baseBranch)
   console.log('=> cmsPath', cmsPath)
 
-  const language = "en-GB" //for now this stays as const
+  const diffOutput = execSync(`git diff --name-only ${baseBranch}...${branch}`).toString();
 
-  const appId = 'cms-suppliers' //TODO: extract appId (package name) from changed en-GB json files for example: packages/web/public/locales/en-GB/acl.json -> web, packages/cms-suppliers/public/static/locales/en-GB/acl.json -> cms-suppliers
+  const allChangedJsonFiles = diffOutput
+    .split('\n')
+    .filter(file => file.endsWith('.json'));
 
-  const crowdoutApiGetAppConfigPath = crowdoutApiPath + 'get-app-config'
+  console.log('=> allChangedJsonFiles', allChangedJsonFiles);
 
-  const response = await fetch(crowdoutApiGetAppConfigPath, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      api_token: cmsApiToken,
-      'User-Agent': 'GitHubAction',
-    },
-    body: JSON.stringify({ appId })
+  // Extract appIds from all files in the diff
+  const appIds = new Set();
+  allChangedJsonFiles.forEach(file => {
+    const appIdMatch = file.match(/packages\/([^\/]+)/);
+    if (appIdMatch) {
+      appIds.add(appIdMatch[1]);
+    }
   });
 
-  const appConfig = await response.json();
+  console.log('=> extracted appIds:', appIds);
 
-  console.log('=> appConfig', appConfig)
+  if (appIds.size === 0) {
+    console.log('=> no appIds found');
+    return;
+  }
 
-  const path = '' //TODO: extract file path from changed en-GB json files for example: packages/web/public/locales/en-GB/acl.json -> packages/web/public/locales/en-GB/acl, packages/cms-suppliers/public/static/locales/en-GB/acl.json -> packages/cms-suppliers/public/static/locales/en-GB/acl
-  const namespace = '' //TODO: extract namespace from changed en-GB json files for example: packages/web/public/locales/en-GB/acl.json -> acl, packages/cms-suppliers/public/static/locales/en-GB/acl.json -> acl
-  const commitMessage = '' //TODO: construct commitMessage based on the path: packages/web/public/locales/en-GB/acl.json -> "Update en-GB translations for acl", packages/cms-suppliers/public/static/locales/en-GB/acl.json -> "Update en-GB translations for acl"
-  const content = '' //TODO: extract changed file content for given branch and file path and stringify it
+  console.log('=> unique appIds found:', Array.from(appIds));
+
+  const results = [];
+
+  for (const appId of appIds) {
+    console.log(`=> Processing appId: ${appId}`);
+
+    try {
+      const crowdoutApiGetAppConfigPath = crowdoutApiPath + 'get-app-config';
+      const response = await fetch(crowdoutApiGetAppConfigPath, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          api_token: cmsApiToken,
+          'User-Agent': 'GitHubAction',
+        },
+        body: JSON.stringify({ appId })
+      });
+
+      // Check if the response is not ok (e.g., 400 status)
+      if (!response.ok) {
+        console.log(`=> Error for appId ${appId}: ${response.status} - ${response.message}`);
+        continue; // Skip to the next appId
+      }
+
+      const appConfig = await response.json();
+      console.log(`=> appConfig for ${appId}:`, appConfig);
+
+      const projectPath = `packages/${appId}/${appConfig.translationsPath}/${appConfig.sourceLanguage}/`;
+      console.log(`=> projectPath for filtering ${appId}:`, projectPath);
+
+      const changedFiles = allChangedJsonFiles
+        .filter(file => file.includes(projectPath));
+
+      console.log(`=> filtered changedFiles for ${appId}:`, changedFiles);
+
+      for (const file of changedFiles) {
+        const path = file.replace(/\.json$/, '');
+        const namespace = file.split('/').pop().replace(/\.json$/, '');
+        const commitMessage = `Update ${appConfig.sourceLanguage} translations for ${namespace}`;
+        const content = execSync(`git show ${branch}:${file}`).toString();
+
+        results.push({
+          path,
+          namespace,
+          commitMessage,
+          content,
+          appConfig,
+          appId
+        });
+      }
+    } catch (error) {
+      console.log(`=> Error processing appId ${appId}:`, error);
+    }
+  }
+
+  console.log('=> results', results);
 };
 
 const saveFile = () => {
