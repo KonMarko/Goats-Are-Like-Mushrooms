@@ -8,9 +8,26 @@ const branch = process.env.BRANCH;
 const baseBranch = process.env.BASE_BRANCH;
 const crowdoutOperation = process.env.CROWDOUT_OPERATION;
 const cmsPath = process.env.CMS_PATH
-const crowdoutApiPath = cmsPath + '/api/crowdout/gh/'
-
 const forbiddenBranches = ['staging', 'production'];
+const CROWDOUT_API_PATH = cmsPath + '/api/crowdout/gh/'
+const CROWDOUT_API_GET_APP_CONFIG_PATH = CROWDOUT_API_PATH + 'get-app-config';
+const CROWDOUT_API_SAVE_FILE_PATH = CROWDOUT_API_PATH + 'save-file'
+
+const saveFile = async (fileData) => {
+  console.log('=> Saving file:', fileData.path);
+
+  const response = await fetch(CROWDOUT_API_SAVE_FILE_PATH, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      api_token: cmsApiToken,
+      'User-Agent': 'GitHubAction',
+    },
+    body: JSON.stringify(fileData)
+  });
+
+  console.log('=> Saving file response:', response);
+}
 
 const triggerFallbacks = async () => {
   console.log('=> triggerFallbacks')
@@ -50,8 +67,7 @@ const triggerFallbacks = async () => {
     console.log(`=> Processing appId: ${appId}`);
 
     try {
-      const crowdoutApiGetAppConfigPath = crowdoutApiPath + 'get-app-config';
-      const response = await fetch(crowdoutApiGetAppConfigPath, {
+      const response = await fetch(CROWDOUT_API_GET_APP_CONFIG_PATH, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -99,30 +115,12 @@ const triggerFallbacks = async () => {
   }
 
   console.log('=> results', results);
+  for (const fileData of results) {
+    await saveFile(fileData);
+  }
 };
 
-const saveFile = () => {
-  const mockedData = {
-    path: "packages/cms-suppliers/public/static/locales/en-GB/aboutYou",
-    content: "{\n  \"addItemPlaceholder\": \"Chatty, Friendly, Adventurous\",\n  \"addTag\": \"Add - changed\",\n  \"addTagDescription\": \"Add between 1 and 3 tags\",\n  \"briefDescriptionLabel\": \"A brief description\",\n  \"cancel\": \"Cancel\",\n  \"changesSaved\": \"Changes saved\",\n  \"description\": \"Couples love to get to know you before getting in touch! We know how important a personality match is on both sides to make for the best partnership. That's why we've made space for you to be yourself and to give a face to your business.\",\n  \"descriptionPlaceholder\": \"Describe yourself, and let the couple get to know you. What would you like to know about the couple? They probably want to know the same about you.\",\n  \"introduction\": \"Hi, I'm {{name}} \",\n  \"introPlaceholder\": \"Share your favourite testimonial, quote or a sentence that best describes you.\",\n  \"nameLabel\": \"Name to display\",\n  \"namePlaceholder\": \"What should couples call you?\",\n  \"newKey\": \"New key\",\n  \"pageTitle\": \"About you\",\n  \"personalityTagPlaceholder\": \"Personality\",\n  \"photoUploadError\": \"Uploading photo failed\",\n  \"previewDescription\": \"This is a preview of what couples will see on your profile.\",\n  \"previewTitle\": \"Preview\",\n  \"quickIntroduction\": \"Grab their attention\",\n  \"removePhoto\": \"Remove photo\",\n  \"saveButton\": \"Save\",\n  \"setPhotoZoom\": \"Set photo zoom\",\n  \"tagPlaceholder\": \"Tags\",\n  \"tagsLabel\": \"Describe yourself in 3 words\",\n  \"unsavedChanges\": \"You have unsaved changes\",\n  \"upload\": \"Upload\",\n  \"uploadPhoto\": \"Upload photo\",\n  \"yourNamePlaceholderText\": \"[Your name]\",\n  \"yourPhoto\": \"Your photo\",\n  \"yourTagPlaceholder\": \"Your\",\n  \"aNewWithWrongOrder\": \"A new - with wrong order\"\n}\n",
-    commitMessage: "Update en-GB translations for aboutYou",
-    branch: "crowdout/fallback-test",
-    appConfig: {
-      id: "cms-suppliers",
-      name: "cms-suppliers",
-      translationsPath: "public/static/locales",
-      sourceLanguage: "en-GB"
-    },
-    namespace: "aboutYou",
-    language: "en-GB"
-  }
 
-  const crowdoutApiSaveFilePath = crowdoutApiPath + 'save-file'
-
-  console.log('=> fetch crowdoutApiSaveFilePath', crowdoutApiSaveFilePath)
-  // fetch('')
-
-}
 
 const main = async () => {
   if (forbiddenBranches.includes(branch) || !branch.trim()) {
