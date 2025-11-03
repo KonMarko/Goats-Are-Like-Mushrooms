@@ -86,7 +86,9 @@ const triggerFallbacks = async () => {
       const appConfig = await response.json();
       console.log(`=> appConfig for ${appId}:`, appConfig);
 
-      const projectPath = `packages/${appId}/${appConfig.translationsPath}/${appConfig.sourceLanguage}/`;
+      const {translationsPath, sourceLanguage} = appConfig;
+
+      const projectPath = `packages/${appId}/${translationsPath}/${sourceLanguage}/`;
       console.log(`=> projectPath for filtering ${appId}:`, projectPath);
 
       const changedFiles = allChangedJsonFiles
@@ -97,7 +99,7 @@ const triggerFallbacks = async () => {
       for (const file of changedFiles) {
         const path = file.replace(/\.json$/, '');
         const namespace = file.split('/').pop().replace(/\.json$/, '');
-        const commitMessage = `Update ${appConfig.sourceLanguage} translations for ${namespace}`;
+        const commitMessage = `Update ${sourceLanguage} translations for ${namespace}`;
         const content = execSync(`git show ${branch}:${file}`).toString();
 
         results.push({
@@ -106,7 +108,8 @@ const triggerFallbacks = async () => {
           commitMessage,
           content,
           appConfig,
-          appId
+          branch,
+          language: sourceLanguage,
         });
       }
     } catch (error) {
