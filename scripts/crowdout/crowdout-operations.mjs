@@ -22,16 +22,14 @@ const triggerFallbacks = async () => {
 
   const crowdoutApiGetAppConfigPath = crowdoutApiPath + 'get-app-config'
 
-  const body = { appId }
-
-  console.log('=> body', body)
   const response = await fetch(crowdoutApiGetAppConfigPath, {
     method: 'POST',
     headers: {
+      'Content-Type': 'application/json',
       api_token: cmsApiToken,
       'User-Agent': 'GitHubAction',
     },
-    body: JSON.stringify(body)
+    body: JSON.stringify({ appId })
   });
 
   const appConfig = await response.json();
