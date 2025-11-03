@@ -1,6 +1,4 @@
-import {convertCrowdinBranch, crowdinCommand, getBranches, setupCrowdinAuth,} from '../crowdin/_crowdin-common.mjs';
-import { execSync } from 'child_process';
-import fs from 'fs';
+import {execSync} from 'child_process';
 
 
 const cmsApiToken = process.env.CMS_API_TOKEN
