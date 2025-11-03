@@ -21,13 +21,17 @@ const triggerFallbacks = async () => {
   const appId = 'cms-suppliers' //TODO: extract appId (package name) from changed en-GB json files for example: packages/web/public/locales/en-GB/acl.json -> web, packages/cms-suppliers/public/static/locales/en-GB/acl.json -> cms-suppliers
 
   const crowdoutApiGetAppConfigPath = crowdoutApiPath + 'get-app-config'
+
+  const body = { appId }
+
+  console.log('=> body', body)
   const response = await fetch(crowdoutApiGetAppConfigPath, {
     method: 'POST',
     headers: {
       api_token: cmsApiToken,
       'User-Agent': 'GitHubAction',
     },
-    body: JSON.stringify({ appId })
+    body: JSON.stringify(body)
   });
 
   const appConfig = await response.json();
