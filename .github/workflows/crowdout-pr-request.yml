@@ -5,7 +5,7 @@ on:
     types: [created]
 
 jobs:
-  crowdin-fetch-pr:
+  crowdout-pr-request:
     runs-on: ubuntu-latest
     steps:
       - uses: khan/pull-request-comment-trigger@v1.1.0
