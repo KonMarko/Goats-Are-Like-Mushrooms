@@ -1,15 +1,16 @@
 import {execSync} from 'child_process';
 
 
-const cmsApiToken = process.env.CMS_API_TOKEN
-const branch = process.env.BRANCH;
-const baseBranch = process.env.BASE_BRANCH;
-const crowdoutOperation = process.env.CROWDOUT_OPERATION;
-const cmsPath = process.env.CMS_PATH
-const forbiddenBranches = ['staging', 'production'];
-const CROWDOUT_API_PATH = cmsPath + '/api/crowdout/gh/'
+const CMS_API_TOKEN = process.env.CMS_API_TOKEN
+const BRANCH = process.env.BRANCH;
+const BASE_BRANCH = process.env.BASE_BRANCH;
+const CROWDOUT_OPERATION = process.env.CROWDOUT_OPERATION;
+const CMS_PATH = process.env.CMS_PATH
+const FORBIDDEN_BRANCHES = ['staging', 'production'];
+const CROWDOUT_API_PATH = CMS_PATH + '/api/crowdout/gh/'
 const CROWDOUT_API_GET_APP_CONFIG_PATH = CROWDOUT_API_PATH + 'get-app-config';
 const CROWDOUT_API_SAVE_FILE_PATH = CROWDOUT_API_PATH + 'save-file'
+const CREATE_LINKS_FOR_LANGUAGES = ['de-DE', 'fr-FR'];
 
 const saveFile = async (fileData) => {
   console.log('=> Saving file:', fileData.path);
@@ -18,7 +19,7 @@ const saveFile = async (fileData) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      api_token: cmsApiToken,
+      api_token: CMS_API_TOKEN,
       'User-Agent': 'GitHubAction',
     },
     body: JSON.stringify(fileData)
@@ -29,11 +30,11 @@ const saveFile = async (fileData) => {
 
 const triggerFallbacks = async () => {
   console.log('=> triggerFallbacks')
-  console.log('=> branch', branch)
-  console.log('=> baseBranch', baseBranch)
-  console.log('=> cmsPath', cmsPath)
+  console.log('=> branch', BRANCH)
+  console.log('=> baseBranch', BASE_BRANCH)
+  console.log('=> cmsPath', CMS_PATH)
 
-  const diffOutput = execSync(`git diff --name-only ${baseBranch}...${branch}`).toString();
+  const diffOutput = execSync(`git diff --name-only ${BASE_BRANCH}...${BRANCH}`).toString();
 
   const allChangedJsonFiles = diffOutput
     .split('\n')
@@ -69,7 +70,7 @@ const triggerFallbacks = async () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          api_token: cmsApiToken,
+          api_token: CMS_API_TOKEN,
           'User-Agent': 'GitHubAction',
         },
         body: JSON.stringify({ appId })
@@ -98,7 +99,7 @@ const triggerFallbacks = async () => {
         const path = file.replace(/\.json$/, '');
         const namespace = file.split('/').pop().replace(/\.json$/, '');
         const commitMessage = `Update ${sourceLanguage} translations for ${namespace}`;
-        const content = execSync(`git show ${branch}:${file}`).toString();
+        const content = execSync(`git show ${BRANCH}:${file}`).toString();
 
         results.push({
           path,
@@ -106,7 +107,7 @@ const triggerFallbacks = async () => {
           commitMessage,
           content,
           appConfig,
-          branch,
+          branch: BRANCH,
           language: sourceLanguage,
         });
       }
@@ -116,26 +117,35 @@ const triggerFallbacks = async () => {
   }
 
   console.log('=> results', results);
+  const links = []
   for (const fileData of results) {
-    await saveFile(fileData);
+    // await saveFile(fileData);
+    console.log(fileData)
+    for(const lang of CREATE_LINKS_FOR_LANGUAGES) {
+    const crowdoutLink = `${CMS_PATH}/admin/crowdout/translations/${encodeURIComponent(BRANCH)}/${fileData.appConfig.appId}/${lang}/${fileData.namespace}?diff=true`
+    links.push(crowdoutLink)
+    }
   }
+
+  console.log('=> links', links)
+  //links
 };
 
 
 
 const main = async () => {
-  if (forbiddenBranches.includes(branch) || !branch.trim()) {
-    console.log('Branch is not allowed: ' + branch);
+  if (FORBIDDEN_BRANCHES.includes(BRANCH) || !BRANCH.trim()) {
+    console.log('Branch is not allowed: ' + BRANCH);
     process.exit(1);
   }
 
-  switch (crowdoutOperation) {
+  switch (CROWDOUT_OPERATION) {
     case 'Trigger fallbacks': {
       await triggerFallbacks();
       break;
     }
     default: {
-      throw new Error('Unexpected operation: ' + crowdoutOperation);
+      throw new Error('Unexpected operation: ' + CROWDOUT_OPERATION);
     }
   }
 
