@@ -51,7 +51,7 @@ jobs:
           curl -sS -X POST "https://slack.com/api/chat.postMessage" \
             -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
             -H "Content-Type: application/json; charset=utf-8" \
-            --data "$(printf '%s' "$MESSAGE" | jq -Rs --arg ch "$SLACK_CHANNEL_ID" '{channel: $ch, text: .}')"
+            --data "{\"channel\": \"$SLACK_CHANNEL_ID\", \"text\": $(printf '%s' "$MESSAGE" | jq -Rs .)}"
 
       - name: Comment PR with translation links
         if: steps.trigger.outputs.triggered == 'true' && steps.slack_message.outcome == 'failure'
