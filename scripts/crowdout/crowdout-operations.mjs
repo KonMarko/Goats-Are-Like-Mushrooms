@@ -138,7 +138,18 @@ ${Object.entries(links).map(([lang, urls]) => {
   return urls.map(url => `${emoji} ${url}`).join('\n');
 }).join('\n')}`;
 
+  // Output the message in a format that can be captured by GitHub Actions
   console.log('=> message', message);
+
+  // Print the message with a special delimiter that can be parsed in the workflow
+  // Using the newer GitHub Actions output syntax
+  const outputPath = process.env.GITHUB_OUTPUT;
+  if (outputPath) {
+    const fs = await import('fs');
+    const delim = 'GH_DELIM_' + Math.random().toString(36).slice(2);
+    fs.appendFileSync(outputPath, `translation_message<<${delim}\n${message}\n${delim}\n`, 'utf8');
+  }
+  return message;
 };
 
 
