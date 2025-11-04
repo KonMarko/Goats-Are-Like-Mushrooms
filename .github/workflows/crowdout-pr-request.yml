@@ -42,7 +42,7 @@ jobs:
           BASE_BRANCH: ${{ github.base_ref || 'master'}}
           CROWDOUT_OPERATION: "Trigger fallbacks"
           AUTHOR_GH: ${{ env.COMMENT_AUTHOR }}
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_USER_MAP_JSON: ${{ secrets.SLACK_USER_MAP_JSON }}
         run: |
           node ./scripts/crowdout/crowdout-operations.mjs
 
