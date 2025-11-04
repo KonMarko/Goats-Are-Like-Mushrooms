@@ -18,7 +18,6 @@ const readSlackMap = () => {
   try {
     console.log('=> SLACK_USER_MAP_JSON', SLACK_USER_MAP_JSON);
     const map = JSON.parse(SLACK_USER_MAP_JSON || '{}');
-    // Validate: ensure it's { [login]: "Uxxxxx" }
     if (map && typeof map === 'object') return map;
     return {};
   } catch {
@@ -30,6 +29,7 @@ const resolveSlackIdForGithubLogin = () => {
   if (!AUTHOR_GH) return null;
   const map = readSlackMap();
   console.log('=> Slack user map:', map);
+  console.log('=> AUTHOR_GH', AUTHOR_GH);
   console.log('=> map[AUTHOR_GH]', map[AUTHOR_GH]);
   if (map[AUTHOR_GH]) return map[AUTHOR_GH];
   // case-insensitive fallback
