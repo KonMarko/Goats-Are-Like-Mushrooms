@@ -131,7 +131,14 @@ const triggerFallbacks = async () => {
   }
 
   console.log('=> links', links)
-  //links
+
+  const message = `Hello :wave:, can I have translations for these please?
+${Object.entries(links).map(([lang, urls]) => {
+  const emoji = `:${lang.split('-')[0]}:`;
+  return urls.map(url => `${emoji} ${url}`).join('\n');
+}).join('\n')}`;
+
+  console.log('=> message', message);
 };
 
 
