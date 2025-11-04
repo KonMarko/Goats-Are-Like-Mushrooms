@@ -65,17 +65,21 @@ jobs:
         uses: thollander/actions-comment-pull-request@v1
         with:
           message: |
-            Translations have been requested in the [Translations channel](${{ secrets.SLACK_CHANNEL_ID }})
+            Translations have been requested in the [Translations channel](https://bridebook.slack.com/archives/${{ secrets.SLACK_CHANNEL_ID }})
+            
+            Please remember to provide context for the translators in the request message thread!
 
       - name: Comment PR with translation links (failure)
         if: steps.trigger.outputs.triggered == 'true' && steps.slack_message.outcome == 'failure'
         uses: thollander/actions-comment-pull-request@v1
         with:
           message: |
-            Something went wrong when posting slack message, Copy the below message and paste it in [Translations channel](${{ secrets.SLACK_CHANNEL_ID }}) manually:
+            Something went wrong when posting slack message, Copy the below message and paste it in [Translations channel](https://bridebook.slack.com/archives/${{ secrets.SLACK_CHANNEL_ID }}) manually:
             
             ```
             ${{ steps.trigger_fallbacks.outputs.translation_message }}
             ```
+            
+            Please remember to provide context for the translators in the request message thread!
 
 
