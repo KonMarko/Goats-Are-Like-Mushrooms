@@ -139,9 +139,9 @@ const createTranslationMessage = (links) => {
   const messageBase= `Hello :wave:, can I have translations for these please?
 ${Object.entries(links).map(([lang, urls]) => {
   const emoji = `:${lang.split('-')[0]}:`;
-  return `${emoji}:\n${urls.map(url => {
+  return `\n${emoji}:\n${urls.map(url => {
     const {link, namespace, language} = url
-    return `• <${link}|${namespace} - ${language}>`;
+    return `• <${link}| Crowdout | ${namespace} | ${language}>`;
   }).join('\n')}`;
 }).join('\n')}`;
   return appendCcForAuthor(messageBase);
