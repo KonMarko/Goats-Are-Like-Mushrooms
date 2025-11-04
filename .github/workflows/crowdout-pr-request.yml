@@ -27,6 +27,11 @@ jobs:
           gh pr checkout ${{ github.event.issue.number }}
           echo "ISSUE_BRANCH=$(git branch --show-current)" >> $GITHUB_ENV
 
+      - name: Get comment author
+        if: ${{ github.event_name == 'issue_comment' && steps.trigger.outputs.triggered == 'true'}}
+        run: |
+          echo "COMMENT_AUTHOR=${{ github.event.comment.user.login }}" >> $GITHUB_ENV
+
       - name: Trigger fallbacks
         if: steps.trigger.outputs.triggered == 'true'
         id: trigger_fallbacks
@@ -36,6 +41,8 @@ jobs:
           BRANCH: ${{ github.head_ref || env.ISSUE_BRANCH }}
           BASE_BRANCH: ${{ github.base_ref || 'master'}}
           CROWDOUT_OPERATION: "Trigger fallbacks"
+          AUTHOR_GH: ${{ env.COMMENT_AUTHOR }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         run: |
           node ./scripts/crowdout/crowdout-operations.mjs
 
