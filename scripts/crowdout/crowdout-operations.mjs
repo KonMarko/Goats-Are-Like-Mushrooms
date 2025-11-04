@@ -10,13 +10,13 @@ const FORBIDDEN_BRANCHES = ['staging', 'production'];
 const CROWDOUT_API_PATH = CMS_PATH + '/api/crowdout/gh/'
 const CROWDOUT_API_GET_APP_CONFIG_PATH = CROWDOUT_API_PATH + 'get-app-config';
 const CROWDOUT_API_SAVE_FILE_PATH = CROWDOUT_API_PATH + 'save-file'
+const CROWDOUT_TRANSLATIONS_PATH = CMS_PATH + '/admin/crowdout/translations'
 const CREATE_LINKS_FOR_LANGUAGES = ['de-DE', 'fr-FR'];
 const AUTHOR_GH = process.env.AUTHOR_GH || '';
 const SLACK_USER_MAP_JSON = process.env.SLACK_USER_MAP_JSON || '';
 
 const readSlackMap = () => {
   try {
-    console.log('=> SLACK_USER_MAP_JSON', SLACK_USER_MAP_JSON);
     const map = JSON.parse(SLACK_USER_MAP_JSON || '{}');
     if (map && typeof map === 'object') return map;
     return {};
@@ -28,9 +28,6 @@ const readSlackMap = () => {
 const resolveSlackIdForGithubLogin = () => {
   if (!AUTHOR_GH) return null;
   const map = readSlackMap();
-  console.log('=> Slack user map:', map);
-  console.log('=> AUTHOR_GH', AUTHOR_GH);
-  console.log('=> map[AUTHOR_GH]', map[AUTHOR_GH]);
   if (map[AUTHOR_GH]) return map[AUTHOR_GH];
   // case-insensitive fallback
   const lower = AUTHOR_GH.toLowerCase();
@@ -48,8 +45,6 @@ const appendCcForAuthor = (message) => {
 
 
 const saveFile = async (fileData) => {
-  console.log('=> Saving file:', fileData.path);
-
   const response = await fetch(CROWDOUT_API_SAVE_FILE_PATH, {
     method: 'POST',
     headers: {
@@ -59,23 +54,13 @@ const saveFile = async (fileData) => {
     },
     body: JSON.stringify(fileData)
   });
-
-  console.log('=> Saving file response:', response);
 }
 
 const triggerFallbacks = async () => {
-  console.log('=> triggerFallbacks')
-  console.log('=> branch', BRANCH)
-  console.log('=> baseBranch', BASE_BRANCH)
-  console.log('=> cmsPath', CMS_PATH)
-
   const diffOutput = execSync(`git diff --name-only ${BASE_BRANCH}...${BRANCH}`).toString();
-
   const allChangedJsonFiles = diffOutput
     .split('\n')
     .filter(file => file.endsWith('.json'));
-
-  console.log('=> allChangedJsonFiles', allChangedJsonFiles);
 
   // Extract appIds from all files in the diff
   const appIds = new Set();
@@ -86,14 +71,12 @@ const triggerFallbacks = async () => {
     }
   });
 
-  console.log('=> extracted appIds:', appIds);
 
   if (appIds.size === 0) {
-    console.log('=> no appIds found');
+    console.log('No appIds found');
     return;
   }
 
-  console.log('=> unique appIds found:', Array.from(appIds));
 
   const results = [];
 
@@ -113,22 +96,17 @@ const triggerFallbacks = async () => {
 
       // Check if the response is not ok (e.g., 400 status)
       if (!response.ok) {
-        console.log(`=> Error for appId ${appId}: ${response.status} - ${response.message}`);
+        console.log(`Error for appId ${appId}: ${response.status} - ${response.message}`);
         continue; // Skip to the next appId
       }
 
       const appConfig = await response.json();
-      console.log(`=> appConfig for ${appId}:`, appConfig);
-
       const {translationsPath, sourceLanguage} = appConfig;
 
       const projectPath = `packages/${appId}/${translationsPath}/${sourceLanguage}/`;
-      console.log(`=> projectPath for filtering ${appId}:`, projectPath);
 
       const changedFiles = allChangedJsonFiles
         .filter(file => file.includes(projectPath));
-
-      console.log(`=> filtered changedFiles for ${appId}:`, changedFiles);
 
       for (const file of changedFiles) {
         const path = file.replace(/\.json$/, '');
@@ -147,34 +125,27 @@ const triggerFallbacks = async () => {
         });
       }
     } catch (error) {
-      console.log(`=> Error processing appId ${appId}:`, error);
+      console.log(`Error processing appId ${appId}:`, error);
     }
   }
 
-  console.log('=> results', results);
   const links = CREATE_LINKS_FOR_LANGUAGES.reduce((acc, lang) => {
     acc[lang] = []
     return acc
   },{})
   for (const fileData of results) {
-    // await saveFile(fileData);
-    console.log(fileData)
+    // await saveFile(fileData); //uncomment after testing the messaging part
     for(const lang of CREATE_LINKS_FOR_LANGUAGES) {
-    const crowdoutLink = `${CMS_PATH}/admin/crowdout/translations/${encodeURIComponent(BRANCH)}/${fileData.appConfig.id}/${lang}/${fileData.namespace}?diff=true`
+    const crowdoutLink = `${CMS_PATH}${CROWDOUT_TRANSLATIONS_PATH}/${encodeURIComponent(BRANCH)}/${fileData.appConfig.id}/${lang}/${fileData.namespace}?diff=true`
     links[lang].push(crowdoutLink)
     }
   }
-
-  console.log('=> links', links)
 
   const message = `Hello :wave:, can I have translations for these please?
 ${Object.entries(links).map(([lang, urls]) => {
   const emoji = `:${lang.split('-')[0]}:`;
   return urls.map(url => `${emoji} ${url}`).join('\n');
 }).join('\n')}`;
-
-  console.log('=> message', message);
-
   const outputPath = process.env.GITHUB_OUTPUT;
   if (outputPath) {
     const fs = await import('fs');
@@ -188,7 +159,6 @@ ${Object.entries(links).map(([lang, urls]) => {
 
 const main = async () => {
   if (FORBIDDEN_BRANCHES.includes(BRANCH) || !BRANCH.trim()) {
-    console.log('Branch is not allowed: ' + BRANCH);
     process.exit(1);
   }
 
@@ -201,8 +171,6 @@ const main = async () => {
       throw new Error('Unexpected operation: ' + CROWDOUT_OPERATION);
     }
   }
-
-  console.log('The script finished successfully');
 };
 
 try {
