@@ -15,11 +15,6 @@ const CROWDOUT_API_PATH = CMS_PATH + '/api/crowdout/gh/'
 const CROWDOUT_API_GET_APP_CONFIG_PATH = CROWDOUT_API_PATH + 'get-app-config';
 const CROWDOUT_API_SAVE_FILE_PATH = CROWDOUT_API_PATH + 'save-file'
 const CROWDOUT_TRANSLATIONS_PATH = CMS_PATH + '/admin/crowdout/translations'
-const COMMON_HEADERS = {
-  'Content-Type': 'application/json',
-  api_token: CMS_API_TOKEN,
-  'User-Agent': 'GitHubAction',
-}
 const FORBIDDEN_BRANCHES = ['staging', 'production'];
 
 const readSlackMap = () => {
@@ -53,7 +48,11 @@ const appendCcForAuthor = (message) => {
 const saveFile = async (fileData) => {
   const response = await fetch(CROWDOUT_API_SAVE_FILE_PATH, {
     method: 'POST',
-    headers: COMMON_HEADERS,
+    headers: {
+      'Content-Type': 'application/json',
+      api_token: CMS_API_TOKEN,
+      'User-Agent': 'GitHubAction',
+    },
     body: JSON.stringify(fileData)
   });
 }
@@ -79,7 +78,11 @@ const extractAppIds = (files) => {
 const fetchAppConfig = async (appId) => {
   const response = await fetch(CROWDOUT_API_GET_APP_CONFIG_PATH, {
     method: 'POST',
-    headers: COMMON_HEADERS,
+    headers: {
+      'Content-Type': 'application/json',
+      api_token: CMS_API_TOKEN,
+      'User-Agent': 'GitHubAction',
+    },
     body: JSON.stringify({ appId })
   });
 
@@ -176,6 +179,8 @@ const triggerFallbacksAndSlackMessage = async () => {
       console.log(`Error processing appId ${appId}:`, error);
     }
   }
+
+  console.log('=> results', results)
 
   const links = saveSourceAndGenerateTranslationLinks(results);
   console.log('=> links', links)
