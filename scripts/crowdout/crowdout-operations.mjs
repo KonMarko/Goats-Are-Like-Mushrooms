@@ -174,13 +174,16 @@ const triggerFallbacks = async () => {
   console.log('=> links', links)
 
   let message = `Hello :wave:, can I have translations for these please?
-    ${Object.entries(links).map(([lang, urls]) => {
-      const emoji = `:${lang.split('-')[0]}:`;
-      return urls.map(url => `${emoji} ${url}`).join('\n');
-    }).join('\n')}`;
+${Object.entries(links).map(([lang, urls]) => {
+  const emoji = `:${lang.split('-')[0]}:`;
+  return urls.map(url => `${emoji} ${url}`).join('\n');
+}).join('\n')}`;
 
+  console.log('=> AUTHOR_GH', AUTHOR_GH);
   let email = await getGithubPublicEmail();
+  console.log('=> author email', email);
   const slackUserId = await findSlackIdByEmail(email);
+  console.log('=> slackUserId', email);
 
   if(slackUserId) {
     message = `${message}\n\ncc: <@${slackUserId}>`;
