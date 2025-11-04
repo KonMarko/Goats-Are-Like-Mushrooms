@@ -127,7 +127,7 @@ const saveSourceAndGenerateTranslationLinks = (results) => {
   for (const fileData of results) {
     // await saveFile(fileData); //uncomment after testing the messaging part
     for (const lang of CREATE_LINKS_FOR_LANGUAGES) {
-      const crowdoutLink = `${CMS_PATH}${CROWDOUT_TRANSLATIONS_PATH}/${encodeURIComponent(BRANCH)}/${fileData.appConfig.id}/${lang}/${fileData.namespace}?diff=true`;
+      const crowdoutLink = `${CROWDOUT_TRANSLATIONS_PATH}/${encodeURIComponent(BRANCH)}/${fileData.appConfig.id}/${lang}/${fileData.namespace}?diff=true`;
       links[lang].push({link: crowdoutLink, namespace: fileData.namespace, language: lang});
     }
   }
