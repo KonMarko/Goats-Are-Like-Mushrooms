@@ -119,22 +119,16 @@ const processChangedFiles = (allChangedJsonFiles, appId, appConfig) => {
 };
 
 const saveSourceAndGenerateTranslationLinks = (results) => {
-  const links = {};
+  const links = CREATE_LINKS_FOR_LANGUAGES.reduce((acc, lang) => {
+    acc[lang] = [];
+    return acc;
+  }, {});
 
   for (const fileData of results) {
     // await saveFile(fileData); //uncomment after testing the messaging part
-    const appId = fileData.appConfig.id;
-
-    if (!links[appId]) {
-      links[appId] = CREATE_LINKS_FOR_LANGUAGES.reduce((acc, lang) => {
-        acc[lang] = [];
-        return acc;
-      }, {});
-    }
-
     for (const lang of CREATE_LINKS_FOR_LANGUAGES) {
-      const crowdoutLink = `${CROWDOUT_TRANSLATIONS_PATH}/${encodeURIComponent(BRANCH)}/${appId}/${lang}/${fileData.namespace}?diff=true`;
-      links[appId][lang].push({link: crowdoutLink, namespace: fileData.namespace, language: lang, appId});
+      const crowdoutLink = `${CROWDOUT_TRANSLATIONS_PATH}/${encodeURIComponent(BRANCH)}/${fileData.appConfig.id}/${lang}/${fileData.namespace}?diff=true`;
+      links[lang].push({link: crowdoutLink, namespace: fileData.namespace, language: lang, appId: fileData.appConfig.id});
     }
   }
 
@@ -143,13 +137,11 @@ const saveSourceAndGenerateTranslationLinks = (results) => {
 
 const createTranslationMessage = (links) => {
   const messageBase= `Hello :wave:, can I have translations for these please?
-${Object.entries(links).map(([appId, languages]) => {
-  return `\n*${appId}:*${Object.entries(languages).map(([lang, urls]) => {
-    const emoji = `:${lang.split('-')[0]}:`;
-    return `\n${emoji}:\n${urls.map(url => {
-      const {link, namespace} = url
-      return `• <${link}|${namespace}>`;
-    }).join('\n')}`;
+${Object.entries(links).map(([lang, urls]) => {
+  const emoji = `:${lang.split('-')[0]}:`;
+  return `\n${emoji}:\n${urls.map(url => {
+    const {link, namespace, language, appId} = url
+    return `• <${link}| ${appId} | ${namespace} | ${language}>`;
   }).join('\n')}`;
 }).join('\n')}`;
   return appendCcForAuthor(messageBase);
