@@ -141,6 +141,7 @@ ${Object.entries(links).map(([lang, urls]) => {
   const emoji = `:${lang.split('-')[0]}:`;
   return urls.map(url => `${emoji} ${url}`).join('\n');
 }).join('\n')}`;
+  console.log('=> messageBase', messageBase)
   return appendCcForAuthor(messageBase);
 };
 
@@ -177,6 +178,7 @@ const triggerFallbacksAndSlackMessage = async () => {
   }
 
   const links = saveSourceAndGenerateTranslationLinks(results);
+  console.log('=> links', links)
   const message = createTranslationMessage(links);
   await setActionOutput(message);
 
