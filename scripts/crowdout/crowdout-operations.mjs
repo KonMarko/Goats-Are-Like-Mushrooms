@@ -128,7 +128,7 @@ const saveSourceAndGenerateTranslationLinks = (results) => {
     // await saveFile(fileData); //uncomment after testing the messaging part
     for (const lang of CREATE_LINKS_FOR_LANGUAGES) {
       const crowdoutLink = `${CMS_PATH}${CROWDOUT_TRANSLATIONS_PATH}/${encodeURIComponent(BRANCH)}/${fileData.appConfig.id}/${lang}/${fileData.namespace}?diff=true`;
-      links[lang].push(crowdoutLink);
+      links[lang].push({link: crowdoutLink, namespace: fileData.namespace, language: lang});
     }
   }
 
@@ -139,7 +139,10 @@ const createTranslationMessage = (links) => {
   const messageBase= `Hello :wave:, can I have translations for these please?
 ${Object.entries(links).map(([lang, urls]) => {
   const emoji = `:${lang.split('-')[0]}:`;
-  return `${emoji}:\n ${urls.map(url => `- ${url}`).join('\n')}`;
+  return `${emoji}:\n${urls.map(url => {
+    const {link, namespace, language} = url
+    return `• <${link}|${namespace} - ${language}>`;
+  }).join('\n')}`;
 }).join('\n')}`;
   return appendCcForAuthor(messageBase);
 };
