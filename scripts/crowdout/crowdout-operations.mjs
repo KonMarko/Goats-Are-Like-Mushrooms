@@ -144,7 +144,7 @@ const saveSourceAndGenerateTranslationLinks = (results) => {
 const createTranslationMessage = (links) => {
   const messageBase= `Hello :wave:, can I have translations for these please?
 ${Object.entries(links).map(([appId, languages]) => {
-  return `\n*${appId}:*${Object.entries(languages).map(([lang, urls]) => {
+  return `\n**${appId}:**${Object.entries(languages).map(([lang, urls]) => {
     const emoji = `:${lang.split('-')[0]}:`;
     return `\n${emoji}:\n${urls.map(url => {
       const {link, namespace} = url
