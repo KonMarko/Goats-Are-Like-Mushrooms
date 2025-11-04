@@ -122,7 +122,7 @@ const triggerFallbacks = async () => {
     // await saveFile(fileData);
     console.log(fileData)
     for(const lang of CREATE_LINKS_FOR_LANGUAGES) {
-    const crowdoutLink = `${CMS_PATH}/admin/crowdout/translations/${encodeURIComponent(BRANCH)}/${fileData.appConfig.appId}/${lang}/${fileData.namespace}?diff=true`
+    const crowdoutLink = `${CMS_PATH}/admin/crowdout/translations/${encodeURIComponent(BRANCH)}/${fileData.appConfig.id}/${lang}/${fileData.namespace}?diff=true`
     links.push(crowdoutLink)
     }
   }
