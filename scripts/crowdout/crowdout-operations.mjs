@@ -12,46 +12,37 @@ const CROWDOUT_API_GET_APP_CONFIG_PATH = CROWDOUT_API_PATH + 'get-app-config';
 const CROWDOUT_API_SAVE_FILE_PATH = CROWDOUT_API_PATH + 'save-file'
 const CREATE_LINKS_FOR_LANGUAGES = ['de-DE', 'fr-FR'];
 const AUTHOR_GH = process.env.AUTHOR_GH || '';
-const SLACK_BOT_TOKEN = process.env.SLACK_BOT_TOKEN || '';
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN || '';
+const SLACK_USER_MAP_JSON = process.env.SLACK_USER_MAP_JSON || '';
 
-const getGithubPublicEmail = async () => {
-  if (!AUTHOR_GH) return '';
+const readSlackMap = () => {
   try {
-    const res = await fetch(`https://api.github.com/users/${encodeURIComponent(AUTHOR_GH)}`, {
-      headers: {
-        'User-Agent': 'GitHubAction',
-        ...(GITHUB_TOKEN ? { Authorization: `Bearer ${GITHUB_TOKEN}` } : {})
-      }
-    });
-    if (!res.ok) return '';
-    const data = await res.json();
-    // GitHub only returns this if the user made their email public.
-    return (data && data.email) ? data.email : '';
+    const map = JSON.parse(SLACK_USER_MAP_JSON || '{}');
+    // Validate: ensure it's { [login]: "Uxxxxx" }
+    if (map && typeof map === 'object') return map;
+    return {};
   } catch {
-    return '';
+    return {};
   }
 };
 
-const findSlackIdByEmail = async (email) => {
-  if (!email || !SLACK_BOT_TOKEN) return null;
-  try {
-    const body = new URLSearchParams({ email });
-    const res = await fetch('https://slack.com/api/users.lookupByEmail', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${SLACK_BOT_TOKEN}`,
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      body
-    });
-    const json = await res.json();
-    if (json && json.ok && json.user && json.user.id) return json.user.id;
-    return null;
-  } catch {
-    return null;
-  }
+const resolveSlackIdForGithubLogin = (login) => {
+  if (!login) return null;
+  const map = readSlackMap();
+  if (map[login]) return map[login];
+  // case-insensitive fallback
+  const lower = login.toLowerCase();
+  const hit = Object.entries(map).find(([k]) => k.toLowerCase() === lower);
+  return hit ? hit[1] : null;
 };
+
+const appendCcForAuthor = (message) => {
+  const slackId = resolveSlackIdForGithubLogin(AUTHOR_GH);
+  if (slackId) return `${message}\n\ncc: <@${slackId}>`;
+  // fallback (won’t notify in Slack, but still shows who)
+  if (AUTHOR_GH) return `${message}\n\ncc: @${AUTHOR_GH}`;
+  return message;
+};
+
 
 const saveFile = async (fileData) => {
   console.log('=> Saving file:', fileData.path);
@@ -173,21 +164,11 @@ const triggerFallbacks = async () => {
 
   console.log('=> links', links)
 
-  let message = `Hello :wave:, can I have translations for these please?
+  const message = `Hello :wave:, can I have translations for these please?
 ${Object.entries(links).map(([lang, urls]) => {
   const emoji = `:${lang.split('-')[0]}:`;
   return urls.map(url => `${emoji} ${url}`).join('\n');
 }).join('\n')}`;
-
-  console.log('=> AUTHOR_GH', AUTHOR_GH);
-  let email = await getGithubPublicEmail();
-  console.log('=> author email', email);
-  const slackUserId = await findSlackIdByEmail(email);
-  console.log('=> slackUserId', email);
-
-  if(slackUserId) {
-    message = `${message}\n\ncc: <@${slackUserId}>`;
-  }
 
   console.log('=> message', message);
 
@@ -195,7 +176,7 @@ ${Object.entries(links).map(([lang, urls]) => {
   if (outputPath) {
     const fs = await import('fs');
     const delim = 'GH_DELIM_' + Math.random().toString(36).slice(2);
-    fs.appendFileSync(outputPath, `translation_message<<${delim}\n${message}\n${delim}\n`, 'utf8');
+    fs.appendFileSync(outputPath, `translation_message<<${delim}\n${appendCcForAuthor(message)}\n${delim}\n`, 'utf8');
   }
   return message;
 };
