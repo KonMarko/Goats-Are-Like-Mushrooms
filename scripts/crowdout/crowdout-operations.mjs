@@ -128,7 +128,7 @@ const saveSourceAndGenerateTranslationLinks = (results) => {
     // await saveFile(fileData); //uncomment after testing the messaging part
     for (const lang of CREATE_LINKS_FOR_LANGUAGES) {
       const crowdoutLink = `${CROWDOUT_TRANSLATIONS_PATH}/${encodeURIComponent(BRANCH)}/${fileData.appConfig.id}/${lang}/${fileData.namespace}?diff=true`;
-      links[lang].push({link: crowdoutLink, namespace: fileData.namespace, language: lang});
+      links[lang].push({link: crowdoutLink, namespace: fileData.namespace, language: lang, appId: fileData.appConfig.id});
     }
   }
 
@@ -140,8 +140,8 @@ const createTranslationMessage = (links) => {
 ${Object.entries(links).map(([lang, urls]) => {
   const emoji = `:${lang.split('-')[0]}:`;
   return `\n${emoji}:\n${urls.map(url => {
-    const {link, namespace, language} = url
-    return `• <${link}| Crowdout | ${namespace} | ${language}>`;
+    const {link, namespace, language, appId} = url
+    return `• <${link}| ${appId} | ${namespace} | ${language}>`;
   }).join('\n')}`;
 }).join('\n')}`;
   return appendCcForAuthor(messageBase);
