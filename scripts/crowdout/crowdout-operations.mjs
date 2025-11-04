@@ -18,7 +18,7 @@ const GITHUB_TOKEN = process.env.GITHUB_TOKEN || '';
 const getGithubPublicEmail = async () => {
   if (!AUTHOR_GH) return '';
   try {
-    const res = await fetch(`https://api.github.com/users/${encodeURIComponent(login)}`, {
+    const res = await fetch(`https://api.github.com/users/${encodeURIComponent(AUTHOR_GH)}`, {
       headers: {
         'User-Agent': 'GitHubAction',
         ...(GITHUB_TOKEN ? { Authorization: `Bearer ${GITHUB_TOKEN}` } : {})
