@@ -15,6 +15,11 @@ const CROWDOUT_API_PATH = CMS_PATH + '/api/crowdout/gh/'
 const CROWDOUT_API_GET_APP_CONFIG_PATH = CROWDOUT_API_PATH + 'get-app-config';
 const CROWDOUT_API_SAVE_FILE_PATH = CROWDOUT_API_PATH + 'save-file'
 const CROWDOUT_TRANSLATIONS_PATH = CMS_PATH + '/admin/crowdout/translations'
+const COMMON_HEADERS = {
+  'Content-Type': 'application/json',
+  api_token: CMS_API_TOKEN,
+  'User-Agent': 'GitHubAction',
+}
 const FORBIDDEN_BRANCHES = ['staging', 'production'];
 
 const readSlackMap = () => {
@@ -48,11 +53,7 @@ const appendCcForAuthor = (message) => {
 const saveFile = async (fileData) => {
   const response = await fetch(CROWDOUT_API_SAVE_FILE_PATH, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      api_token: CMS_API_TOKEN,
-      'User-Agent': 'GitHubAction',
-    },
+    headers: COMMON_HEADERS,
     body: JSON.stringify(fileData)
   });
 }
@@ -78,11 +79,7 @@ const extractAppIds = (files) => {
 const fetchAppConfig = async (appId) => {
   const response = await fetch(CROWDOUT_API_GET_APP_CONFIG_PATH, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      api_token: CMS_API_TOKEN,
-      'User-Agent': 'GitHubAction',
-    },
+    headers: COMMON_HEADERS,
     body: JSON.stringify({ appId })
   });
 
@@ -142,9 +139,8 @@ const createTranslationMessage = (links) => {
   const messageBase= `Hello :wave:, can I have translations for these please?
 ${Object.entries(links).map(([lang, urls]) => {
   const emoji = `:${lang.split('-')[0]}:`;
-  return urls.map(url => `${emoji} ${url}`).join('\n');
+  return `${emoji}:\n ${urls.map(url => `- ${url}`).join('\n')}`;
 }).join('\n')}`;
-  console.log('=> messageBase', messageBase)
   return appendCcForAuthor(messageBase);
 };
 
@@ -180,10 +176,7 @@ const triggerFallbacksAndSlackMessage = async () => {
     }
   }
 
-  console.log('=> results', results)
-
   const links = saveSourceAndGenerateTranslationLinks(results);
-  console.log('=> links', links)
   const message = createTranslationMessage(links);
   await setActionOutput(message);
 
