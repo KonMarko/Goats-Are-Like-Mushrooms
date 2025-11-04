@@ -1,22 +1,29 @@
 import {execSync} from 'child_process';
 
-
-const CMS_API_TOKEN = process.env.CMS_API_TOKEN
-const BRANCH = process.env.BRANCH;
+//envs
+const AUTHOR_GH = process.env.AUTHOR_GH;
 const BASE_BRANCH = process.env.BASE_BRANCH;
-const CROWDOUT_OPERATION = process.env.CROWDOUT_OPERATION;
+const BRANCH = process.env.BRANCH;
+const CMS_API_TOKEN = process.env.CMS_API_TOKEN
 const CMS_PATH = process.env.CMS_PATH
-const FORBIDDEN_BRANCHES = ['staging', 'production'];
+const CROWDOUT_OPERATION = process.env.CROWDOUT_OPERATION;
+const SLACK_USER_MAP_JSON = process.env.SLACK_USER_MAP_JSON;
+
+//constants
+const CREATE_LINKS_FOR_LANGUAGES = ['de-DE', 'fr-FR'];
 const CROWDOUT_API_PATH = CMS_PATH + '/api/crowdout/gh/'
 const CROWDOUT_API_GET_APP_CONFIG_PATH = CROWDOUT_API_PATH + 'get-app-config';
 const CROWDOUT_API_SAVE_FILE_PATH = CROWDOUT_API_PATH + 'save-file'
-const CREATE_LINKS_FOR_LANGUAGES = ['de-DE', 'fr-FR'];
-const AUTHOR_GH = process.env.AUTHOR_GH || '';
-const SLACK_USER_MAP_JSON = process.env.SLACK_USER_MAP_JSON || '';
+const CROWDOUT_TRANSLATIONS_PATH = CMS_PATH + '/admin/crowdout/translations'
+const COMMON_HEADERS = {
+  'Content-Type': 'application/json',
+  api_token: CMS_API_TOKEN,
+  'User-Agent': 'GitHubAction',
+}
+const FORBIDDEN_BRANCHES = ['staging', 'production'];
 
 const readSlackMap = () => {
   try {
-    console.log('=> SLACK_USER_MAP_JSON', SLACK_USER_MAP_JSON);
     const map = JSON.parse(SLACK_USER_MAP_JSON || '{}');
     if (map && typeof map === 'object') return map;
     return {};
@@ -28,9 +35,6 @@ const readSlackMap = () => {
 const resolveSlackIdForGithubLogin = () => {
   if (!AUTHOR_GH) return null;
   const map = readSlackMap();
-  console.log('=> Slack user map:', map);
-  console.log('=> AUTHOR_GH', AUTHOR_GH);
-  console.log('=> map[AUTHOR_GH]', map[AUTHOR_GH]);
   if (map[AUTHOR_GH]) return map[AUTHOR_GH];
   // case-insensitive fallback
   const lower = AUTHOR_GH.toLowerCase();
@@ -46,141 +50,136 @@ const appendCcForAuthor = (message) => {
   return message;
 };
 
-
 const saveFile = async (fileData) => {
-  console.log('=> Saving file:', fileData.path);
-
   const response = await fetch(CROWDOUT_API_SAVE_FILE_PATH, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      api_token: CMS_API_TOKEN,
-      'User-Agent': 'GitHubAction',
-    },
+    headers: COMMON_HEADERS,
     body: JSON.stringify(fileData)
   });
-
-  console.log('=> Saving file response:', response);
 }
 
-const triggerFallbacks = async () => {
-  console.log('=> triggerFallbacks')
-  console.log('=> branch', BRANCH)
-  console.log('=> baseBranch', BASE_BRANCH)
-  console.log('=> cmsPath', CMS_PATH)
-
+const getChangedJsonFiles = () => {
   const diffOutput = execSync(`git diff --name-only ${BASE_BRANCH}...${BRANCH}`).toString();
-
-  const allChangedJsonFiles = diffOutput
+  return diffOutput
     .split('\n')
     .filter(file => file.endsWith('.json'));
+};
 
-  console.log('=> allChangedJsonFiles', allChangedJsonFiles);
-
-  // Extract appIds from all files in the diff
+const extractAppIds = (files) => {
   const appIds = new Set();
-  allChangedJsonFiles.forEach(file => {
+  files.forEach(file => {
     const appIdMatch = file.match(/packages\/([^\/]+)/);
     if (appIdMatch) {
       appIds.add(appIdMatch[1]);
     }
   });
+  return appIds;
+};
 
-  console.log('=> extracted appIds:', appIds);
+const fetchAppConfig = async (appId) => {
+  const response = await fetch(CROWDOUT_API_GET_APP_CONFIG_PATH, {
+    method: 'POST',
+    headers: COMMON_HEADERS,
+    body: JSON.stringify({ appId })
+  });
 
-  if (appIds.size === 0) {
-    console.log('=> no appIds found');
-    return;
+  if (!response.ok) {
+    console.log(`Error for appId ${appId}: ${response.status} - ${response.message}`);
+    return null;
   }
 
-  console.log('=> unique appIds found:', Array.from(appIds));
+  return await response.json();
+};
 
+const processChangedFiles = (allChangedJsonFiles, appId, appConfig) => {
   const results = [];
+  const {translationsPath, sourceLanguage} = appConfig;
+  const projectPath = `packages/${appId}/${translationsPath}/${sourceLanguage}/`;
 
-  for (const appId of appIds) {
-    console.log(`=> Processing appId: ${appId}`);
+  const changedFiles = allChangedJsonFiles.filter(file => file.includes(projectPath));
 
-    try {
-      const response = await fetch(CROWDOUT_API_GET_APP_CONFIG_PATH, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          api_token: CMS_API_TOKEN,
-          'User-Agent': 'GitHubAction',
-        },
-        body: JSON.stringify({ appId })
-      });
+  for (const file of changedFiles) {
+    const path = file.replace(/\.json$/, '');
+    const namespace = file.split('/').pop().replace(/\.json$/, '');
+    const commitMessage = `Update ${sourceLanguage} translations for ${namespace}`;
+    const content = execSync(`git show ${BRANCH}:${file}`).toString();
 
-      // Check if the response is not ok (e.g., 400 status)
-      if (!response.ok) {
-        console.log(`=> Error for appId ${appId}: ${response.status} - ${response.message}`);
-        continue; // Skip to the next appId
-      }
-
-      const appConfig = await response.json();
-      console.log(`=> appConfig for ${appId}:`, appConfig);
-
-      const {translationsPath, sourceLanguage} = appConfig;
-
-      const projectPath = `packages/${appId}/${translationsPath}/${sourceLanguage}/`;
-      console.log(`=> projectPath for filtering ${appId}:`, projectPath);
-
-      const changedFiles = allChangedJsonFiles
-        .filter(file => file.includes(projectPath));
-
-      console.log(`=> filtered changedFiles for ${appId}:`, changedFiles);
-
-      for (const file of changedFiles) {
-        const path = file.replace(/\.json$/, '');
-        const namespace = file.split('/').pop().replace(/\.json$/, '');
-        const commitMessage = `Update ${sourceLanguage} translations for ${namespace}`;
-        const content = execSync(`git show ${BRANCH}:${file}`).toString();
-
-        results.push({
-          path,
-          namespace,
-          commitMessage,
-          content,
-          appConfig,
-          branch: BRANCH,
-          language: sourceLanguage,
-        });
-      }
-    } catch (error) {
-      console.log(`=> Error processing appId ${appId}:`, error);
-    }
+    results.push({
+      path,
+      namespace,
+      commitMessage,
+      content,
+      appConfig,
+      branch: BRANCH,
+      language: sourceLanguage,
+    });
   }
 
-  console.log('=> results', results);
+  return results;
+};
+
+const saveSourceAndGenerateTranslationLinks = (results) => {
   const links = CREATE_LINKS_FOR_LANGUAGES.reduce((acc, lang) => {
-    acc[lang] = []
-    return acc
-  },{})
+    acc[lang] = [];
+    return acc;
+  }, {});
+
   for (const fileData of results) {
-    // await saveFile(fileData);
-    console.log(fileData)
-    for(const lang of CREATE_LINKS_FOR_LANGUAGES) {
-    const crowdoutLink = `${CMS_PATH}/admin/crowdout/translations/${encodeURIComponent(BRANCH)}/${fileData.appConfig.id}/${lang}/${fileData.namespace}?diff=true`
-    links[lang].push(crowdoutLink)
+    // await saveFile(fileData); //uncomment after testing the messaging part
+    for (const lang of CREATE_LINKS_FOR_LANGUAGES) {
+      const crowdoutLink = `${CMS_PATH}${CROWDOUT_TRANSLATIONS_PATH}/${encodeURIComponent(BRANCH)}/${fileData.appConfig.id}/${lang}/${fileData.namespace}?diff=true`;
+      links[lang].push(crowdoutLink);
     }
   }
 
-  console.log('=> links', links)
+  return links;
+};
 
-  const message = `Hello :wave:, can I have translations for these please?
+const createTranslationMessage = (links) => {
+  const messageBase= `Hello :wave:, can I have translations for these please?
 ${Object.entries(links).map(([lang, urls]) => {
   const emoji = `:${lang.split('-')[0]}:`;
   return urls.map(url => `${emoji} ${url}`).join('\n');
 }).join('\n')}`;
+  return appendCcForAuthor(messageBase);
+};
 
-  console.log('=> message', message);
-
+const setActionOutput = async (message) => {
   const outputPath = process.env.GITHUB_OUTPUT;
   if (outputPath) {
     const fs = await import('fs');
     const delim = 'GH_DELIM_' + Math.random().toString(36).slice(2);
-    fs.appendFileSync(outputPath, `translation_message<<${delim}\n${appendCcForAuthor(message)}\n${delim}\n`, 'utf8');
+    fs.appendFileSync(outputPath, `translation_message<<${delim}\n${message}\n${delim}\n`, 'utf8');
   }
+};
+
+const triggerFallbacksAndSlackMessage = async () => {
+  const allChangedJsonFiles = getChangedJsonFiles();
+  const appIds = extractAppIds(allChangedJsonFiles);
+
+  if (appIds.size === 0) {
+    console.log('No appIds found');
+    return;
+  }
+
+  const results = [];
+
+  for (const appId of appIds) {
+    try {
+      const appConfig = await fetchAppConfig(appId);
+      if (!appConfig) continue;
+
+      const fileResults = processChangedFiles(allChangedJsonFiles, appId, appConfig);
+      results.push(...fileResults);
+    } catch (error) {
+      console.log(`Error processing appId ${appId}:`, error);
+    }
+  }
+
+  const links = saveSourceAndGenerateTranslationLinks(results);
+  const message = createTranslationMessage(links);
+  await setActionOutput(message);
+
   return message;
 };
 
@@ -188,21 +187,18 @@ ${Object.entries(links).map(([lang, urls]) => {
 
 const main = async () => {
   if (FORBIDDEN_BRANCHES.includes(BRANCH) || !BRANCH.trim()) {
-    console.log('Branch is not allowed: ' + BRANCH);
     process.exit(1);
   }
 
   switch (CROWDOUT_OPERATION) {
     case 'Trigger fallbacks': {
-      await triggerFallbacks();
+      await triggerFallbacksAndSlackMessage();
       break;
     }
     default: {
       throw new Error('Unexpected operation: ' + CROWDOUT_OPERATION);
     }
   }
-
-  console.log('The script finished successfully');
 };
 
 try {
