@@ -39,7 +39,7 @@ jobs:
           CMS_API_TOKEN: ${{ secrets.CMS_API_TOKEN }}
           CMS_PATH: ${{ secrets.CMS_PATH }}
           BRANCH: ${{ github.head_ref || env.ISSUE_BRANCH }}
-          BASE_BRANCH: ${{ github.base_ref || 'master'}}
+          BASE_BRANCH: ${{ github.event.pull_request.base.ref || 'master' }}
           CROWDOUT_OPERATION: "Trigger fallbacks"
           AUTHOR_GH: ${{ env.COMMENT_AUTHOR }}
           SLACK_USER_MAP_JSON: ${{ secrets.SLACK_USER_MAP_JSON }}
