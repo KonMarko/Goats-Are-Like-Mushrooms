@@ -32,6 +32,10 @@ jobs:
         run: |
           echo "COMMENT_AUTHOR=${{ github.event.comment.user.login }}" >> $GITHUB_ENV
 
+      - name: Print event context
+        run: |
+          echo "Event: ${{ toJson(github.event) }}"
+
       - name: Trigger fallbacks
         if: steps.trigger.outputs.triggered == 'true'
         id: trigger_fallbacks
