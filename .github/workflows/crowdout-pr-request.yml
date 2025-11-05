@@ -32,9 +32,13 @@ jobs:
         run: |
           echo "COMMENT_AUTHOR=${{ github.event.comment.user.login }}" >> $GITHUB_ENV
 
-      - name: Print event context
+      - name: Get pull request base branch
+        id: get_base_branch
         run: |
-          echo "Event: ${{ toJson(github.event) }}"
+          PR_NUMBER=$(echo "${{ github.event.issue.number }}")
+          PR_BASE_BRANCH=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/pulls/${PR_NUMBER}" | jq -r .base.ref)
+          echo "BASE_BRANCH=$PR_BASE_BRANCH" >> $GITHUB_ENV
 
       - name: Trigger fallbacks
         if: steps.trigger.outputs.triggered == 'true'
@@ -43,7 +47,7 @@ jobs:
           CMS_API_TOKEN: ${{ secrets.CMS_API_TOKEN }}
           CMS_PATH: ${{ secrets.CMS_PATH }}
           BRANCH: ${{ github.head_ref || env.ISSUE_BRANCH }}
-          BASE_BRANCH: ${{ github.event.pull_request.base.ref || 'master' }}
+          BASE_BRANCH: ${{ env.BASE_BRANCH }}
           CROWDOUT_OPERATION: "Trigger fallbacks"
           AUTHOR_GH: ${{ env.COMMENT_AUTHOR }}
           SLACK_USER_MAP_JSON: ${{ secrets.SLACK_USER_MAP_JSON }}
