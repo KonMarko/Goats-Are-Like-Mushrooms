@@ -59,7 +59,7 @@ const saveFile = async (fileData) => {
 }
 
 const getChangedJsonFiles = () => {
-  const diffOutput = execSync(`git diff --name-only ${BASE_BRANCH}...${BRANCH}`).toString();
+  const diffOutput = execSync(`git diff --name-only origin/${BASE_BRANCH}...origin/${BRANCH}`).toString();
   return diffOutput
     .split('\n')
     .filter(file => file.endsWith('.json'));
