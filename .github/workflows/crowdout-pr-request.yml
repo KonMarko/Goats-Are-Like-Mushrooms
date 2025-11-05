@@ -32,13 +32,17 @@ jobs:
         run: |
           echo "COMMENT_AUTHOR=${{ github.event.comment.user.login }}" >> $GITHUB_ENV
 
-      - name: Get pull request base branch
-        id: get_base_branch
+      - name: Get pull request info
+        id: get_pr_info
         run: |
           PR_NUMBER=$(echo "${{ github.event.issue.number }}")
-          PR_BASE_BRANCH=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            "https://api.github.com/repos/${{ github.repository }}/pulls/${PR_NUMBER}" | jq -r .base.ref)
+          PR_INFO=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/pulls/${PR_NUMBER}")
+          PR_BASE_BRANCH=$(echo "$PR_INFO" | jq -r .base.ref)
+          PR_TITLE=$(echo "$PR_INFO" | jq -r .title)
           echo "BASE_BRANCH=$PR_BASE_BRANCH" >> $GITHUB_ENV
+          echo "PR_NUMBER=$PR_NUMBER" >> $GITHUB_ENV
+          echo "PR_TITLE=$PR_TITLE" >> $GITHUB_ENV
 
       - name: Trigger fallbacks
         if: steps.trigger.outputs.triggered == 'true'
@@ -51,6 +55,9 @@ jobs:
           CROWDOUT_OPERATION: "Trigger fallbacks"
           AUTHOR_GH: ${{ env.COMMENT_AUTHOR }}
           SLACK_USER_MAP_JSON: ${{ secrets.SLACK_USER_MAP_JSON }}
+          PR_NUMBER: ${{ env.PR_NUMBER }}
+          PR_TITLE: ${{ env.PR_TITLE }}
+          REPO_FULL_NAME: ${{ github.repository }}
         run: |
           node ./scripts/crowdout/crowdout-operations.mjs
 
