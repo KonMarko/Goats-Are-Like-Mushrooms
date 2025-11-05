@@ -2,6 +2,7 @@
   "addItemPlaceholder": "Chatty, Friendly, Adventurous",
   "addTag": "Add - changed",
   "addTagDescription": "Add between 1 and 3 tags",
+  "aNewWithWrongOrder": "A new - with wrong order",
   "briefDescriptionLabel": "A brief description",
   "cancel": "Cancel",
   "changesSaved": "Changes saved",
@@ -11,7 +12,7 @@
   "introPlaceholder": "Share your favourite testimonial, quote or a sentence that best describes you.",
   "nameLabel": "Name to display",
   "namePlaceholder": "What should couples call you?",
-  "newKey": "New key",
+  "newKey": "Banana",
   "pageTitle": "About you",
   "personalityTagPlaceholder": "Personality",
   "photoUploadError": "Uploading photo failed",
@@ -28,6 +29,5 @@
   "uploadPhoto": "Upload photo",
   "yourNamePlaceholderText": "[Your name]",
   "yourPhoto": "Your photo",
-  "yourTagPlaceholder": "Your",
-  "aNewWithWrongOrder": "A new - with wrong order"
+  "yourTagPlaceholder": "Your"
 }
