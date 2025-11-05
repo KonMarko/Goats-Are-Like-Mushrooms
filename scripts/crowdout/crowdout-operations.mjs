@@ -48,7 +48,7 @@ const resolveSlackIdForGithubLogin = () => {
 const appendPrLink = (message) => {
   if (PR_NUMBER && PR_TITLE && REPO_FULL_NAME) {
     const prLink = `https://github.com/${REPO_FULL_NAME}/pull/${PR_NUMBER}`;
-    return `PR: ${message}\n\n<${prLink}|${PR_TITLE}>`;
+    return `${message}\n\nPR: <${prLink}|${PR_TITLE}>`;
   }
   return message;
 };
