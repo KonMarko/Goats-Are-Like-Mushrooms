@@ -196,7 +196,7 @@ const main = async () => {
   console.log('=> main, BASE_BRANCH:', BASE_BRANCH);
   switch (CROWDOUT_OPERATION) {
     case 'Trigger fallbacks': {
-      // await triggerFallbacksAndSlackMessage();
+      await triggerFallbacksAndSlackMessage();
       break;
     }
     default: {
