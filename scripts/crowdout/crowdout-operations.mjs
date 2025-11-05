@@ -48,7 +48,7 @@ const resolveSlackIdForGithubLogin = () => {
 const appendPrLink = (message) => {
   if (PR_NUMBER && PR_TITLE && REPO_FULL_NAME) {
     const prLink = `https://github.com/${REPO_FULL_NAME}/pull/${PR_NUMBER}`;
-    return `${message}\n\n<${prLink}|${PR_TITLE}>`;
+    return `PR: ${message}\n\n<${prLink}|${PR_TITLE}>`;
   }
   return message;
 };
@@ -74,7 +74,6 @@ const getChangedJsonFiles = () => {
   execSync('git fetch --all');
   const diffOutput = execSync(`git diff --name-only origin/${BASE_BRANCH}...origin/${BRANCH}`).toString();
 
-  console.log('=> diffOutput', diffOutput)
   return diffOutput
     .split('\n')
     .filter(file => file.endsWith('.json'));
@@ -175,7 +174,6 @@ const setActionOutput = async (message) => {
 const triggerFallbacksAndSlackMessage = async () => {
   const allChangedJsonFiles = getChangedJsonFiles();
 
-  console.log('=> allChangedJsonFiles', allChangedJsonFiles)
   const appIds = extractAppIds(allChangedJsonFiles);
 
   if (appIds.size === 0) {
@@ -211,7 +209,6 @@ const main = async () => {
     process.exit(1);
   }
 
-  console.log('=> main, BASE_BRANCH:', BASE_BRANCH);
   switch (CROWDOUT_OPERATION) {
     case 'Trigger fallbacks': {
       await triggerFallbacksAndSlackMessage();
