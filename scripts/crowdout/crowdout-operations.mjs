@@ -62,6 +62,8 @@ const getChangedJsonFiles = () => {
   // Ensure the remote branches are fetched
   execSync('git fetch --all');
   const diffOutput = execSync(`git diff --name-only origin/${BASE_BRANCH}...origin/${BRANCH}`).toString();
+
+  console.log('=> diffOutput', diffOutput)
   return diffOutput
     .split('\n')
     .filter(file => file.endsWith('.json'));
@@ -160,6 +162,8 @@ const setActionOutput = async (message) => {
 
 const triggerFallbacksAndSlackMessage = async () => {
   const allChangedJsonFiles = getChangedJsonFiles();
+
+  console.log('=> allChangedJsonFiles', allChangedJsonFiles)
   const appIds = extractAppIds(allChangedJsonFiles);
 
   if (appIds.size === 0) {
