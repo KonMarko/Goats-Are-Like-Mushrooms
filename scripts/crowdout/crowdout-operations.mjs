@@ -7,6 +7,9 @@ const BRANCH = process.env.BRANCH;
 const CMS_API_TOKEN = process.env.CMS_API_TOKEN
 const CMS_PATH = process.env.CMS_PATH
 const CROWDOUT_OPERATION = process.env.CROWDOUT_OPERATION;
+const PR_NUMBER = process.env.PR_NUMBER;
+const PR_TITLE = process.env.PR_TITLE;
+const REPO_FULL_NAME = process.env.REPO_FULL_NAME;
 const SLACK_USER_MAP_JSON = process.env.SLACK_USER_MAP_JSON;
 
 //constants
@@ -40,6 +43,14 @@ const resolveSlackIdForGithubLogin = () => {
   const lower = AUTHOR_GH.toLowerCase();
   const hit = Object.entries(map).find(([k]) => k.toLowerCase() === lower);
   return hit ? hit[1] : null;
+};
+
+const appendPrLink = (message) => {
+  if (PR_NUMBER && PR_TITLE && REPO_FULL_NAME) {
+    const prLink = `https://github.com/${REPO_FULL_NAME}/pull/${PR_NUMBER}`;
+    return `${message}\n\n<${prLink}|${PR_TITLE}>`;
+  }
+  return message;
 };
 
 const appendCcForAuthor = (message) => {
@@ -148,7 +159,8 @@ ${Object.entries(links).map(([lang, urls]) => {
     return `• <${link}| ${appId} | ${namespace} | ${language}>`;
   }).join('\n')}`;
 }).join('\n')}`;
-  return appendCcForAuthor(messageBase);
+  const messageWithPrLink = appendPrLink(messageBase);
+  return appendCcForAuthor(messageWithPrLink);
 };
 
 const setActionOutput = async (message) => {
