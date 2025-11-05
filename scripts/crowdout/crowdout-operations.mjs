@@ -59,6 +59,8 @@ const saveFile = async (fileData) => {
 }
 
 const getChangedJsonFiles = () => {
+  // Ensure the remote branches are fetched
+  execSync('git fetch --all');
   const diffOutput = execSync(`git diff --name-only origin/${BASE_BRANCH}...origin/${BRANCH}`).toString();
   return diffOutput
     .split('\n')
