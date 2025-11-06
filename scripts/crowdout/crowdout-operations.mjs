@@ -200,6 +200,8 @@ const triggerFallbacksAndSlackMessage = async () => {
 
   const links = saveSourceAndGenerateTranslationLinks(results);
   const message = createTranslationMessage(links);
+
+  console.log('=> message', message)
   await setActionOutput(message);
 
   return message;
