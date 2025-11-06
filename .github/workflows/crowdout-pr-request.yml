@@ -19,6 +19,12 @@ jobs:
       - uses: actions/checkout@v3
         if: steps.trigger.outputs.triggered == 'true'
 
+      - name: Load Crowdout credentials
+        id: creds-crowdout
+        uses: ./.github/actions/credentials/crowdout
+        with:
+          service-account-token: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+
       - name: Checkout Pull Request
         if: ${{ github.event_name == 'issue_comment' && steps.trigger.outputs.triggered == 'true'}}
         env:
@@ -48,13 +54,13 @@ jobs:
         if: steps.trigger.outputs.triggered == 'true'
         id: trigger_fallbacks
         env:
-          CMS_API_TOKEN: ${{ secrets.CMS_API_TOKEN }}
-          CMS_PATH: ${{ secrets.CMS_PATH }}
+          CMS_API_TOKEN: ${{ steps.creds-crowdout.outputs.CMS_API_TOKEN }}
+          CMS_PATH: ${{ steps.creds-crowdout.outputs.CMS_PATH }}
           BRANCH: ${{ github.head_ref || env.ISSUE_BRANCH }}
           BASE_BRANCH: ${{ env.BASE_BRANCH }}
           CROWDOUT_OPERATION: "Trigger fallbacks"
           AUTHOR_GH: ${{ env.COMMENT_AUTHOR }}
-          SLACK_USER_MAP_JSON: ${{ secrets.SLACK_USER_MAP_JSON }}
+          SLACK_USER_MAP_JSON: ${{ steps.creds-crowdout.outputs.SLACK_USER_MAP_JSON }}
           PR_NUMBER: ${{ env.PR_NUMBER }}
           PR_TITLE: ${{ env.PR_TITLE }}
           REPO_FULL_NAME: ${{ github.repository }}
@@ -66,21 +72,21 @@ jobs:
         if: steps.trigger.outputs.triggered == 'true'
         continue-on-error: true
         env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+          CROWDOUT_SLACK_TOKEN: ${{ steps.creds-crowdout.outputs.CROWDOUT_SLACK_TOKEN }}
+          TRANSLATIONS_SLACK_CHANNEL_ID: ${{ steps.creds-crowdout.outputs.TRANSLATIONS_SLACK_CHANNEL_ID }}
           MESSAGE: ${{ steps.trigger_fallbacks.outputs.translation_message }}
         run: |
           curl -sS -X POST "https://slack.com/api/chat.postMessage" \
-            -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+            -H "Authorization: Bearer CROWDOUT_SLACK_TOKEN" \
             -H "Content-Type: application/json; charset=utf-8" \
-            --data "{\"channel\": \"$SLACK_CHANNEL_ID\", \"text\": $(printf '%s' "$MESSAGE" | jq -Rs .), \"unfurl_links\": false, \"unfurl_media\": false}"
+            --data "{\"channel\": \"$TRANSLATIONS_SLACK_CHANNEL_ID\", \"text\": $(printf '%s' "$MESSAGE" | jq -Rs .), \"unfurl_links\": false, \"unfurl_media\": false}"
 
       - name: Comment PR with translation links (success)
         if: steps.trigger.outputs.triggered == 'true' && steps.slack_message.outcome == 'success'
         uses: thollander/actions-comment-pull-request@v1
         with:
           message: |
-            Translations have been requested in the [Translations channel](https://bridebook.slack.com/archives/${{ secrets.SLACK_CHANNEL_ID }})
+            Translations have been requested in the [Translations channel](https://bridebook.slack.com/archives/${{ secrets.TRANSLATIONS_SLACK_CHANNEL_ID }})
             
             Please remember to provide context for the translators in the request message thread!
 
@@ -89,7 +95,7 @@ jobs:
         uses: thollander/actions-comment-pull-request@v1
         with:
           message: |
-            Something went wrong when posting slack message, Copy the below message and paste it in [Translations channel](https://bridebook.slack.com/archives/${{ secrets.SLACK_CHANNEL_ID }}) manually:
+            Something went wrong when posting slack message, Copy the below message and paste it in [Translations channel](https://bridebook.slack.com/archives/${{ secrets.TRANSLATIONS_SLACK_CHANNEL_ID }}) manually:
             
             ```
             ${{ steps.trigger_fallbacks.outputs.translation_message }}
