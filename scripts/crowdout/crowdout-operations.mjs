@@ -67,6 +67,9 @@ const saveFile = async (fileData) => {
     headers: COMMON_HEADERS,
     body: JSON.stringify(fileData)
   });
+  if (!response.ok) {
+    console.log(`Error saving file ${fileData.path}: ${response.status} - ${response.message}`);
+  }
 }
 
 const getChangedJsonFiles = () => {
@@ -208,6 +211,12 @@ const main = async () => {
   if (FORBIDDEN_BRANCHES.includes(BRANCH) || !BRANCH.trim()) {
     process.exit(1);
   }
+
+  console.log('=> secrets loaded', {
+    SLACK_USER_MAP_JSON: {value: SLACK_USER_MAP_JSON, length: SLACK_USER_MAP_JSON?.length},
+    CMS_PATH: {value: CMS_PATH, length: CMS_PATH?.length},
+    CMS_API_TOKEN: {value: CMS_API_TOKEN, length: CMS_API_TOKEN?.length},
+  });
 
   switch (CROWDOUT_OPERATION) {
     case 'Trigger fallbacks': {
