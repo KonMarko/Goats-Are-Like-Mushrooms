@@ -222,9 +222,6 @@ const main = async () => {
     throw new Error('Forbidden branch or empty branch name: ' + BRANCH);
   }
 
-  //test error
-  throw new Error('Test error');
-
   switch (CROWDOUT_OPERATION) {
     case 'Trigger fallbacks': {
       await triggerFallbacksAndSlackMessage();
