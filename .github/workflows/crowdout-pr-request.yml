@@ -102,11 +102,13 @@ jobs:
             ```
             
             Please remember to provide context for the translators in the request message thread!
+            
+            [Check action run logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
       - name: Comment PR - general failure
         if: ${{ failure() && !steps.trigger_fallbacks.outputs.translation_message }}
         uses: thollander/actions-comment-pull-request@v1
         with:
           message: |
-            Something went wrong. Please check action logs for more details.
+            Something went wrong. Please check [action run logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for more details.
 
