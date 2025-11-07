@@ -81,7 +81,7 @@ jobs:
             -H "Content-Type: application/json; charset=utf-8" \
             --data "{\"channel\": \"$TRANSLATIONS_SLACK_CHANNEL_ID\", \"text\": $(printf '%s' "$MESSAGE" | jq -Rs .), \"unfurl_links\": false, \"unfurl_media\": false}"
 
-      - name: Comment PR with translation links (success)
+      - name: Comment PR with translation links (slack message success)
         if: ${{ success() }}
         uses: thollander/actions-comment-pull-request@v1
         with:
@@ -90,8 +90,8 @@ jobs:
             
             Please remember to provide context for the translators in the request message thread!
 
-      - name: Comment PR with translation links (failure)
-        if: ${{ failure() }}
+      - name: Comment PR with translation links (slack message failure)
+        if: ${{ failure() && steps.trigger_fallbacks.outputs.translation_message }}
         uses: thollander/actions-comment-pull-request@v1
         with:
           message: |
@@ -103,4 +103,10 @@ jobs:
             
             Please remember to provide context for the translators in the request message thread!
 
+      - name: Comment PR - general failure
+        if: ${{ failure() && !steps.trigger_fallbacks.outputs.translation_message }}
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: |
+            Something went wrong. Please check action logs for more details.
 
