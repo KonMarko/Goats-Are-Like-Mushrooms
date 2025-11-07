@@ -213,17 +213,17 @@ const triggerFallbacksAndSlackMessage = async () => {
   const links = saveSourceAndGenerateTranslationLinks(results);
   const message = createTranslationMessage(links);
   await setActionOutput(message);
-  //test error
-  throw new Error('Test error');
 
   return message;
 };
 
 const main = async () => {
   if (FORBIDDEN_BRANCHES.includes(BRANCH) || !BRANCH.trim()) {
-    process.exit(1);
+    throw new Error('Forbidden branch or empty branch name: ' + BRANCH);
   }
 
+  //test error
+  throw new Error('Test error');
 
   switch (CROWDOUT_OPERATION) {
     case 'Trigger fallbacks': {
