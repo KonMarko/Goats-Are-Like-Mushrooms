@@ -82,7 +82,7 @@ jobs:
             --data "{\"channel\": \"$TRANSLATIONS_SLACK_CHANNEL_ID\", \"text\": $(printf '%s' "$MESSAGE" | jq -Rs .), \"unfurl_links\": false, \"unfurl_media\": false}"
 
       - name: Comment PR with translation links (success)
-        if: steps.trigger.outputs.triggered == 'true' && steps.slack_message.outcome == 'success'
+        if: ${{ success() }}
         uses: thollander/actions-comment-pull-request@v1
         with:
           message: |
@@ -91,7 +91,7 @@ jobs:
             Please remember to provide context for the translators in the request message thread!
 
       - name: Comment PR with translation links (failure)
-        if: steps.trigger.outputs.triggered == 'true' && steps.slack_message.outcome == 'failure'
+        if: ${{ failure() }}
         uses: thollander/actions-comment-pull-request@v1
         with:
           message: |
