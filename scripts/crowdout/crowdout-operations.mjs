@@ -1,11 +1,11 @@
-import {execSync} from 'child_process';
+import { execSync } from 'child_process';
 
 //envs
 const AUTHOR_GH = process.env.AUTHOR_GH;
 const BASE_BRANCH = process.env.BASE_BRANCH;
 const BRANCH = process.env.BRANCH;
-const CMS_API_TOKEN = process.env.CMS_API_TOKEN
-const CMS_PATH = process.env.CMS_PATH
+const CMS_API_TOKEN = process.env.CMS_API_TOKEN;
+const CMS_PATH = process.env.CMS_PATH;
 const CROWDOUT_OPERATION = process.env.CROWDOUT_OPERATION;
 const PR_NUMBER = process.env.PR_NUMBER;
 const PR_TITLE = process.env.PR_TITLE;
@@ -14,15 +14,15 @@ const SLACK_USER_MAP_JSON = process.env.SLACK_USER_MAP_JSON;
 
 //constants
 const CREATE_LINKS_FOR_LANGUAGES = ['de-DE', 'fr-FR'];
-const CROWDOUT_API_PATH = CMS_PATH + '/api/crowdout/gh/'
+const CROWDOUT_API_PATH = CMS_PATH + '/api/crowdout/gh/';
 const CROWDOUT_API_GET_APP_CONFIG_PATH = CROWDOUT_API_PATH + 'get-app-config';
-const CROWDOUT_API_SAVE_FILE_PATH = CROWDOUT_API_PATH + 'save-file'
-const CROWDOUT_TRANSLATIONS_PATH = CMS_PATH + '/admin/crowdout/translations'
+const CROWDOUT_API_SAVE_FILE_PATH = CROWDOUT_API_PATH + 'save-file';
+const CROWDOUT_TRANSLATIONS_PATH = CMS_PATH + '/admin/crowdout/translations';
 const COMMON_HEADERS = {
   'Content-Type': 'application/json',
   api_token: CMS_API_TOKEN,
   'User-Agent': 'GitHubAction',
-}
+};
 const FORBIDDEN_BRANCHES = ['staging', 'production'];
 
 const readSlackMap = () => {
@@ -65,26 +65,26 @@ const saveFile = async (fileData) => {
   const response = await fetch(CROWDOUT_API_SAVE_FILE_PATH, {
     method: 'POST',
     headers: COMMON_HEADERS,
-    body: JSON.stringify(fileData)
+    body: JSON.stringify(fileData),
   });
   if (!response.ok) {
     console.log(`Error saving file ${fileData.path}: ${response.status} - ${response.message}`);
   }
-}
+};
 
 const getChangedJsonFiles = () => {
   // Ensure the remote branches are fetched
   execSync('git fetch --all');
-  const diffOutput = execSync(`git diff --name-only origin/${BASE_BRANCH}...origin/${BRANCH}`).toString();
+  const diffOutput = execSync(
+      `git diff --name-only origin/${BASE_BRANCH}...origin/${BRANCH}`,
+  ).toString();
 
-  return diffOutput
-    .split('\n')
-    .filter(file => file.endsWith('.json'));
+  return diffOutput.split('\n').filter((file) => file.endsWith('.json'));
 };
 
 const extractAppIds = (files) => {
   const appIds = new Set();
-  files.forEach(file => {
+  files.forEach((file) => {
     const appIdMatch = file.match(/packages\/([^\/]+)/);
     if (appIdMatch) {
       appIds.add(appIdMatch[1]);
@@ -97,7 +97,7 @@ const fetchAppConfig = async (appId) => {
   const response = await fetch(CROWDOUT_API_GET_APP_CONFIG_PATH, {
     method: 'POST',
     headers: COMMON_HEADERS,
-    body: JSON.stringify({ appId })
+    body: JSON.stringify({ appId }),
   });
 
   if (!response.ok) {
@@ -110,14 +110,17 @@ const fetchAppConfig = async (appId) => {
 
 const processChangedFiles = (allChangedJsonFiles, appId, appConfig) => {
   const results = [];
-  const {translationsPath, sourceLanguage} = appConfig;
+  const { translationsPath, sourceLanguage } = appConfig;
   const projectPath = `packages/${appId}/${translationsPath}/${sourceLanguage}/`;
 
-  const changedFiles = allChangedJsonFiles.filter(file => file.includes(projectPath));
+  const changedFiles = allChangedJsonFiles.filter((file) => file.includes(projectPath));
 
   for (const file of changedFiles) {
     const path = file.replace(/\.json$/, '');
-    const namespace = file.split('/').pop().replace(/\.json$/, '');
+    const namespace = file
+        .split('/')
+        .pop()
+        .replace(/\.json$/, '');
     const commitMessage = `Update ${sourceLanguage} translations for ${namespace}`;
     const content = execSync(`git show ${BRANCH}:${file}`).toString();
 
@@ -145,7 +148,12 @@ const saveSourceAndGenerateTranslationLinks = (results) => {
     // await saveFile(fileData); //uncomment after testing the messaging part
     for (const lang of CREATE_LINKS_FOR_LANGUAGES) {
       const crowdoutLink = `${CROWDOUT_TRANSLATIONS_PATH}/${encodeURIComponent(BRANCH)}/${fileData.appConfig.id}/${lang}/${fileData.namespace}?diff=true`;
-      links[lang].push({link: crowdoutLink, namespace: fileData.namespace, language: lang, appId: fileData.appConfig.id});
+      links[lang].push({
+        link: crowdoutLink,
+        namespace: fileData.namespace,
+        language: lang,
+        appId: fileData.appConfig.id,
+      });
     }
   }
 
@@ -153,14 +161,18 @@ const saveSourceAndGenerateTranslationLinks = (results) => {
 };
 
 const createTranslationMessage = (links) => {
-  const messageBase= `Hello :wave:, can I have translations for these please?
-${Object.entries(links).map(([lang, urls]) => {
-  const emoji = `:${lang.split('-')[0]}:`;
-  return `\n${emoji}:\n${urls.map(url => {
-    const {link, namespace, language, appId} = url
-    return `• <${link}| ${appId} | ${namespace} | ${language}>`;
-  }).join('\n')}`;
-}).join('\n')}`;
+  const messageBase = `Hello :wave:, can I have translations for these please?
+${Object.entries(links)
+      .map(([lang, urls]) => {
+        const emoji = `:${lang.split('-')[0]}:`;
+        return `\n${emoji}:\n${urls
+            .map((url) => {
+              const { link, namespace, language, appId } = url;
+              return `• <${link}| ${appId} | ${namespace} | ${language}>`;
+            })
+            .join('\n')}`;
+      })
+      .join('\n')}`;
   const messageWithPrLink = appendPrLink(messageBase);
   return appendCcForAuthor(messageWithPrLink);
 };
@@ -200,25 +212,18 @@ const triggerFallbacksAndSlackMessage = async () => {
 
   const links = saveSourceAndGenerateTranslationLinks(results);
   const message = createTranslationMessage(links);
-
-  console.log('=> message', message)
   await setActionOutput(message);
 
   return message;
 };
-
-
 
 const main = async () => {
   if (FORBIDDEN_BRANCHES.includes(BRANCH) || !BRANCH.trim()) {
     process.exit(1);
   }
 
-  console.log('=> secrets loaded', {
-    SLACK_USER_MAP_JSON: {value: SLACK_USER_MAP_JSON, length: SLACK_USER_MAP_JSON?.length},
-    CMS_PATH: {value: CMS_PATH, length: CMS_PATH?.length},
-    CMS_API_TOKEN: {value: CMS_API_TOKEN, length: CMS_API_TOKEN?.length},
-  });
+  //test error
+  throw new Error('Test error');
 
   switch (CROWDOUT_OPERATION) {
     case 'Trigger fallbacks': {
