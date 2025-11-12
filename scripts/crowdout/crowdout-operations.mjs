@@ -117,10 +117,9 @@ const processChangedFiles = (allChangedJsonFiles, appId, appConfig) => {
 
   for (const file of changedFiles) {
     const path = file.replace(/\.json$/, '');
-    const namespace = file
+    const namespace = path
         .split('/')
-        .pop()
-        .replace(/\.json$/, '');
+        .pop();
     const commitMessage = `Update ${sourceLanguage} translations for ${namespace}`;
     const content = execSync(`git show ${BRANCH}:${file}`).toString();
 
@@ -192,8 +191,7 @@ const triggerFallbacksAndSlackMessage = async () => {
   const appIds = extractAppIds(allChangedJsonFiles);
 
   if (appIds.size === 0) {
-    console.log('No appIds found');
-    return;
+    throw new Error('No appIds found');
   }
 
   const results = [];
@@ -208,6 +206,10 @@ const triggerFallbacksAndSlackMessage = async () => {
     } catch (error) {
       console.log(`Error processing appId ${appId}:`, error);
     }
+  }
+
+  if(!results.length) {
+    throw new Error('No source files found');
   }
 
   const links = saveSourceAndGenerateTranslationLinks(results);
