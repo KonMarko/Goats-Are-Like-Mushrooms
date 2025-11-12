@@ -54,7 +54,7 @@ jobs:
         if: steps.trigger.outputs.triggered == 'true'
         id: trigger_fallbacks
         env:
-          CMS_API_TOKEN: ${{ steps.creds-crowdout.outputs.CMS_API_TOKEN }}
+          BB_API_KEY: ${{ steps.creds-crowdout.outputs.BB_API_KEY }}
           CMS_PATH: ${{ steps.creds-crowdout.outputs.CMS_PATH }}
           BRANCH: ${{ github.head_ref || env.ISSUE_BRANCH }}
           BASE_BRANCH: ${{ env.BASE_BRANCH }}
