@@ -4,7 +4,7 @@ import { execSync } from 'child_process';
 const AUTHOR_GH = process.env.AUTHOR_GH;
 const BASE_BRANCH = process.env.BASE_BRANCH;
 const BRANCH = process.env.BRANCH;
-const CMS_API_TOKEN = process.env.CMS_API_TOKEN;
+const BB_API_KEY = process.env.BB_API_KEY;
 const CMS_PATH = process.env.CMS_PATH;
 const CROWDOUT_OPERATION = process.env.CROWDOUT_OPERATION;
 const PR_NUMBER = process.env.PR_NUMBER;
@@ -20,7 +20,7 @@ const CROWDOUT_API_SAVE_FILE_PATH = CROWDOUT_API_PATH + 'save-file';
 const CROWDOUT_TRANSLATIONS_PATH = CMS_PATH + '/admin/crowdout/translations';
 const COMMON_HEADERS = {
   'Content-Type': 'application/json',
-  api_token: CMS_API_TOKEN,
+  Authorization: `Bearer ${BB_API_KEY}`,
   'User-Agent': 'GitHubAction',
 };
 const FORBIDDEN_BRANCHES = ['staging', 'production'];
