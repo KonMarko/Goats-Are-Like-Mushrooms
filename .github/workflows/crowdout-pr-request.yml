@@ -90,8 +90,9 @@ jobs:
           MSG_MINIMAL: true
           SLACK_TOKEN: ${{ steps.creds-crowdout.outputs.CROWDOUT_SLACK_TOKEN }}
           SLACK_CHANNEL: ${{ steps.creds-crowdout.outputs.TRANSLATIONS_SLACK_CHANNEL_ID }}
-          SLACK_TITLE: "Translation Request"
+          SLACK_TITLE: "Hello :wave:, can I have translations for these please?"
           SLACK_MESSAGE: ${{ steps.trigger_fallbacks.outputs.translation_message }}
+          SLACK_FOOTER: ${{ env.TARGET_BRANCH }}
 
       - name: Comment PR with translation links (slack message success)
         if: ${{ success() }}
