@@ -69,7 +69,7 @@ const saveFile = async (fileData) => {
     body: JSON.stringify(fileData),
   });
   if (!response.ok) {
-    console.log(`Error saving file ${fileData.path}: ${response.status} - ${response.statusText}`);
+    console.error(`Error saving file ${fileData.path}: ${response.status} - ${response.statusText}`);
   }
 };
 
@@ -103,7 +103,7 @@ const fetchAppConfig = async (appId) => {
 
   if (!response.ok) {
     const errorText = await response.text();
-    console.log(
+    console.error(
         `Error for appId ${appId}: ${response.status} - ${response.statusText} - ${errorText}`,
     );
     return null;
@@ -196,6 +196,7 @@ const triggerFallbacksAndSlackMessage = async () => {
   }
 
   const results = [];
+  const errors = [];
 
   for (const appId of appIds) {
     try {
@@ -205,7 +206,17 @@ const triggerFallbacksAndSlackMessage = async () => {
       const fileResults = processChangedFiles(allChangedJsonFiles, appId, appConfig);
       results.push(...fileResults);
     } catch (error) {
-      console.log(`Error processing appId ${appId}:`, error);
+      console.error(`Error processing appId ${appId}:`, error);
+      errors.push({ appId, error });
+    }
+  }
+
+  if (errors.length > 0) {
+    const errorMessage = `Encountered ${errors.length} error(s) while processing appIds: ${errors.map(e => e.appId).join(', ')}`;
+    console.warn(errorMessage);
+
+    if (errors.length === appIds.size) {
+      throw new Error(`All appIds failed to process: ${errorMessage}`);
     }
   }
 
