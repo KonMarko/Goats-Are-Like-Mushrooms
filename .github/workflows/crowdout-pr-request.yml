@@ -6,6 +6,7 @@ on:
 
 jobs:
   crowdout-pr-request:
+    if: github.event.issue.pull_request
     runs-on: ubuntu-latest
     steps:
       - uses: khan/pull-request-comment-trigger@v1.1.0
@@ -31,7 +32,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh pr checkout ${{ github.event.issue.number }}
-          echo "ISSUE_BRANCH=$(git branch --show-current)" >> $GITHUB_ENV
+          BRANCH=$(git branch --show-current) && echo "ISSUE_BRANCH=$BRANCH" >> $GITHUB_ENV || exit 1
 
       - name: Get comment author
         if: ${{ github.event_name == 'issue_comment' && steps.trigger.outputs.triggered == 'true'}}
@@ -70,7 +71,6 @@ jobs:
       - name: Send Slack message
         id: slack_message
         if: steps.trigger.outputs.triggered == 'true'
-        continue-on-error: true
         env:
           CROWDOUT_SLACK_TOKEN: ${{ steps.creds-crowdout.outputs.CROWDOUT_SLACK_TOKEN }}
           TRANSLATIONS_SLACK_CHANNEL_ID: ${{ steps.creds-crowdout.outputs.TRANSLATIONS_SLACK_CHANNEL_ID }}
@@ -86,8 +86,8 @@ jobs:
         uses: thollander/actions-comment-pull-request@v1
         with:
           message: |
-            Translations have been requested in the [Translations channel](https://bridebook.slack.com/archives/${{ secrets.TRANSLATIONS_SLACK_CHANNEL_ID }})
-            
+            Translations have been requested in the [Translations channel](https://bridebook.slack.com/archives/${{ steps.creds-crowdout.outputs.TRANSLATIONS_SLACK_CHANNEL_ID }})
+
             Please remember to provide context for the translators in the request message thread!
 
       - name: Comment PR with translation links (slack message failure)
@@ -95,14 +95,14 @@ jobs:
         uses: thollander/actions-comment-pull-request@v1
         with:
           message: |
-            Something went wrong when posting slack message, Copy the below message and paste it in [Translations channel](https://bridebook.slack.com/archives/${{ secrets.TRANSLATIONS_SLACK_CHANNEL_ID }}) manually:
-            
+            Something went wrong when posting slack message, Copy the below message and paste it in [Translations channel](https://bridebook.slack.com/archives/${{ steps.creds-crowdout.outputs.TRANSLATIONS_SLACK_CHANNEL_ID }}) manually:
+
             ```
             ${{ steps.trigger_fallbacks.outputs.translation_message }}
             ```
-            
+
             Please remember to provide context for the translators in the request message thread!
-            
+
             [Check action run logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
       - name: Comment PR - general failure

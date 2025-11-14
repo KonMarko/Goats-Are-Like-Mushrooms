@@ -1,4 +1,5 @@
 import { execSync } from 'child_process';
+import { appendFileSync } from 'fs';
 
 //envs
 const AUTHOR_GH = process.env.AUTHOR_GH;
@@ -68,7 +69,7 @@ const saveFile = async (fileData) => {
     body: JSON.stringify(fileData),
   });
   if (!response.ok) {
-    console.log(`Error saving file ${fileData.path}: ${response.status} - ${response.message}`);
+    console.log(`Error saving file ${fileData.path}: ${response.status} - ${response.statusText}`);
   }
 };
 
@@ -85,7 +86,7 @@ const getChangedJsonFiles = () => {
 const extractAppIds = (files) => {
   const appIds = new Set();
   files.forEach((file) => {
-    const appIdMatch = file.match(/packages\/([^\/]+)/);
+    const appIdMatch = file.match(/packages[/]([^/]+)/);
     if (appIdMatch) {
       appIds.add(appIdMatch[1]);
     }
@@ -101,7 +102,10 @@ const fetchAppConfig = async (appId) => {
   });
 
   if (!response.ok) {
-    console.log(`Error for appId ${appId}: ${response.status} - ${response.message}`);
+    const errorText = await response.text();
+    console.log(
+        `Error for appId ${appId}: ${response.status} - ${response.statusText} - ${errorText}`,
+    );
     return null;
   }
 
@@ -116,11 +120,8 @@ const processChangedFiles = (allChangedJsonFiles, appId, appConfig) => {
   const changedFiles = allChangedJsonFiles.filter((file) => file.includes(projectPath));
 
   for (const file of changedFiles) {
-    const path = file.replace(/\.json$/, '');
-    const namespace = file
-        .split('/')
-        .pop()
-        .replace(/\.json$/, '');
+    const path = file.replace(/[.]json$/, '');
+    const namespace = path.split('/').pop();
     const commitMessage = `Update ${sourceLanguage} translations for ${namespace}`;
     const content = execSync(`git show ${BRANCH}:${file}`).toString();
 
@@ -180,9 +181,8 @@ ${Object.entries(links)
 const setActionOutput = async (message) => {
   const outputPath = process.env.GITHUB_OUTPUT;
   if (outputPath) {
-    const fs = await import('fs');
     const delim = 'GH_DELIM_' + Math.random().toString(36).slice(2);
-    fs.appendFileSync(outputPath, `translation_message<<${delim}\n${message}\n${delim}\n`, 'utf8');
+    appendFileSync(outputPath, `translation_message<<${delim}\n${message}\n${delim}\n`, 'utf8');
   }
 };
 
@@ -192,8 +192,7 @@ const triggerFallbacksAndSlackMessage = async () => {
   const appIds = extractAppIds(allChangedJsonFiles);
 
   if (appIds.size === 0) {
-    console.log('No appIds found');
-    return;
+    throw new Error('No appIds found');
   }
 
   const results = [];
@@ -208,6 +207,10 @@ const triggerFallbacksAndSlackMessage = async () => {
     } catch (error) {
       console.log(`Error processing appId ${appId}:`, error);
     }
+  }
+
+  if (!results.length) {
+    throw new Error('No source files found');
   }
 
   const links = saveSourceAndGenerateTranslationLinks(results);
@@ -233,9 +236,4 @@ const main = async () => {
   }
 };
 
-try {
-  await main();
-} catch (error) {
-  console.log(error);
-  process.exit(1);
-}
+main();
