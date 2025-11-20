@@ -1,6 +1,6 @@
 {
   "addItemPlaceholder": "Gesprächig, freundlich, abenteuerlustig",
-  "addTag": "Hinzufügen",
+  "addTag": "Add - changed",
   "addTagDescription": "Fügen Sie zwischen 1 und 3 Tags hinzu",
   "briefDescriptionLabel": "Eine kurze Beschreibung",
   "cancel": "Abbrechen",
@@ -11,6 +11,7 @@
   "introPlaceholder": "Teilen Sie Ihre Lieblingsbewertung, die Sie am besten beschreibt.",
   "nameLabel": "Anzuzeigender Name",
   "namePlaceholder": "Wie sollen Paare Sie ansprechen?",
+  "newKey": "Banane",
   "pageTitle": "Über Sie",
   "personalityTagPlaceholder": "Persönlichkeit",
   "photoUploadError": "Hochladen des Fotos fehlgeschlagen",
@@ -23,7 +24,6 @@
   "tagPlaceholder": "Tags",
   "tagsLabel": "Beschreiben Sie sich selbst in 3 Worten",
   "unsavedChanges": "Sie haben ungespeicherte Änderungen",
-  "updatePhoto": "Foto aktualisieren",
   "upload": "Hochladen",
   "uploadPhoto": "Foto hochladen",
   "yourNamePlaceholderText": "[Ihr Name]",
