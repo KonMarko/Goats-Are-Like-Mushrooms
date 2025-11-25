@@ -196,6 +196,6 @@
   "weddingDetails.textField.save": "Speichern",
   "weddingDetails.venue.checkbox.label": "Verwendet Fotos von eurer Hochzeitslocation",
   "weddingDetails.venue.input.label": "Location",
-  "weddingDetails.venue.input.placeholder": "Location hinzufügen",
+  "weddingDetails.venue.input.placeholder": "Location hinzufügen"
   "weddingDetails.venue.title": "Hochzeitslocation"
 }
