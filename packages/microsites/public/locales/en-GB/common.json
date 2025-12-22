@@ -1,4 +1,5 @@
 {
+  "another.new.key": "Another new key",
   "auth.input.email.format.errorTxt": "Hmm, looks like that email is not in the correct format.",
   "button.save": "Save",
   "datePickerTitle.aWeekday": "A {{weekDay}}",
@@ -10,7 +11,7 @@
   "errorPage.errorOnClient": "An error occurred on client",
   "errorPage.errorOnServer": "An error {{ statusCode }} occurred on server",
   "errorPage.imageCaption": "By Fiona Kelly Wedding Photography",
-  "errorPage.notFound": "404 page not found",
+  "errorPage.notFound": "404 page not found - modified",
   "errorPage.pageTitle": "Not found",
   "errorPage.refresh": "Please refresh the page.",
   "errorPage.title": "Hmm, something is not quite right with the page you're looking for...",
@@ -18,7 +19,6 @@
   "form.validation.error.city": "Please enter city",
   "form.validation.error.country": "Please enter country",
   "form.validation.error.email": "Please enter email address",
-  "form.validation.error.postcode": "Please enter postcode",
   "options.label.friday": "Friday",
   "options.label.monThurs": "Mon-Thurs",
   "options.label.saturday": "Saturday",
@@ -30,5 +30,5 @@
   "season.summer.months": "Jul/Aug/Sep",
   "season.summer.name": "Summer",
   "season.winter.months": "Jan/Feb/Mar",
-  "season.winter.name": "Winter"
+  "season.winter.name": "Winter",
 }
