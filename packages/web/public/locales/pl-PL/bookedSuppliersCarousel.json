@@ -1,0 +1,7 @@
+{
+  "bookedSuppliers.add": "Dodaj usługodawcę",
+  "bookedSuppliers.favourites": "Ulubionych: {{ count }}",
+  "bookedSuppliers.favourites_plural": "Ulubionych: {{ count }}",
+  "bookedSuppliers.manage": "Zarządzaj usługodawcą",
+  "bookedSuppliers.title": "Wasz zespół marzeń"
+}

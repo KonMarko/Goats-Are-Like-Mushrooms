@@ -1,0 +1,18 @@
+{
+  "bookmark.successMsg": "Zapisano inspirację w albumie",
+  "fullImageView.bookmarkButton": "Dodaj do zakładek",
+  "fullImageView.similarImagesText": "Przejrzyj powiązane obrazy",
+  "fullImageView.unbookmarkButton": "Dodano do zakładek",
+  "fullImageView.viewProfileButton": "Zobacz profil",
+  "page.head": "Wizja wesela",
+  "savedInspiration.addButton": "Dodaj więcej inspiracji",
+  "savedInspiration.addInspirationButtonLabel": "Dodaj inspirację",
+  "savedInspiration.addInspirationSubtitle": "Znajdź inspiracje na wesele w kilka sekund",
+  "savedInspiration.addInspirationText": "Zacznij dodawać inspiracje!",
+  "savedInspiration.title": "Wasza wizja wesela",
+  "searchInput.fixed.placeholder": "Szukaj",
+  "searchInput.main.placeholder": "Szukaj inspiracji, np. radosne wesele",
+  "title": "Odkryj wizję Waszego wesela",
+  "unbookmark.error": "Coś poszło nie tak",
+  "unbookmark.successMsg": "Usunięto inspirację z albumu"
+}

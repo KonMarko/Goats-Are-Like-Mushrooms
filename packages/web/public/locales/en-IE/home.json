@@ -1,4 +1,8 @@
 {
+  "bookSupplierWidget.supplier.description": "Add them to your dream team",
+  "bookSupplierWidget.supplier.title": "Already booked a supplier?",
+  "bookSupplierWidget.venue.description": "Add it now to personalise your planning",
+  "bookSupplierWidget.venue.title": "Already booked your venue?",
   "eventNearby": "Discover events and open days near you",
   "page.head": "My Wedding",
   "searchInputPlaceholder": "Choose a location",
@@ -8,5 +12,7 @@
   "specialOffersCarousel.seeMore_plural": "See {{count}} more offers",
   "supplierTypes.title": "Find your dream supplier",
   "trendingPhotographers": "Popular photographers near you",
-  "trendingVenues": "Popular venues near you"
+  "trendingVenues": "Popular venues near you",
+  "venueTypes.title": "Popular venue types",
+  "venueTypes.titleWithLocation": "Popular venue types in {{location}}"
 }

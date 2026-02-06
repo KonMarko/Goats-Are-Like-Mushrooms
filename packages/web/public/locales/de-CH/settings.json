@@ -23,7 +23,7 @@
   "confirmationModal.continue": "Weiter",
   "confirmationModal.description": "Dadurch werden die empfohlenen Anbieter je nach ihrer Verfügbarkeit in deinem Land geändert. \n\n Vielleicht möchtest du auch deine bestehenden Planungsdaten überprüfen, um sicherzustellen, dass sie noch aktuell sind.",
   "confirmationModal.location.label": "Einen bestimmten Ort eingeben",
-  "confirmationModal.location.placeholder": "z.B. Region, Stadt oder Dorf",
+  "confirmationModal.location.placeholder": "z.B. Region, Stadt oder Ortschaft",
   "confirmationModal.location.subtitle": "heiraten?",
   "confirmationModal.location.title": "Wo in {{country}} möchtet ihr",
   "confirmationModal.no": "Nein, abbrechen",

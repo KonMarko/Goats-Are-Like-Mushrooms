@@ -1,16 +1,18 @@
 {
-  "betaLabel": "Beta",
   "bookmark.successMsg": "Inspiration in deinem Notizbuch gespeichert",
   "fullImageView.bookmarkButton": "Lesezeichen",
-  "fullImageView.similarImagesText": "Ähnliche Bilder",
+  "fullImageView.similarImagesText": "Ähnliche Bilder entdecken",
   "fullImageView.unbookmarkButton": "Gespeichert",
   "fullImageView.viewProfileButton": "Profil ansehen",
-  "page.head": "Hochzeitsinspiration",
+  "page.head": "Hochzeitsvision",
   "savedInspiration.addButton": "Mehr Inspiration hinzufügen",
+  "savedInspiration.addInspirationButtonLabel": "Inspiration hinzufügen",
+  "savedInspiration.addInspirationSubtitle": "Findet Inspiration für eure Hochzeit in Sekundenschnelle",
   "savedInspiration.addInspirationText": "Fang an, Inspiration hinzuzufügen!",
-  "searchInput.fixed.placeholder": "Bildersuche",
+  "savedInspiration.title": "Eure Vision",
+  "searchInput.fixed.placeholder": "Suchen",
   "searchInput.main.placeholder": "Suche nach Inspiration, z.B. freudig",
-  "title": "Lass dich inspirieren",
+  "title": "Hochzeitsvision und Inspiration",
   "unbookmark.error": "Etwas ist schief gelaufen",
   "unbookmark.successMsg": "Inspiration aus deinem Notizbuch entfernt"
 }

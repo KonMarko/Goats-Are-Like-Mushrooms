@@ -12,8 +12,6 @@
   "dragCard.overlay.text.noThanks": "No Thanks",
   "dragCard.overlay.text.saved": "Saved",
   "favouriteButton.list": "Add to favourites",
-  "featureControlsExplainedStep.concierge.subtitle": "The simplest way to discover your top venue matches",
-  "featureControlsExplainedStep.concierge.title": "Swipe your way to\n\"The One\"",
   "featureControlsExplainedStep.continueButton": "Get started",
   "featureControlsExplainedStep.scrollUp": "Scroll up to see more information",
   "featureControlsExplainedStep.subtitle": "Let's have some fun!",
@@ -23,14 +21,6 @@
   "featureControlsExplainedStep.tapFavouriteButton": "Tap to favourite",
   "featureControlsExplainedStep.tapSkipButton": "Tap to skip",
   "featureControlsExplainedStep.title": "Swipe right on venues to find your perfect match!",
-  "featureEndResultsStep.concierge.exploreVenuesCta": "Explore more venues",
-  "featureEndResultsStep.concierge.requestBrochureCta": "Send messages now",
-  "featureEndResultsStep.concierge.subtitle.hasFavourites": "Looks like you’ve found some real gems! Start a conversation and take the next step.",
-  "featureEndResultsStep.concierge.subtitle.noFavourites": "Looks like you haven’t saved any venues to your favourites. Explore more options for your big day now!",
-  "featureEndResultsStep.concierge.title.hasFavourites": "We’ve saved {{count}} match to your Favourties!",
-  "featureEndResultsStep.concierge.title.hasFavourites_plural": "We’ve saved {{count}} matches to your Favourties!",
-  "featureEndResultsStep.concierge.title.noFavourites": "You’re one step closer!",
-  "featureEndResultsStep.concierge.viewFavouritesCta": "Go to favourites",
   "featureEndResultsStep.dummyCard1.venueName": "The Everly Manor",
   "featureEndResultsStep.dummyCard2.venueName": "The Rosewood Hall",
   "featureEndResultsStep.dummyCard3.venueName": "The Willows Estate",
@@ -69,5 +59,6 @@
   "noResultsView.subtitle": "We can't seem to find any venues matching your criteria. Please review your preferences now.",
   "noResultsView.title": "No matches found",
   "pageTitle": "Discover your perfect {{ supplierCategory }}",
-  "skipButton.list": "No, thanks"
+  "skipButton.list": "No, thanks",
+  "swipeUpHint": "Swipe up to discover more about this venue"
 }

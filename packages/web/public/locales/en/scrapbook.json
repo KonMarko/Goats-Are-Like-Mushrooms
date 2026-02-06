@@ -13,8 +13,8 @@
   "noNotesTitle": "Start adding notes!",
   "notesNumber": "{{count}} note",
   "notesNumber_plural": "{{count}} notes",
-  "pageTitle": "Our Wedding Scrapbook",
-  "popup.title": "Scrapbook",
-  "tabs.savedInspiration": "Inspiration",
-  "tabs.scrapbook": "Scrapbook"
+  "pageTitle.inspiration": "Our Wedding Inspiration",
+  "popup.inspiration.title": "Inspiration",
+  "tabs.savedInspiration": "Wedding vision",
+  "tabs.scrapbook": "Notes"
 }

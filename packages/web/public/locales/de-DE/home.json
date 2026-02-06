@@ -1,12 +1,17 @@
 {
+  "bookSupplierWidget.supplier.description": "Zum Dreamteam hinzufügen",
+  "bookSupplierWidget.supplier.title": "Bereits einen Dienstleister gebucht?",
+  "bookSupplierWidget.venue.description": "Jetzt hinzufügen, damit wir eure Planung personalisieren können",
+  "bookSupplierWidget.venue.title": "Schon eine Location gebucht?",
   "eventNearby": "Entdecke Events und Tage der offenen Tür in eurer Nähe",
   "page.head": "Meine Hochzeit",
-  "searchInputPlaceholder": "Wähle einen Standort",
   "seeAll": "Alle anzeigen",
   "specialOffers.title": "Für euch ausgesuchte Wochenangebote",
   "specialOffersCarousel.seeMore": "Siehe {{count}} weiteres Angebot",
   "specialOffersCarousel.seeMore_plural": "Siehe {{count}} weitere Angebote",
   "supplierTypes.title": "Findet den perfekten Dienstleister",
   "trendingPhotographers": "Beliebte Fotografen in eurer Nähe",
-  "trendingVenues": "Beliebte Locations in deiner Nähe"
+  "trendingVenues": "Beliebte Locations in deiner Nähe",
+  "venueTypes.title": "Beliebte Location-Arten",
+  "venueTypes.titleWithLocation": "Beliebte Location Arten in {{location}}"
 }

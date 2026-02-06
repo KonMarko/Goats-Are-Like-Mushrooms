@@ -12,8 +12,6 @@
   "dragCard.overlay.text.noThanks": "Nein, danke",
   "dragCard.overlay.text.saved": "Gespeichert",
   "favouriteButton.list": "Zu Favoriten hinzufügen",
-  "featureControlsExplainedStep.concierge.subtitle": "Der einfachste Weg, deine Top-Hochzeitslocations zu entdecken",
-  "featureControlsExplainedStep.concierge.title": "Swipen durch fantastische Locations",
   "featureControlsExplainedStep.continueButton": "Los geht's",
   "featureControlsExplainedStep.scrollUp": "Nach oben scrollen für mehr Information",
   "featureControlsExplainedStep.subtitle": "Viel Spaß!",
@@ -23,14 +21,6 @@
   "featureControlsExplainedStep.tapFavouriteButton": "Zum Speichern tippen",
   "featureControlsExplainedStep.tapSkipButton": "Zum Überspringen tippen",
   "featureControlsExplainedStep.title": "Nach rechts swipen, um die perfekte Location zu finden!",
-  "featureEndResultsStep.concierge.exploreVenuesCta": "Mehr Locations erkunden",
-  "featureEndResultsStep.concierge.requestBrochureCta": "Nachrichten jetzt senden",
-  "featureEndResultsStep.concierge.subtitle.hasFavourites": "Sieht aus, als hättet ihr ein paar echte Perlen gefunden! Schaut euch diese in den Favoriten an.",
-  "featureEndResultsStep.concierge.subtitle.noFavourites": "Sieht so aus, als hättet ihr keine Locations zu euren Favoriten hinzugefügt. Entdeckt jetzt weitere Optionen für euren großen Tag!",
-  "featureEndResultsStep.concierge.title.hasFavourites": "Wir haben {{count}} Match zu euren Favoriten hinzugefügt!",
-  "featureEndResultsStep.concierge.title.hasFavourites_plural": "Wir haben {{count}} Matches zu euren Favoriten hinzugefügt!",
-  "featureEndResultsStep.concierge.title.noFavourites": "Ihr seid einen Schritt näher dran!",
-  "featureEndResultsStep.concierge.viewFavouritesCta": "Zu den Favoriten",
   "featureEndResultsStep.dummyCard1.venueName": "Eventgut Hohenfried",
   "featureEndResultsStep.dummyCard2.venueName": "Schloss Wolkenkuss",
   "featureEndResultsStep.dummyCard3.venueName": "Villa Seerose",
@@ -69,5 +59,6 @@
   "noResultsView.subtitle": "Wir können keine Locations finden, die euren Kriterien entsprechen. Bitte überprüft jetzt eure Präferenzen.",
   "noResultsView.title": "Keine Matches gefunden",
   "pageTitle": "Entdeckt euer perfektes {{ supplierCategory }}-Match",
-  "skipButton.list": "Nein, danke"
+  "skipButton.list": "Nein, danke",
+  "swipeUpHint": "Nach oben swipen, um mehr über diese Location zu erfahren"
 }

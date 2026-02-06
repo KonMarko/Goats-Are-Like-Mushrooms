@@ -1,16 +1,18 @@
 {
-  "betaLabel": "Beta",
   "bookmark.successMsg": "Inspiration saved to your scrapbook",
   "fullImageView.bookmarkButton": "Bookmark",
-  "fullImageView.similarImagesText": "Similar images",
+  "fullImageView.similarImagesText": "Explore related images",
   "fullImageView.unbookmarkButton": "Bookmarked",
   "fullImageView.viewProfileButton": "View profile",
-  "page.head": "Wedding inspiration",
+  "page.head": "Wedding vision",
   "savedInspiration.addButton": "Add more inspiration",
+  "savedInspiration.addInspirationButtonLabel": "Add inspiration",
+  "savedInspiration.addInspirationSubtitle": "Search to find your wedding inspiration in seconds",
   "savedInspiration.addInspirationText": "Start adding inspiration!",
-  "searchInput.fixed.placeholder": "Image search",
+  "savedInspiration.title": "Your wedding vision",
+  "searchInput.fixed.placeholder": "Search",
   "searchInput.main.placeholder": "Search for inspiration, e.g. joyful",
-  "title": "Get inspired",
+  "title": "Discover your wedding vision",
   "unbookmark.error": "Something went wrong",
   "unbookmark.successMsg": "Inspiration removed from your scrapbook"
 }

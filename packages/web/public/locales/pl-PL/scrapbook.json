@@ -1,0 +1,20 @@
+{
+  "addNote": "Dodaj notatkę",
+  "editContent.label": "Notatka",
+  "editContent.placeholder": "Piosenki do tańca, role na weselu, co trzeba kupić, ulubione suknie – dodaj wszystko, co zechcesz!",
+  "editNote": "Edytuj notatkę",
+  "editNoteAddPhotos": "Dodaj zdjęcia",
+  "editNoteDelete": "Usuń notatkę",
+  "editTitle.label": "Tytuł notatki",
+  "editTitle.placeholder": "O czym jest ta notatka?",
+  "modalDeleteSubtitle": "Ta notatka zniknie z albumu.",
+  "modalDeleteTitle": "Czy usunąć z albumu?",
+  "noNotesDesc": "Wykorzystaj album do robienia notatek, zapisywania zdjęć i porządkowania pomysłów.",
+  "noNotesTitle": "Zacznij dodawać notatki!",
+  "notesNumber": "Liczba notatek: {{count}}",
+  "notesNumber_plural": "Liczba notatek: {{count}}",
+  "pageTitle.inspiration": "Our Wedding Inspiration",
+  "popup.inspiration.title": "Inspiration",
+  "tabs.savedInspiration": "Wizja wesela",
+  "tabs.scrapbook": "Notatki"
+}

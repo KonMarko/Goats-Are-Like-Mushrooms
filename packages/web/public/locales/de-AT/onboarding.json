@@ -26,7 +26,7 @@
   "feedbackBudget": "Teilt euer Budget mithilfe des Budget-Tools ein!",
   "introBudget": "Schätzt euer gesamtes Hochzeitsbudget. Wir erstellen einen Kostenüberblick damit ihr genau wisst wie viel ihr wofür ausgeben solltet. Eine durchschnittliche Hochzeit in Österreich kostet <bold>15.000 €</bold>.",
   "introBudgetNoVenue": "Gebt eine Einschätzung ab! Wir erstellen einen Kostenüberschlag für euch und finden die Locations, die am besten zu euch und eurem Budget passen.\n\n(Eine Hochzeit in Österreich kostet im Durchschnitt <bold>15.000 €</bold>.)",
-  "locationInputPlaceholder": "Gib eine deutsche Stadt oder Region ein",
+  "locationInputPlaceholder": "Gebt eine österreichische Stadt, ein Bundesland oder eine Region ein",
   "page.title": "Onboarding",
   "planning.initialBudget": "Wir haben ein Budget im Auge, aber noch keine Location gebucht",
   "planning.notStarted": "Noch nichts",

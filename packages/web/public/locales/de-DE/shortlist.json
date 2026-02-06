@@ -63,6 +63,7 @@
   "details.buttons.shareProfile": "Profil teilen",
   "details.buttons.unbook": "Dienstleister nicht als gebucht markieren",
   "details.buttons.unfavouriteSupplier": "Diesen Dienstleister aus den Favoriten entfernen",
+  "details.buttons.viewPriceEstimate": "Preisschätzung ansehen",
   "details.buttons.viewProfile": "Profil ansehen",
   "details.pill.booked": "Gebucht",
   "details.pill.bookedOn": "Gebucht am {{date}}",

@@ -1,13 +1,7 @@
 {
   "downloadAppBanner.button": "USE APP",
   "downloadAppBanner.headline": "Get the Bridebook app",
-  "pushNotificationsOptInModal.bbLiteDescription": "We'll notify you about staying organised and special offers.",
-  "pushNotificationsOptInModal.bbLiteTitle": "Get updates on your planning progress",
-  "pushNotificationsOptInModal.confirmButton": "Yes, please!",
-  "pushNotificationsOptInModal.description": "Top suppliers get snapped up fast. Keep your notifications on to respond quickly to new messages and view the latest special offers.",
   "pushNotificationsOptInModal.maybeLater": "Maybe later",
-  "pushNotificationsOptInModal.notNow": "Not now",
-  "pushNotificationsOptInModal.title": "Get real-time responses from suppliers",
   "pushNotificationsOptInModal.variantConfirmButton.keepUpdated": "Yes, keep me updated",
   "pushNotificationsOptInModal.variantConfirmButton.turnOnNotifications": "Turn on notifications",
   "pushNotificationsOptInModal.variantDescription.articles": "We’ll share expert advice based on your wedding timeline.",

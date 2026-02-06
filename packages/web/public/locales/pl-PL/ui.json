@@ -1,0 +1,23 @@
+{
+  "addAPhoto": "Dodaj<1></1>zdjęcie",
+  "back": "Wstecz",
+  "confetti.pressMe": "Naciśnij mnie",
+  "fileFormat": "<0>Format pliku: <1>.JPG</1>, <3>.PNG</3> or <6>.WEBP</6> | Minimalna szerokość: <8>600 pikseli</8> | Maksymalny rozmiar pliku: <10>50mb</10><11></11></0>",
+  "fileUploadLimitReached": "Osiągnięto maksymalną dozwoloną liczbę plików",
+  "photoUploadFileSize.validation": "Plik {{fileName}}<1>nie został przesłany.</1><2>Dozwolony rozmiar wynosi </2><3>{{maxFileSize}} MB</3>.",
+  "photoUploadFileType.validation": "Plik {{fileName}}<1>nie został przesłany.</1>Dozwolone typy plików: <3>{{userFriendlyTypes}}</3>.",
+  "photoUploadImageSize.validation": "Plik {{fileName}}<1>nie został przesłany.</1><2><0>Zdjęcie musi mieć szerokość co najmniej </0><1>{{minImageWidth}} px </1><2></2></2>",
+  "photoUploadLimit.validation": "Plik {{fileName}}<1>nie został przesłany.</1>Osiągnięto limit przesyłania plików.",
+  "profilePhoto.error.fileType": "Obsługiwane są tylko pliki *.jpg i *.png.",
+  "profilePhoto.error.main": "Plik {{name}} nie został przesłany.",
+  "profilePhoto.error.maxSize": "Plik nie został przesłany, maksymalna rozdzielczość wynosi {{width}}x{{height}}.",
+  "profilePhoto.error.minSize": "Zdjęcie musi mieć szerokość co najmniej {{minImageWidth}} px.",
+  "profilePhoto.error.sizeMsg": "Dozwolony rozmiar to 8 MB.",
+  "removePhoto": "Usuń",
+  "suggestionCustom.addManually": "Dodaj jego dane ręcznie tutaj.",
+  "suggestionCustom.supplierNotListed": "Usługodawcy nie ma na liście?",
+  "textFieldPlaceholder": "Wpisz coś",
+  "uploadAPhoto": "Prześlij",
+  "uploading": "Przesyłanie",
+  "uploadNewPhoto": "Prześlij/Zmień"
+}

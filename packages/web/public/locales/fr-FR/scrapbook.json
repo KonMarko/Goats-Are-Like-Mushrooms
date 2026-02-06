@@ -13,8 +13,8 @@
   "noNotesTitle": "Commencez à ajouter vos notes !",
   "notesNumber": "{{count}} note",
   "notesNumber_plural": "{{count}} notes",
-  "pageTitle": "Album de mariage",
-  "popup.title": "Album",
-  "tabs.savedInspiration": "Inspiration",
-  "tabs.scrapbook": "Album"
+  "pageTitle.inspiration": "Notre inspiration pour le mariage",
+  "popup.inspiration.title": "Inspiration",
+  "tabs.savedInspiration": "Mariage idéal",
+  "tabs.scrapbook": "Notes"
 }

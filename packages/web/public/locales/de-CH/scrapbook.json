@@ -13,8 +13,8 @@
   "noNotesTitle": "Fang an Notizen hinzuzufügen!",
   "notesNumber": "{{count}} Notiz",
   "notesNumber_plural": "{{count}} Notizen",
-  "pageTitle": "Unser Hochzeits-Notizbuch",
-  "popup.title": "Notizbuch",
-  "tabs.savedInspiration": "Inspiration",
-  "tabs.scrapbook": "Notizbuch"
+  "popup.inspiration.title": "Inspiration",
+  "pageTitle.inspiration": "Unsere Hochzeitsinspiration",
+  "tabs.savedInspiration": "Hochzeitsvision",
+  "tabs.scrapbook": "Notizen"
 }

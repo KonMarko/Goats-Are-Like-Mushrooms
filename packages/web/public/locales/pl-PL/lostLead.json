@@ -1,0 +1,17 @@
+{
+  "form.error": "Wystąpił błąd podczas przesyłania opinii.",
+  "form.submit": "Prześlij",
+  "form.subtitle": "Firmy są wdzięczne za opinie. Odpowiedzi są anonimowe.",
+  "form.textarea.label": "Dodaj wyjaśnienie",
+  "form.textarea.placeholder": "Np.: Brak koktajli, przestarzała wykładzina, za mało pokoi itp.",
+  "form.title": "Dlaczego nie jesteście zainteresowani?",
+  "notInterestedOption.availability": "Dostępność",
+  "notInterestedOption.communication": "Słaba komunikacja",
+  "notInterestedOption.facilities": "Udogodnienia lub noclegi",
+  "notInterestedOption.location": "Lokalizacja lub oprawa",
+  "notInterestedOption.pricing": "Cena lub stosunek jakości do ceny",
+  "notInterestedOption.services": "Oferowane usługi",
+  "notInterestedOption.style": "Styl lub klimat",
+  "success.submitted": "Przesłano",
+  "success.title": "Dziękujemy, {{ userName }}. Dzięki opiniom możemy znaleźć dla Was lepsze dopasowania."
+}

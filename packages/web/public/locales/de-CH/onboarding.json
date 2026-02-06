@@ -26,7 +26,7 @@
   "feedbackBudget": "Teilt euer Budget mithilfe des Budget-Tools ein!",
   "introBudget": "Schätzt euer gesamtes Hochzeitsbudget. Wir erstellen einen Kostenüberblick, damit ihr genau wisst wie viel ihr wofür ausgeben solltet. Eine durchschnittliche Hochzeit in der Schweiz kostet <bold>30.000 CHF</bold>.",
   "introBudgetNoVenue": "Gebt eine Einschätzung ab! Wir erstellen einen Kostenüberschlag für euch und finden die Locations, die am besten zu euch und eurem Budget passen.\n\n(Eine Hochzeit in der Schweiz kostet im Durchschnitt <bold>30.000 CHF</bold>.)",
-  "locationInputPlaceholder": "Gib eine deutsche Stadt oder Region ein",
+  "locationInputPlaceholder": "Gebt eine schweizerische Stadt, ein Kanton oder eine Region ein",
   "page.title": "Onboarding",
   "planning.initialBudget": "Wir haben ein Budget im Auge, aber noch keine Location gebucht",
   "planning.notStarted": "Noch nichts",

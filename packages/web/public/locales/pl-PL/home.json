@@ -1,0 +1,17 @@
+{
+  "bookSupplierWidget.supplier.description": "Dodaj ich do zespołu marzeń",
+  "bookSupplierWidget.supplier.title": "Czy masz już zarezerwowanego usługodawcę?",
+  "bookSupplierWidget.venue.description": "Dodaj go teraz, aby spersonalizować planowanie",
+  "bookSupplierWidget.venue.title": "Czy masz już zarezerwowane miejsce?",
+  "eventNearby": "Dowiedz się o wydarzeniach i dniach otwartych w Waszej okolicy",
+  "page.head": "Moje wesele",
+  "seeAll": "Zobacz wszystkie",
+  "specialOffers.title": "Oferty tygodnia wybrane dla Was",
+  "specialOffersCarousel.seeMore": "Zobacz więcej ofert ({{count}})",
+  "specialOffersCarousel.seeMore_plural": "Zobacz więcej ofert ({{count}})",
+  "supplierTypes.title": "Znajdź wymarzonego usługodawcę",
+  "trendingPhotographers": "Popularni fotografowie w Waszej okolicy",
+  "trendingVenues": "Popularne sale weselne w Waszej okolicy",
+  "venueTypes.title": "Popularne typy miejsc",
+  "venueTypes.titleWithLocation": "Popularne typy miejsc w lokalizacji: {{location}}"
+}

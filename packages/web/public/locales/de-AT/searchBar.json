@@ -2,7 +2,7 @@
   "autocomplete.text": "Suche nach Dienstleistern in der Nähe von...",
   "in": "in",
   "locationInput.label": "In der Nähe von",
-  "locationInput.placeholder": "Region eingeben",
+  "locationInput.placeholder": "Region oder Land eingeben",
   "locationTab.searchButton.label": "Suche",
   "modal.searchByName.enterSupplierName": "Dienstleister eingeben",
   "modal.searchByName.lookingForSupplier": "Suchst du nach einem bestimmten Dienstleister? Gib dessen Namen ein, um unser Verzeichnis zu durchsuchen",

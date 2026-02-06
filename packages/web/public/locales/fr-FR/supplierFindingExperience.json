@@ -12,8 +12,6 @@
   "dragCard.overlay.text.noThanks": "Non merci",
   "dragCard.overlay.text.saved": "Ajouté",
   "favouriteButton.list": "Ajouter aux favoris",
-  "featureControlsExplainedStep.concierge.subtitle": "Le moyen le plus simple de découvrir les meilleurs lieux",
-  "featureControlsExplainedStep.concierge.title": "Swipez pour trouver votre lieu magique",
   "featureControlsExplainedStep.continueButton": "Commencez !",
   "featureControlsExplainedStep.scrollUp": "Faites défiler vers le haut pour voir plus d'informations",
   "featureControlsExplainedStep.subtitle": "Amusez-vous bien !",
@@ -23,14 +21,6 @@
   "featureControlsExplainedStep.tapFavouriteButton": "Appuyez pour favoris",
   "featureControlsExplainedStep.tapSkipButton": "Appuyez pour passer",
   "featureControlsExplainedStep.title": "Swipez pour trouver votre lieu idéal !",
-  "featureEndResultsStep.concierge.exploreVenuesCta": "Découvrez plus de lieux",
-  "featureEndResultsStep.concierge.requestBrochureCta": "Envoyez des demandes maintenant",
-  "featureEndResultsStep.concierge.subtitle.hasFavourites": "On dirait que vous avez trouvé de vraies perles ! Engagez la conversation et passez à l'étape suivante.",
-  "featureEndResultsStep.concierge.subtitle.noFavourites": "Il semblerait que vous n'ayez enregistré aucun lieu dans vos favoris. Découvrez dès maintenant d'autres options !",
-  "featureEndResultsStep.concierge.title.hasFavourites": "On a enregistré {{count}} matchs dans vos favoris !",
-  "featureEndResultsStep.concierge.title.hasFavourites_plural": "On a enregistré {{count}} matchs dans vos favoris !",
-  "featureEndResultsStep.concierge.title.noFavourites": "Vous y êtes presque !",
-  "featureEndResultsStep.concierge.viewFavouritesCta": "Aller aux Favoris",
   "featureEndResultsStep.dummyCard1.venueName": "Château de Braques",
   "featureEndResultsStep.dummyCard2.venueName": "La Grange des Vignes",
   "featureEndResultsStep.dummyCard3.venueName": "Domaine des Saules",
@@ -69,5 +59,6 @@
   "noResultsView.subtitle": "On n'a pas trouvé de lieux correspondant à vos critères. Changez vos préférences si possible.",
   "noResultsView.title": "Pas de résultat trouvé",
   "pageTitle": "Découvrez le {{ supplierCategory }} de vos rêves",
-  "skipButton.list": "Non merci"
+  "skipButton.list": "Non merci",
+  "swipeUpHint": "Swipez vers le haut pour en savoir plus sur ce lieu"
 }

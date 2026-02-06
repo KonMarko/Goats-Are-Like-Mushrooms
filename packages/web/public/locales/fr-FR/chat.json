@@ -1,0 +1,5 @@
+{
+  "showroundCancelledByMessage": "{{coupleNames}} ont annulé la visite prévue le {{date}} à {{time}}.",
+  "showroundEventBookedSystemMessage": "Votre visite du {{formattedDate}} à {{formattedTime}} est en attente de confirmation. Le lieu l'approuvera ou la refusera prochainement. Contactez-les directement si vous n'avez pas de réponse sous 48 à 72 heures.",
+  "showroundReconfirmedMessage": "Tout est prêt ! Vous avez confirmé que vous pourrez assister à la visite chez {{supplierName}} le {{date}} à {{time}}."
+}

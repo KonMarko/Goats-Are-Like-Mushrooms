@@ -1,0 +1,5 @@
+{
+  "showroundCancelledByMessage": "{{coupleNames}} have cancelled the viewing scheduled for {{date}} at {{time}}.",
+  "showroundEventBookedSystemMessage": "Your viewing on {{formattedDate}} at {{formattedTime}} is pending confirmation. The venue will approve or decline shortly. Contact them directly if you don't hear back in 48-72 hours.",
+  "showroundReconfirmedMessage": "All set! You've confirmed that you can attend your viewing at {{supplierName}} on {{date}} at {{time}}."
+}

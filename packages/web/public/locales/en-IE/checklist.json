@@ -1,9 +1,9 @@
 {
-  "addTask.due.label": "Due",
+  "addTask.due.label2": "Due date",
   "addTask.due.placeholder": "Month",
   "addTask.heading": "Add a new task",
-  "addTask.name.label": "Name",
-  "addTask.name.placeholder": "What do you need to do?",
+  "addTask.name.label2": "Task",
+  "addTask.name.placeholder2": "Eg. Create your wedding website",
   "animationMessage": "Organising all your tasks",
   "animationMessageMobile": "Organising all your tasks",
   "assigned": "Assigned",

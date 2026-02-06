@@ -1,0 +1,23 @@
+{
+  "cta.goToMessage": "Odpowiedź",
+  "cta.sendEnquiry": "Wiadomość",
+  "error": "Wystąpił błąd podczas przetwarzania żądania",
+  "infoItem.bedroom": "pokój",
+  "infoItem.bedroom_plural": "pokoje",
+  "infoItem.guest": "gość",
+  "infoItem.guest_plural": "goście",
+  "infoItem.no": "Nie",
+  "infoItem.noReviews": "Nie ma jeszcze opinii",
+  "infoItem.notSet": "Nie ustawiono",
+  "infoItem.other": "Inne",
+  "infoItem.review": "opinia",
+  "infoItem.review_plural": "opinie",
+  "infoItem.yes": "Tak",
+  "rowHeader.accommodation": "Noclegi",
+  "rowHeader.guests": "Goście",
+  "rowHeader.reviews": "Opinie",
+  "rowHeader.venuePrice": "Cena sali weselnej",
+  "rowHeader.venueStyle": "Styl sali weselnej",
+  "rowHeader.venueType": "Typ miejsca",
+  "title": "Porównaj miejsca"
+}

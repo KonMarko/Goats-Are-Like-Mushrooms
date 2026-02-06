@@ -4,6 +4,7 @@
   "BridebookDeal": "{{bridebook}} Deal",
   "days": "day",
   "days_plural": "days",
+  "deals.section.title": "Exclusive Deals",
   "discountJust": "Just {{discount}}",
   "discountMoneyOff": "{{discount}} Off",
   "discountOff": "{{discount}}% Off",

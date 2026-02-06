@@ -63,6 +63,7 @@
   "details.buttons.shareProfile": "Share profile",
   "details.buttons.unbook": "Unbook this supplier",
   "details.buttons.unfavouriteSupplier": "Unfavourite this supplier",
+  "details.buttons.viewPriceEstimate": "View pricing estimate",
   "details.buttons.viewProfile": "View profile",
   "details.pill.booked": "Booked",
   "details.pill.bookedOn": "Booked on: {{date}}",

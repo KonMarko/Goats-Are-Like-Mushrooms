@@ -1,0 +1,5 @@
+{
+  "showroundCancelledByMessage": "{{coupleNames}} haben die am {{date}} geplante Besichtigung um {{time}} abgesagt.",
+  "showroundEventBookedSystemMessage": "Eure Besichtigung am {{formattedDate}} um {{formattedTime}} wurde noch nicht bestätigt. Die Location wird euch in Kürze zu- oder absagen. Kontaktiert sie direkt, wenn ihr innerhalb von 48 - 72 Stunden keine Rückmeldung erhaltet.",
+  "showroundReconfirmedMessage": "Alles bereit! Du hast bestätigt, dass ihr an der Besichtigung bei {{supplierName}} am {{date}} um {{time}} teilnehmen könnt."
+}

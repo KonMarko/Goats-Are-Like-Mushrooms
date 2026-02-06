@@ -1,13 +1,7 @@
 {
   "downloadAppBanner.button": "UTILISER L'APPLI",
   "downloadAppBanner.headline": "Téléchargez l'application Bridebook",
-  "pushNotificationsOptInModal.bbLiteDescription": "Nous vous notifierons à propos des nouveaux messages, des offres spéciales et d'autres trucs & astuces.",
-  "pushNotificationsOptInModal.bbLiteTitle": "Recevez des mises à jour sur l'avancement de votre organisation",
-  "pushNotificationsOptInModal.confirmButton": "J’active les notifications",
-  "pushNotificationsOptInModal.description": "Les meilleurs prestataires sont vite réservés. Gardez vos notifications actives pour répondre rapidement aux nouveaux messages et consulter les dernières offres spéciales.",
   "pushNotificationsOptInModal.maybeLater": "Peut-être plus tard",
-  "pushNotificationsOptInModal.notNow": "Pas maintenant",
-  "pushNotificationsOptInModal.title": "Obtenez des réponses en temps réel",
   "pushNotificationsOptInModal.variantConfirmButton.keepUpdated": "Oui, tenez-moi au courant",
   "pushNotificationsOptInModal.variantConfirmButton.turnOnNotifications": "Activer les notifications",
   "pushNotificationsOptInModal.variantDescription.articles": "Nous partagerons des conseils d'experts basés sur le calendrier de votre mariage.",
