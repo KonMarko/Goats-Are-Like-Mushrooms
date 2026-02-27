@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   validate-translations:
-    runs-on: bridebook-ci
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
