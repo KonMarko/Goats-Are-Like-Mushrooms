@@ -28,5 +28,6 @@
   "uploadPhoto": "Upload photo",
   "yourNamePlaceholderText": "[Your name]",
   "yourPhoto": "Your photo",
-  "yourTagPlaceholder": "Your"
+  "yourTagPlaceholder": "Your",
+  "anotherKey": "Another key"
 }
