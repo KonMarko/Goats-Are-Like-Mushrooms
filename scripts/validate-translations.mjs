@@ -142,7 +142,7 @@ for (const filename of sourceFiles) {
     if (missingKeys.length > 0) {
       hasErrors = true;
       console.error(
-          `Missing or empty translations in ${targetFilePath} for keys: ${missingKeys.join(', ')}`,
+          `Missing or empty translations in ${targetFilePath} for keys: \n- ${missingKeys.join(',\n- ')}`,
       );
     }
   }
