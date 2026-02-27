@@ -132,8 +132,7 @@ for (const filename of sourceFiles) {
     if (!fs.existsSync(targetFilePath)) {
       hasErrors = true;
       console.error(
-        `::error file=packages/web/public/locales/${targetLocale}/${filename}::` +
-          `Missing translation file. Contains ${changedKeys.length} changed en-GB key(s) requiring translation: ${changedKeys.join(', ')}`,
+          `Missing translation file: ${targetFilePath}`,
       );
       continue;
     }
@@ -143,8 +142,7 @@ for (const filename of sourceFiles) {
     if (missingKeys.length > 0) {
       hasErrors = true;
       console.error(
-        `::error file=packages/web/public/locales/${targetLocale}/${filename}::` +
-          `Missing or empty translations for changed en-GB keys: ${missingKeys.join(', ')}`,
+          `Missing or empty translations in ${targetFilePath} for keys: ${missingKeys.join(', ')}`,
       );
     }
   }
