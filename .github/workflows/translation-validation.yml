@@ -1,0 +1,26 @@
+name: Translation Validation
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - 'packages/web/public/locales/**'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-translations:
+    runs-on: bridebook-ci
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate translations
+        run: node scripts/validate-translations.mjs
+        env:
+          GITHUB_BASE_REF: ${{ github.base_ref }}
