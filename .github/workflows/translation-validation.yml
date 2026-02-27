@@ -5,6 +5,7 @@ on:
     branches: [master]
     paths:
       - 'packages/web/public/locales/**'
+      - 'packages/cms-suppliers/public/static/locales/**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}

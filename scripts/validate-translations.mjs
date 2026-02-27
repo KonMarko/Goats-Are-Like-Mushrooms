@@ -2,9 +2,15 @@ import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 
-const LOCALES_PATH = path.resolve('packages/web/public/locales');
+const PACKAGES = [
+  { name: 'web', localesPath: path.resolve('packages/web/public/locales') },
+  {
+    name: 'cms-suppliers',
+    localesPath: path.resolve('packages/cms-suppliers/public/static/locales'),
+  },
+];
 const SOURCE_LOCALE = 'en-GB';
-const IGNORE_LOCALES = ['ach-UG'];
+const IGNORE_LOCALES = ['ach-UG', 'ru-RU'];
 const GITHUB_BASE_REF = process.env.GITHUB_BASE_REF || '';
 
 /**
@@ -15,9 +21,9 @@ const IS_PR_TO_MASTER = GITHUB_BASE_REF === 'master';
 /**
  * Get all locale directories except the source locale and ignored locales.
  */
-function getTargetLocales() {
-  return fs.readdirSync(LOCALES_PATH).filter((name) => {
-    const fullPath = path.join(LOCALES_PATH, name);
+function getTargetLocales(localesPath) {
+  return fs.readdirSync(localesPath).filter((name) => {
+    const fullPath = path.join(localesPath, name);
     return (
       fs.statSync(fullPath).isDirectory() &&
       name !== SOURCE_LOCALE &&
@@ -102,48 +108,56 @@ if (!ensureMasterAvailable()) {
   process.exit(1);
 }
 
-const sourceLocalePath = path.join(LOCALES_PATH, SOURCE_LOCALE);
-const sourceFiles = fs.readdirSync(sourceLocalePath).filter((f) => f.endsWith('.json'));
-const targetLocales = getTargetLocales();
-
-if (sourceFiles.length === 0) {
-  console.error('No source translation files found.');
-  process.exit(1);
-}
-
-if (targetLocales.length === 0) {
-  console.error('No target locales found.');
-  process.exit(1);
-}
-
+const repoRoot = execSync('git rev-parse --show-toplevel', { encoding: 'utf-8' }).trim();
 let hasErrors = false;
 
-for (const filename of sourceFiles) {
-  const sourceFilePath = path.join(sourceLocalePath, filename);
-  const changedKeys = getChangedKeys(sourceFilePath);
+for (const { name, localesPath } of PACKAGES) {
+  const sourceLocalePath = path.join(localesPath, SOURCE_LOCALE);
 
-  if (changedKeys.length === 0) continue;
+  if (!fs.existsSync(sourceLocalePath)) {
+    console.log(`[${name}] No source locale directory — skipping.`);
+    continue;
+  }
 
-  console.log(`${filename}: ${changedKeys.length} changed key(s)`);
+  const sourceFiles = fs.readdirSync(sourceLocalePath).filter((f) => f.endsWith('.json'));
+  const targetLocales = getTargetLocales(localesPath);
 
-  for (const targetLocale of targetLocales) {
-    const targetFilePath = path.join(LOCALES_PATH, targetLocale, filename);
+  if (sourceFiles.length === 0 || targetLocales.length === 0) {
+    console.log(`[${name}] No source files or target locales — skipping.`);
+    continue;
+  }
 
-    if (!fs.existsSync(targetFilePath)) {
-      hasErrors = true;
-      console.error(
-          `Missing translation file: ${targetFilePath}`,
-      );
-      continue;
-    }
+  console.log(
+    `\n[${name}] Validating ${sourceFiles.length} file(s) against ${targetLocales.length} locale(s)`,
+  );
 
-    const missingKeys = changedKeys.filter((key) => !hasValue(targetFilePath, key));
+  for (const filename of sourceFiles) {
+    const sourceFilePath = path.join(sourceLocalePath, filename);
+    const changedKeys = getChangedKeys(sourceFilePath);
 
-    if (missingKeys.length > 0) {
-      hasErrors = true;
-      console.error(
-          `Missing or empty translations in ${targetFilePath} for keys: \n- ${missingKeys.join(',\n- ')}\n`,
-      );
+    if (changedKeys.length === 0) continue;
+
+    console.log(`  ${filename}: ${changedKeys.length} changed key(s)`);
+
+    for (const targetLocale of targetLocales) {
+      const targetFilePath = path.join(localesPath, targetLocale, filename);
+
+      if (!fs.existsSync(targetFilePath)) {
+        hasErrors = true;
+        console.error(
+            `Missing translation file: ${targetFilePath}`,
+        );
+        continue;
+      }
+
+      const missingKeys = changedKeys.filter((key) => !hasValue(targetFilePath, key));
+
+      if (missingKeys.length > 0) {
+        hasErrors = true;
+        console.error(
+            `Missing or empty translations in ${targetFilePath} for keys: \n- ${missingKeys.join(',\n- ')}\n`,
+        );
+      }
     }
   }
 }
