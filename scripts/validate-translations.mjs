@@ -141,7 +141,7 @@ for (const { name, localesPath } of PACKAGES) {
 
     for (const targetLocale of targetLocales) {
       const targetFilePath = path.join(localesPath, targetLocale, filename);
-      const targetFilePathStripped = targetFilePath.split('packages/')[0]
+      const targetFilePathStripped = targetFilePath.split('packages/')[1]
 
       if (!fs.existsSync(targetFilePath)) {
         hasErrors = true;
