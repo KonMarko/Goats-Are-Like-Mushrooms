@@ -137,15 +137,16 @@ for (const { name, localesPath } of PACKAGES) {
 
     if (changedKeys.length === 0) continue;
 
-    console.log(`  ${filename}: ${changedKeys.length} changed key(s)`);
+    console.log(`  ${filename}: ${changedKeys.length} changed key(s)\n`);
 
     for (const targetLocale of targetLocales) {
       const targetFilePath = path.join(localesPath, targetLocale, filename);
+      const targetFilePathStripped = targetFilePath.split('packages/')[0]
 
       if (!fs.existsSync(targetFilePath)) {
         hasErrors = true;
         console.error(
-            `Missing translation file: ${targetFilePath}`,
+            `Missing translation file: packages/${targetFilePathStripped}`,
         );
         continue;
       }
@@ -155,7 +156,7 @@ for (const { name, localesPath } of PACKAGES) {
       if (missingKeys.length > 0) {
         hasErrors = true;
         console.error(
-            `Missing or empty translations in ${targetFilePath} for keys: \n- ${missingKeys.join(',\n- ')}\n`,
+            `Missing or empty translations in packages/${targetFilePathStripped} for keys: \n- ${missingKeys.join(',\n- ')}\n`,
         );
       }
     }
